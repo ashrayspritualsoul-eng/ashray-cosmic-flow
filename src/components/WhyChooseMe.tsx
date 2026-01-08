@@ -44,7 +44,7 @@ const WhyChooseMe = () => {
               <span className="text-gradient">Healing & Transformation</span>
             </h2>
             <p className="text-foreground text-lg leading-relaxed mb-8">
-              When you choose Ashray Astro, you're choosing a sacred partnership 
+              When you choose Ashray Wellness, you're choosing a sacred partnership 
               on your spiritual journey. My commitment is to guide you with honesty, 
               compassion, and deep respect for your unique path.
             </p>

@@ -90,7 +90,7 @@ const ContactForm = () => {
             {/* Contact Details */}
             <div className="space-y-6">
               {[
-                { icon: Mail, label: "Email", value: "contact@ashrayastro.com" },
+                { icon: Mail, label: "Email", value: "contact@ashraywellness.com" },
                 { icon: Phone, label: "Phone", value: "+91 XXXXX XXXXX" },
                 { icon: MapPin, label: "Location", value: "Available Worldwide" },
               ].map((item, index) => (

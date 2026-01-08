@@ -27,7 +27,7 @@ const Footer = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h3 className="text-2xl font-bold text-secondary mb-4">Ashray Astro</h3>
+            <h3 className="text-2xl font-bold text-secondary mb-4">Ashray Wellness</h3>
             <p className="text-primary-foreground/70 leading-relaxed mb-6">
               Illuminating paths through the ancient wisdom of astrology, tarot, 
               numerology, and energy healing. Your spiritual journey begins here.
@@ -82,7 +82,7 @@ const Footer = () => {
               ))}
             </div>
             <p className="text-primary-foreground/70 text-sm">
-              contact@ashrayastro.com
+              contact@ashraywellness.com
             </p>
             <p className="text-primary-foreground/70 text-sm">
               Available Worldwide
@@ -94,7 +94,7 @@ const Footer = () => {
         <div className="border-t border-secondary/20 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-primary-foreground/60 text-sm">
-              © {new Date().getFullYear()} Ashray Astro. All rights reserved.
+              © {new Date().getFullYear()} Ashray Wellness. All rights reserved.
             </p>
             <p className="text-primary-foreground/60 text-sm flex items-center gap-1">
               Made with <Heart className="w-4 h-4 text-secondary fill-secondary" /> by Ashi Pawaiya Jain

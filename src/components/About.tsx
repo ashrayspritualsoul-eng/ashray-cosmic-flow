@@ -29,7 +29,7 @@ const About = () => {
                     <span className="text-5xl font-bold text-secondary">A</span>
                   </div>
                   <h3 className="text-2xl font-bold text-primary-foreground mb-2">Ashi Pawaiya Jain</h3>
-                  <p className="text-secondary font-medium">Ashray Astro</p>
+                  <p className="text-secondary font-medium">Ashray Wellness</p>
                 </div>
               </div>
             </div>
@@ -56,7 +56,7 @@ const About = () => {
             
             <div className="space-y-4 text-foreground leading-relaxed">
               <p>
-                Welcome, I'm <strong>Ashi Pawaiya Jain</strong>, the soul behind Ashray Astro. 
+                Welcome, I'm <strong>Ashi Pawaiya Jain</strong>, the soul behind Ashray Wellness. 
                 With over a decade of experience in the mystical arts, I've dedicated my life 
                 to helping individuals navigate their spiritual journey with clarity and confidence.
               </p>
