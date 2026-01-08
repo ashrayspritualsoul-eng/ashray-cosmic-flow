@@ -3,11 +3,13 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Sparkles } from "lucide-react";
 
+import { Link, useLocation } from "react-router-dom";
+
 const navLinks = [
-  { label: "Home", href: "#" },
-  { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Services", href: "/services" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 const Navbar = () => {
@@ -37,30 +39,44 @@ const Navbar = () => {
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <a href="#" className="flex items-center gap-2">
+            <Link to="/" className="flex items-center gap-2">
               <Sparkles className={`w-6 h-6 ${isScrolled ? "text-primary" : "text-secondary"}`} />
               <span className={`text-xl font-bold ${isScrolled ? "text-card-foreground" : "text-primary-foreground"}`}>
                 Ashray Wellness
               </span>
-            </a>
+            </Link>
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-8">
               {navLinks.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  className={`font-medium transition-colors duration-300 ${
-                    isScrolled
-                      ? "text-foreground hover:text-primary"
-                      : "text-primary-foreground/80 hover:text-secondary"
-                  }`}
-                >
-                  {link.label}
-                </a>
+                link.href.startsWith("/#") ? (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    className={`font-medium transition-colors duration-300 ${
+                      isScrolled
+                        ? "text-foreground hover:text-primary"
+                        : "text-primary-foreground/80 hover:text-secondary"
+                    }`}
+                  >
+                    {link.label}
+                  </a>
+                ) : (
+                  <Link
+                    key={link.label}
+                    to={link.href}
+                    className={`font-medium transition-colors duration-300 ${
+                      isScrolled
+                        ? "text-foreground hover:text-primary"
+                        : "text-primary-foreground/80 hover:text-secondary"
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                )
               ))}
               <Button variant={isScrolled ? "default" : "hero"} size="default" asChild>
-                <a href="#contact">Book Now</a>
+                <a href="/#contact">Book Now</a>
               </Button>
             </div>
 
@@ -93,17 +109,28 @@ const Navbar = () => {
             <div className="container mx-auto px-4 py-6">
               <div className="flex flex-col gap-4">
                 {navLinks.map((link) => (
-                  <a
-                    key={link.label}
-                    href={link.href}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className="text-card-foreground font-medium py-2 hover:text-primary transition-colors"
-                  >
-                    {link.label}
-                  </a>
+                  link.href.startsWith("/#") ? (
+                    <a
+                      key={link.label}
+                      href={link.href}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="text-card-foreground font-medium py-2 hover:text-primary transition-colors"
+                    >
+                      {link.label}
+                    </a>
+                  ) : (
+                    <Link
+                      key={link.label}
+                      to={link.href}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="text-card-foreground font-medium py-2 hover:text-primary transition-colors"
+                    >
+                      {link.label}
+                    </Link>
+                  )
                 ))}
                 <Button variant="default" className="mt-2" asChild>
-                  <a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>
+                  <a href="/#contact" onClick={() => setIsMobileMenuOpen(false)}>
                     Book Now
                   </a>
                 </Button>

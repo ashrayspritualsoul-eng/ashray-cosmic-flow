@@ -1,107 +1,76 @@
 import { motion } from "framer-motion";
-import { UserCheck, Lock, Globe, Leaf } from "lucide-react";
+import { Globe, Sparkles, Users, Heart } from "lucide-react";
 
 const reasons = [
   {
-    icon: UserCheck,
-    title: "Personalized Guidance",
-    description: "Every reading is tailored to your unique energy and circumstances. No generic predictions—only insights meant for you.",
-  },
-  {
-    icon: Lock,
-    title: "Confidential & Ethical",
-    description: "Your privacy is sacred. All consultations are held in strict confidence, with ethics and integrity at the heart of every session.",
-  },
-  {
     icon: Globe,
-    title: "Worldwide Clients",
-    description: "Serving seekers across the globe with online consultations. Distance is no barrier to spiritual connection.",
+    title: "Global Reach",
+    description: "Trusted by clients from around the world, delivering transformative guidance across cultures and backgrounds.",
   },
   {
-    icon: Leaf,
-    title: "Holistic Approach",
-    description: "Integrating mind, body, and spirit for complete well-being. True healing comes from addressing all aspects of your being.",
+    icon: Sparkles,
+    title: "Diverse Expertise",
+    description: "A unique combination of spiritual wisdom and psychological mastery for holistic healing.",
+  },
+  {
+    icon: Users,
+    title: "Proven Experience",
+    description: "Collaborated with top platforms like Astrotalk and Nebula, and respected organizations like Accenture and the Airforce.",
+  },
+  {
+    icon: Heart,
+    title: "Personalized Approach",
+    description: "Tailored solutions designed to address each client's specific challenges and goals.",
   },
 ];
 
 const WhyChooseMe = () => {
   return (
-    <section className="py-20 lg:py-32 gradient-soft">
-      <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Content Side */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <p className="text-primary font-semibold tracking-widest uppercase text-sm mb-4">
-              Why Choose Me
-            </p>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-card-foreground mb-6 leading-tight">
-              A Journey of Trust,{" "}
-              <span className="text-gradient">Healing & Transformation</span>
-            </h2>
-            <p className="text-foreground text-lg leading-relaxed mb-8">
-              When you choose Ashray Wellness, you're choosing a sacred partnership 
-              on your spiritual journey. My commitment is to guide you with honesty, 
-              compassion, and deep respect for your unique path.
-            </p>
+    <section className="py-20 lg:py-32 gradient-soft relative overflow-hidden">
+      {/* Background pattern */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0 bg-gradient-to-br from-secondary/30 via-tertiary/20 to-secondary/30" />
+      </div>
+      
+      <div className="container mx-auto px-4 relative z-10">
+        {/* Section Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-card-foreground">
+            Why Choose <span className="text-gradient">Ashray Wellness</span>?
+          </h2>
+        </motion.div>
 
-            {/* Stats */}
-            <div className="grid grid-cols-3 gap-6">
-              {[
-                { number: "10+", label: "Years Experience" },
-                { number: "5000+", label: "Happy Clients" },
-                { number: "15+", label: "Countries Served" },
-              ].map((stat, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.3 + index * 0.1 }}
-                  className="text-center"
-                >
-                  <div className="text-3xl md:text-4xl font-bold text-primary mb-1">
-                    {stat.number}
-                  </div>
-                  <div className="text-sm text-foreground">{stat.label}</div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* Reasons Grid */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="grid sm:grid-cols-2 gap-6"
-          >
-            {reasons.map((reason, index) => (
+        {/* Reasons Grid */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {reasons.map((reason, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+              className="text-center"
+            >
               <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.3 + index * 0.1 }}
-                className="p-6 bg-card rounded-xl border border-border shadow-soft hover:shadow-card transition-all duration-300"
+                whileHover={{ scale: 1.05 }}
+                className="w-20 h-20 mx-auto rounded-full bg-primary flex items-center justify-center mb-6 shadow-card"
               >
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                  <reason.icon className="w-6 h-6 text-primary" />
-                </div>
-                <h3 className="text-lg font-bold text-card-foreground mb-2">
-                  {reason.title}
-                </h3>
-                <p className="text-foreground text-sm leading-relaxed">
-                  {reason.description}
-                </p>
+                <reason.icon className="w-10 h-10 text-primary-foreground" />
               </motion.div>
-            ))}
-          </motion.div>
+              <h3 className="text-xl font-bold text-card-foreground mb-3">
+                {reason.title}
+              </h3>
+              <p className="text-foreground leading-relaxed">
+                {reason.description}
+              </p>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
