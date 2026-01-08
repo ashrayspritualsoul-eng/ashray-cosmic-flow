@@ -40,7 +40,7 @@ const Navbar = () => {
             <a href="#" className="flex items-center gap-2">
               <Sparkles className={`w-6 h-6 ${isScrolled ? "text-primary" : "text-secondary"}`} />
               <span className={`text-xl font-bold ${isScrolled ? "text-card-foreground" : "text-primary-foreground"}`}>
-                Ashray Astro
+                Ashray Wellness
               </span>
             </a>
 

@@ -52,7 +52,7 @@ const Hero = () => {
             transition={{ delay: 0.3, duration: 0.6 }}
             className="text-secondary font-medium tracking-widest uppercase text-sm mb-6"
           >
-            Ashray Astro
+            Ashray Wellness
           </motion.p>
           
           <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-primary-foreground leading-tight mb-6 max-w-4xl mx-auto">
