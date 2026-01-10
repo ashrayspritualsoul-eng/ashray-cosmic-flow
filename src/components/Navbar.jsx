@@ -40,15 +40,15 @@ const Navbar = () => {
         transition={{ duration: 0.6 }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? "bg-background/98 backdrop-blur-md shadow-lg border-b border-border py-3"
-            : "bg-gradient-to-b from-background/80 to-transparent backdrop-blur-sm py-5"
+            ? "bg-white/95 dark:bg-gray-900/95 backdrop-blur-lg shadow-xl border-b border-gray-200 dark:border-gray-700 py-3"
+            : "bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-md py-4"
         }`}
       >
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between">
             {/* Logo */}
             <Link to="/" className="flex items-center gap-3 group">
-              <div className="relative w-12 h-12 rounded-full overflow-hidden bg-white shadow-lg ring-2 ring-primary/20 group-hover:ring-primary/40 group-hover:scale-105 transition-all duration-300">
+              <div className="relative w-12 h-12 rounded-full overflow-hidden bg-white shadow-lg ring-2 ring-primary/30 group-hover:ring-primary/60 group-hover:scale-105 transition-all duration-300">
                 <img 
                   src="/logo.png" 
                   alt="Ashray Wellness Logo" 
@@ -64,9 +64,7 @@ const Navbar = () => {
                   <span className="text-xl font-bold text-primary">AW</span>
                 </div>
               </div>
-              <span className={`text-xl font-bold transition-colors ${
-                isScrolled ? "text-card-foreground" : "text-primary-foreground"
-              }`}>
+              <span className="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                 Ashray Wellness
               </span>
             </Link>
@@ -78,25 +76,19 @@ const Navbar = () => {
                   <a
                     key={link.label}
                     href={link.href}
-                    className={`font-medium transition-colors duration-300 ${
-                      isScrolled
-                        ? "text-foreground hover:text-primary"
-                        : "text-primary-foreground/90 hover:text-secondary drop-shadow-md"
-                    }`}
+                    className="font-medium text-gray-700 dark:text-gray-200 hover:text-primary transition-colors duration-300 relative group"
                   >
                     {link.label}
+                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary group-hover:w-full transition-all duration-300"></span>
                   </a>
                 ) : (
                   <Link
                     key={link.label}
                     to={link.href}
-                    className={`font-medium transition-colors duration-300 ${
-                      isScrolled
-                        ? "text-foreground hover:text-primary"
-                        : "text-primary-foreground/90 hover:text-secondary drop-shadow-md"
-                    }`}
+                    className="font-medium text-gray-700 dark:text-gray-200 hover:text-primary transition-colors duration-300 relative group"
                   >
                     {link.label}
+                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary group-hover:w-full transition-all duration-300"></span>
                   </Link>
                 )
               ))}
@@ -108,16 +100,13 @@ const Navbar = () => {
                 onMouseLeave={() => setIsServicesOpen(false)}
               >
                 <button
-                  className={`font-medium transition-colors duration-300 flex items-center gap-1 ${
-                    isScrolled
-                      ? "text-foreground hover:text-primary"
-                      : "text-primary-foreground/90 hover:text-secondary drop-shadow-md"
-                  }`}
+                  className="font-medium text-gray-700 dark:text-gray-200 hover:text-primary transition-colors duration-300 flex items-center gap-1 relative group"
                 >
                   Services
                   <ChevronDown className={`w-4 h-4 transition-transform ${
                     isServicesOpen ? "rotate-180" : ""
                   }`} />
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary group-hover:w-full transition-all duration-300"></span>
                 </button>
                 
                 <AnimatePresence>
@@ -127,11 +116,11 @@ const Navbar = () => {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 10 }}
                       transition={{ duration: 0.2 }}
-                      className="absolute top-full left-0 mt-2 w-72 bg-white/95 dark:bg-gray-900/95 backdrop-blur-xl rounded-xl shadow-2xl border border-gray-200 dark:border-gray-700 py-3 overflow-hidden"
+                      className="absolute top-full left-0 mt-3 w-80 bg-white dark:bg-gray-900 backdrop-blur-xl rounded-2xl shadow-2xl border border-gray-100 dark:border-gray-800 py-3 overflow-hidden"
                     >
                       <Link
                         to="/services"
-                        className="block px-5 py-3 text-sm font-semibold text-gray-900 dark:text-white hover:bg-primary/10 hover:text-primary transition-colors border-b border-gray-200 dark:border-gray-700"
+                        className="block px-6 py-3 text-sm font-semibold text-gray-900 dark:text-white hover:bg-gradient-to-r hover:from-primary/10 hover:to-secondary/10 hover:text-primary transition-all border-b border-gray-100 dark:border-gray-800"
                       >
                         ✨ All Services
                       </Link>
@@ -139,7 +128,7 @@ const Navbar = () => {
                         <Link
                           key={service.href}
                           to={service.href}
-                          className="block px-5 py-2.5 text-sm text-gray-700 dark:text-gray-200 hover:bg-primary/5 hover:text-primary hover:pl-6 transition-all duration-200"
+                          className="block px-6 py-3 text-sm text-gray-700 dark:text-gray-300 hover:bg-gradient-to-r hover:from-primary/5 hover:to-secondary/5 hover:text-primary hover:pl-8 transition-all duration-200"
                         >
                           {service.label}
                         </Link>
@@ -149,7 +138,7 @@ const Navbar = () => {
                 </AnimatePresence>
               </div>
 
-              <Button variant={isScrolled ? "default" : "hero"} size="default" asChild>
+              <Button className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white shadow-lg hover:shadow-xl transition-all duration-300" size="default" asChild>
                 <a href="/#contact">Book Now</a>
               </Button>
             </div>
@@ -157,13 +146,13 @@ const Navbar = () => {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden p-2"
+              className="md:hidden p-2 text-gray-700 dark:text-gray-200"
               aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? (
-                <X className={`w-6 h-6 ${isScrolled ? "text-card-foreground" : "text-primary-foreground"}`} />
+                <X className="w-6 h-6" />
               ) : (
-                <Menu className={`w-6 h-6 ${isScrolled ? "text-card-foreground" : "text-primary-foreground"}`} />
+                <Menu className="w-6 h-6" />
               )}
             </button>
           </div>
@@ -178,7 +167,7 @@ const Navbar = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="fixed top-[72px] left-0 right-0 bg-white/98 dark:bg-gray-900/98 backdrop-blur-xl z-40 border-b border-gray-200 dark:border-gray-700 shadow-2xl md:hidden max-h-[calc(100vh-72px)] overflow-y-auto"
+            className="fixed top-[72px] left-0 right-0 bg-white dark:bg-gray-900 backdrop-blur-xl z-40 border-b border-gray-200 dark:border-gray-700 shadow-2xl md:hidden max-h-[calc(100vh-72px)] overflow-y-auto"
           >
             <div className="container mx-auto px-4 py-6">
               <div className="flex flex-col gap-4">
@@ -253,7 +242,7 @@ const Navbar = () => {
                   </AnimatePresence>
                 </div>
 
-                <Button variant="default" className="mt-2" asChild>
+                <Button className="mt-2 bg-gradient-to-r from-primary to-secondary text-white" asChild>
                   <a href="/#contact" onClick={() => setIsMobileMenuOpen(false)}>
                     Book Now
                   </a>

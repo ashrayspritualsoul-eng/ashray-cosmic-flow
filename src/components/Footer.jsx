@@ -20,16 +20,22 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="relative bg-gradient-to-b from-background to-muted border-t border-border">
-      {/* Decorative gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-cosmic opacity-5 pointer-events-none"></div>
+    <footer className="relative overflow-hidden">
+      {/* Cosmic gradient background */}
+      <div className="absolute inset-0 gradient-cosmic"></div>
+      
+      {/* Decorative elements */}
+      <div className="absolute inset-0 opacity-30">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-primary/20 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary/20 rounded-full blur-3xl"></div>
+      </div>
       
       <div className="relative container mx-auto px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-          {/* Brand Section with Logo */}
+          {/* Brand Section with Bigger Logo */}
           <div className="lg:col-span-1">
-            <Link to="/" className="flex items-center gap-3 mb-6 group">
-              <div className="w-16 h-16 rounded-full overflow-hidden bg-white shadow-lg ring-2 ring-primary/20 group-hover:ring-primary/40 group-hover:scale-105 transition-all duration-300">
+            <Link to="/" className="flex items-center gap-4 mb-6 group">
+              <div className="w-20 h-20 rounded-full overflow-hidden bg-white shadow-2xl ring-2 ring-white/30 group-hover:ring-white/60 group-hover:scale-110 transition-all duration-300">
                 <img 
                   src="/logo.png" 
                   alt="Ashray Wellness Logo" 
@@ -45,9 +51,9 @@ const Footer = () => {
                   <span className="text-2xl font-bold text-primary">AW</span>
                 </div>
               </div>
-              <span className="text-2xl font-bold text-card-foreground">Ashray Wellness</span>
+              <span className="text-2xl font-bold text-primary-foreground">Ashray Wellness</span>
             </Link>
-            <p className="text-foreground/80 leading-relaxed mb-6">
+            <p className="text-primary-foreground/80 leading-relaxed mb-6">
               Guiding you towards spiritual awakening, inner peace, and holistic well-being through ancient wisdom and modern healing practices.
             </p>
             {/* Social Links */}
@@ -56,14 +62,14 @@ const Footer = () => {
                 href="https://www.instagram.com/ashraywellnesss/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110"
+                className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center hover:bg-white hover:text-primary transition-all duration-300 hover:scale-110 text-primary-foreground"
                 aria-label="Instagram"
               >
                 <Instagram className="w-5 h-5" />
               </a>
               <a
                 href="mailto:jainarchi023@gmail.com"
-                className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110"
+                className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center hover:bg-white hover:text-primary transition-all duration-300 hover:scale-110 text-primary-foreground"
                 aria-label="Email"
               >
                 <Mail className="w-5 h-5" />
@@ -72,7 +78,7 @@ const Footer = () => {
                 href="https://wa.me/919340216182"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110"
+                className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center hover:bg-white hover:text-primary transition-all duration-300 hover:scale-110 text-primary-foreground"
                 aria-label="WhatsApp"
               >
                 <Phone className="w-5 h-5" />
@@ -82,13 +88,13 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h3 className="text-lg font-bold text-card-foreground mb-4">Our Services</h3>
+            <h3 className="text-lg font-bold text-primary-foreground mb-4">Our Services</h3>
             <ul className="space-y-3">
               {services.map((service) => (
                 <li key={service.href}>
                   <Link
                     to={service.href}
-                    className="text-foreground/80 hover:text-primary transition-colors duration-300 hover:translate-x-1 inline-block"
+                    className="text-primary-foreground/80 hover:text-secondary transition-colors duration-300 hover:translate-x-1 inline-block"
                   >
                     {service.name}
                   </Link>
@@ -99,21 +105,21 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-bold text-card-foreground mb-4">Quick Links</h3>
+            <h3 className="text-lg font-bold text-primary-foreground mb-4">Quick Links</h3>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.href}>
                   {link.href.startsWith("/#") ? (
                     <a
                       href={link.href}
-                      className="text-foreground/80 hover:text-primary transition-colors duration-300 hover:translate-x-1 inline-block"
+                      className="text-primary-foreground/80 hover:text-secondary transition-colors duration-300 hover:translate-x-1 inline-block"
                     >
                       {link.name}
                     </a>
                   ) : (
                     <Link
                       to={link.href}
-                      className="text-foreground/80 hover:text-primary transition-colors duration-300 hover:translate-x-1 inline-block"
+                      className="text-primary-foreground/80 hover:text-secondary transition-colors duration-300 hover:translate-x-1 inline-block"
                     >
                       {link.name}
                     </Link>
@@ -125,26 +131,26 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-lg font-bold text-card-foreground mb-4">Get in Touch</h3>
+            <h3 className="text-lg font-bold text-primary-foreground mb-4">Get in Touch</h3>
             <ul className="space-y-4">
-              <li className="flex items-start gap-3 text-foreground/80">
-                <Phone className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+              <li className="flex items-start gap-3 text-primary-foreground/80">
+                <Phone className="w-5 h-5 text-secondary mt-0.5 flex-shrink-0" />
                 <div>
-                  <a href="https://wa.me/919340216182" className="hover:text-primary transition-colors">
+                  <a href="https://wa.me/919340216182" className="hover:text-secondary transition-colors">
                     +91 93402 16182
                   </a>
                 </div>
               </li>
-              <li className="flex items-start gap-3 text-foreground/80">
-                <Mail className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+              <li className="flex items-start gap-3 text-primary-foreground/80">
+                <Mail className="w-5 h-5 text-secondary mt-0.5 flex-shrink-0" />
                 <div>
-                  <a href="mailto:jainarchi023@gmail.com" className="hover:text-primary transition-colors break-all">
+                  <a href="mailto:jainarchi023@gmail.com" className="hover:text-secondary transition-colors break-all">
                     jainarchi023@gmail.com
                   </a>
                 </div>
               </li>
-              <li className="flex items-start gap-3 text-foreground/80">
-                <MapPin className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+              <li className="flex items-start gap-3 text-primary-foreground/80">
+                <MapPin className="w-5 h-5 text-secondary mt-0.5 flex-shrink-0" />
                 <div>
                   Jabalpur, Madhya Pradesh<br />
                   India
@@ -155,12 +161,12 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-border">
+        <div className="mt-12 pt-8 border-t border-white/10">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-foreground/60 text-sm text-center md:text-left">
+            <p className="text-primary-foreground/60 text-sm text-center md:text-left">
               © {currentYear} Ashray Wellness. All rights reserved.
             </p>
-            <p className="text-foreground/60 text-sm text-center md:text-right">
+            <p className="text-primary-foreground/60 text-sm text-center md:text-right">
               Crafted with 💜 for your spiritual journey
             </p>
           </div>
