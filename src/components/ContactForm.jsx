@@ -8,10 +8,22 @@ import { Send, Mail, Phone, MapPin, Sparkles } from "lucide-react";
 import { z } from "zod";
 
 const contactSchema = z.object({
-  name: z.string().trim().min(1, "Name is required").max(100, "Name must be less than 100 characters"),
-  email: z.string().trim().email("Please enter a valid email address").max(255, "Email must be less than 255 characters"),
+  name: z
+    .string()
+    .trim()
+    .min(1, "Name is required")
+    .max(100, "Name must be less than 100 characters"),
+  email: z
+    .string()
+    .trim()
+    .email("Please enter a valid email address")
+    .max(255, "Email must be less than 255 characters"),
   phone: z.string().trim().max(20, "Phone number is too long").optional(),
-  message: z.string().trim().min(1, "Message is required").max(1000, "Message must be less than 1000 characters"),
+  message: z
+    .string()
+    .trim()
+    .min(1, "Message is required")
+    .max(1000, "Message must be less than 1000 characters"),
 });
 
 const ContactForm = () => {
@@ -24,20 +36,20 @@ const ContactForm = () => {
     message: "",
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
 
     try {
       const validatedData = contactSchema.parse(formData);
-      
+
       // Simulate form submission
       await new Promise((resolve) => setTimeout(resolve, 1500));
-      
+
       toast({
         title: "Message Sent! ✨",
         description: "Thank you for reaching out. I'll get back to you soon.",
@@ -82,17 +94,25 @@ const ContactForm = () => {
               <span className="text-gradient">Spiritual Journey</span>
             </h2>
             <p className="text-foreground text-lg leading-relaxed mb-10">
-              Ready to explore the cosmos and discover your true path? 
-              Reach out for a consultation or simply say hello. 
-              Every great journey begins with a single step.
+              Ready to explore the cosmos and discover your true path? Reach out
+              for a consultation or simply say hello. Every great journey begins
+              with a single step.
             </p>
 
             {/* Contact Details */}
             <div className="space-y-6">
               {[
-                { icon: Mail, label: "Email", value: "contact@ashraywellness.com" },
+                {
+                  icon: Mail,
+                  label: "Email",
+                  value: "contact@ashraywellness.com",
+                },
                 { icon: Phone, label: "Phone", value: "+91 XXXXX XXXXX" },
-                { icon: MapPin, label: "Location", value: "Available Worldwide" },
+                {
+                  icon: MapPin,
+                  label: "Location",
+                  value: "Available Worldwide",
+                },
               ].map((item, index) => (
                 <motion.div
                   key={index}
@@ -107,7 +127,9 @@ const ContactForm = () => {
                   </div>
                   <div>
                     <p className="text-sm text-foreground">{item.label}</p>
-                    <p className="font-semibold text-card-foreground">{item.value}</p>
+                    <p className="font-semibold text-card-foreground">
+                      {item.value}
+                    </p>
                   </div>
                 </motion.div>
               ))}
@@ -117,11 +139,14 @@ const ContactForm = () => {
             <div className="mt-12 p-6 rounded-2xl gradient-golden/30 border border-secondary">
               <div className="flex items-center gap-3 mb-3">
                 <Sparkles className="w-5 h-5 text-primary" />
-                <h3 className="font-bold text-card-foreground">What to Expect</h3>
+                <h3 className="font-bold text-card-foreground">
+                  What to Expect
+                </h3>
               </div>
               <p className="text-foreground text-sm">
-                After submitting your message, you'll receive a response within 24-48 hours. 
-                We'll discuss your needs and schedule a consultation at your convenience.
+                After submitting your message, you'll receive a response within
+                24-48 hours. We'll discuss your needs and schedule a
+                consultation at your convenience.
               </p>
             </div>
           </motion.div>
@@ -133,12 +158,20 @@ const ContactForm = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <form onSubmit={handleSubmit} className="bg-card p-8 rounded-2xl border border-border shadow-card">
-              <h3 className="text-2xl font-bold text-card-foreground mb-6">Send a Message</h3>
-              
+            <form
+              onSubmit={handleSubmit}
+              className="bg-card p-8 rounded-2xl border border-border shadow-card"
+            >
+              <h3 className="text-2xl font-bold text-card-foreground mb-6">
+                Send a Message
+              </h3>
+
               <div className="space-y-5">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-card-foreground mb-2">
+                  <label
+                    htmlFor="name"
+                    className="block text-sm font-medium text-card-foreground mb-2"
+                  >
                     Full Name *
                   </label>
                   <Input
@@ -153,7 +186,10 @@ const ContactForm = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-card-foreground mb-2">
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-medium text-card-foreground mb-2"
+                  >
                     Email Address *
                   </label>
                   <Input
@@ -169,7 +205,10 @@ const ContactForm = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-card-foreground mb-2">
+                  <label
+                    htmlFor="phone"
+                    className="block text-sm font-medium text-card-foreground mb-2"
+                  >
                     Phone Number (Optional)
                   </label>
                   <Input
@@ -184,7 +223,10 @@ const ContactForm = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-card-foreground mb-2">
+                  <label
+                    htmlFor="message"
+                    className="block text-sm font-medium text-card-foreground mb-2"
+                  >
                     Your Message *
                   </label>
                   <Textarea
