@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Sparkles, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const services = [
@@ -43,16 +43,31 @@ const Navbar = () => {
         transition={{ duration: 0.6 }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? "bg-background/95 backdrop-blur-md shadow-soft py-3"
-            : "bg-transparent py-5"
+            ? "bg-background/98 backdrop-blur-md shadow-lg border-b border-border py-3"
+            : "bg-gradient-to-b from-background/80 to-transparent backdrop-blur-sm py-5"
         }`}
       >
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <Link to="/" className="flex items-center gap-2">
-              <Sparkles className={`w-6 h-6 ${isScrolled ? "text-primary" : "text-secondary"}`} />
-              <span className={`text-xl font-bold ${isScrolled ? "text-card-foreground" : "text-primary-foreground"}`}>
+            <Link to="/" className="flex items-center gap-3 group">
+              <div className="w-12 h-12 rounded-full overflow-hidden ring-2 ring-secondary/20 group-hover:ring-secondary/40 transition-all">
+                <img 
+                  src="/logo.png" 
+                  alt="Ashray Wellness Logo" 
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                    e.target.nextSibling.style.display = 'flex';
+                  }}
+                />
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center" style={{display: 'none'}}>
+                  <span className="text-xl font-bold text-primary">AW</span>
+                </div>
+              </div>
+              <span className={`text-xl font-bold transition-colors ${
+                isScrolled ? "text-card-foreground" : "text-primary-foreground"
+              }`}>
                 Ashray Wellness
               </span>
             </Link>
@@ -67,7 +82,7 @@ const Navbar = () => {
                     className={`font-medium transition-colors duration-300 ${
                       isScrolled
                         ? "text-foreground hover:text-primary"
-                        : "text-primary-foreground/80 hover:text-secondary"
+                        : "text-primary-foreground/90 hover:text-secondary drop-shadow-md"
                     }`}
                   >
                     {link.label}
@@ -79,7 +94,7 @@ const Navbar = () => {
                     className={`font-medium transition-colors duration-300 ${
                       isScrolled
                         ? "text-foreground hover:text-primary"
-                        : "text-primary-foreground/80 hover:text-secondary"
+                        : "text-primary-foreground/90 hover:text-secondary drop-shadow-md"
                     }`}
                   >
                     {link.label}
@@ -97,7 +112,7 @@ const Navbar = () => {
                   className={`font-medium transition-colors duration-300 flex items-center gap-1 ${
                     isScrolled
                       ? "text-foreground hover:text-primary"
-                      : "text-primary-foreground/80 hover:text-secondary"
+                      : "text-primary-foreground/90 hover:text-secondary drop-shadow-md"
                   }`}
                 >
                   Services
@@ -113,20 +128,19 @@ const Navbar = () => {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 10 }}
                       transition={{ duration: 0.2 }}
-                      className="absolute top-full left-0 mt-2 w-64 bg-background/98 backdrop-blur-md rounded-lg shadow-card border border-border py-2"
+                      className="absolute top-full left-0 mt-2 w-72 bg-card/98 backdrop-blur-xl rounded-xl shadow-2xl border border-border/50 py-3 overflow-hidden"
                     >
                       <Link
                         to="/services"
-                        className="block px-4 py-2 text-sm font-medium text-foreground hover:bg-accent hover:text-primary transition-colors"
+                        className="block px-5 py-3 text-sm font-semibold text-card-foreground hover:bg-primary/10 hover:text-primary transition-colors border-b border-border/30"
                       >
-                        All Services
+                        ✨ All Services
                       </Link>
-                      <div className="h-px bg-border my-1" />
                       {services.map((service) => (
                         <Link
                           key={service.href}
                           to={service.href}
-                          className="block px-4 py-2 text-sm text-foreground hover:bg-accent hover:text-primary transition-colors"
+                          className="block px-5 py-2.5 text-sm text-foreground hover:bg-primary/5 hover:text-primary hover:pl-6 transition-all duration-200"
                         >
                           {service.label}
                         </Link>
@@ -165,7 +179,7 @@ const Navbar = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="fixed top-[72px] left-0 right-0 bg-background/98 backdrop-blur-md z-40 border-b border-border shadow-card md:hidden max-h-[calc(100vh-72px)] overflow-y-auto"
+            className="fixed top-[72px] left-0 right-0 bg-card/98 backdrop-blur-xl z-40 border-b border-border shadow-2xl md:hidden max-h-[calc(100vh-72px)] overflow-y-auto"
           >
             <div className="container mx-auto px-4 py-6">
               <div className="flex flex-col gap-4">
@@ -218,9 +232,9 @@ const Navbar = () => {
                             setIsMobileMenuOpen(false);
                             setIsMobileServicesOpen(false);
                           }}
-                          className="block text-card-foreground py-2 hover:text-primary transition-colors text-sm font-medium"
+                          className="block text-card-foreground py-2 hover:text-primary transition-colors text-sm font-semibold"
                         >
-                          All Services
+                          ✨ All Services
                         </Link>
                         {services.map((service) => (
                           <Link
@@ -230,7 +244,7 @@ const Navbar = () => {
                               setIsMobileMenuOpen(false);
                               setIsMobileServicesOpen(false);
                             }}
-                            className="block text-card-foreground/80 py-2 hover:text-primary transition-colors text-sm"
+                            className="block text-foreground py-2 hover:text-primary transition-colors text-sm"
                           >
                             {service.label}
                           </Link>
