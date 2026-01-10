@@ -1,113 +1,167 @@
-import { motion } from "framer-motion";
-import { Instagram, Facebook, Twitter, Mail, Heart } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Instagram, Mail, Phone, MapPin } from "lucide-react";
 
 const Footer = () => {
-  const socialLinks = [
-    { icon: Instagram, href: "#", label: "Instagram" },
-    { icon: Facebook, href: "#", label: "Facebook" },
-    { icon: Twitter, href: "#", label: "Twitter" },
-    { icon: Mail, href: "mailto:ashrayspritualsoul@gmail.com", label: "Email" },
+  const currentYear = new Date().getFullYear();
+
+  const services = [
+    { name: "Psychic & Tarot Readings", href: "/services/psychic-tarot-readings" },
+    { name: "Numerology Consultations", href: "/services/numerology" },
+    { name: "Reiki Healing & Training", href: "/services/reiki-healing" },
+    { name: "Spiritual Remedies", href: "/services/spiritual-remedies" },
+    { name: "Therapy & Mental Health Support", href: "/services/therapy-mental-health" },
   ];
 
   const quickLinks = [
-    { label: "About", href: "/about" },
-    { label: "Services", href: "/services" },
-    { label: "Testimonials", href: "/#testimonials" },
-    { label: "Contact", href: "/#contact" },
+    { name: "Home", href: "/" },
+    { name: "About", href: "/about" },
+    { name: "Services", href: "/services" },
+    { name: "Contact", href: "/#contact" },
   ];
 
   return (
-    <footer className="gradient-cosmic py-16">
-      <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-3 gap-12 mb-12">
-          {/* Brand */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h3 className="text-2xl font-bold text-secondary mb-4">Ashray Wellness</h3>
-            <p className="text-primary-foreground/70 leading-relaxed mb-6">
-              Illuminating paths through the ancient wisdom of astrology, tarot, 
-              numerology, and energy healing. Your spiritual journey begins here.
+    <footer className="relative bg-gradient-to-b from-background to-muted border-t border-border">
+      {/* Decorative gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-cosmic opacity-5 pointer-events-none"></div>
+      
+      <div className="relative container mx-auto px-4 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+          {/* Brand Section with Logo */}
+          <div className="lg:col-span-1">
+            <Link to="/" className="flex items-center gap-3 mb-6 group">
+              <div className="w-16 h-16 rounded-full overflow-hidden bg-white shadow-lg ring-2 ring-primary/20 group-hover:ring-primary/40 group-hover:scale-105 transition-all duration-300">
+                <img 
+                  src="/logo.png" 
+                  alt="Ashray Wellness Logo" 
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                    e.target.parentElement.classList.add('bg-gradient-to-br', 'from-primary/30', 'to-secondary/30');
+                    e.target.nextSibling.style.display = 'flex';
+                  }}
+                />
+                {/* Fallback Logo */}
+                <div className="hidden absolute inset-0 items-center justify-center">
+                  <span className="text-2xl font-bold text-primary">AW</span>
+                </div>
+              </div>
+              <span className="text-2xl font-bold text-card-foreground">Ashray Wellness</span>
+            </Link>
+            <p className="text-foreground/80 leading-relaxed mb-6">
+              Guiding you towards spiritual awakening, inner peace, and holistic well-being through ancient wisdom and modern healing practices.
             </p>
-            <p className="text-secondary italic text-sm">
-              "Trust the universe, embrace your light"
-            </p>
-          </motion.div>
+            {/* Social Links */}
+            <div className="flex gap-4">
+              <a
+                href="https://www.instagram.com/ashraywellnesss/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110"
+                aria-label="Instagram"
+              >
+                <Instagram className="w-5 h-5" />
+              </a>
+              <a
+                href="mailto:jainarchi023@gmail.com"
+                className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110"
+                aria-label="Email"
+              >
+                <Mail className="w-5 h-5" />
+              </a>
+              <a
+                href="https://wa.me/919340216182"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110"
+                aria-label="WhatsApp"
+              >
+                <Phone className="w-5 h-5" />
+              </a>
+            </div>
+          </div>
+
+          {/* Services */}
+          <div>
+            <h3 className="text-lg font-bold text-card-foreground mb-4">Our Services</h3>
+            <ul className="space-y-3">
+              {services.map((service) => (
+                <li key={service.href}>
+                  <Link
+                    to={service.href}
+                    className="text-foreground/80 hover:text-primary transition-colors duration-300 hover:translate-x-1 inline-block"
+                  >
+                    {service.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
 
           {/* Quick Links */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="md:text-center"
-          >
-            <h4 className="text-lg font-bold text-primary-foreground mb-4">Quick Links</h4>
+          <div>
+            <h3 className="text-lg font-bold text-card-foreground mb-4">Quick Links</h3>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
-                <li key={link.label}>
+                <li key={link.href}>
                   {link.href.startsWith("/#") ? (
                     <a
                       href={link.href}
-                      className="text-primary-foreground/70 hover:text-secondary transition-colors duration-300"
+                      className="text-foreground/80 hover:text-primary transition-colors duration-300 hover:translate-x-1 inline-block"
                     >
-                      {link.label}
+                      {link.name}
                     </a>
                   ) : (
                     <Link
                       to={link.href}
-                      className="text-primary-foreground/70 hover:text-secondary transition-colors duration-300"
+                      className="text-foreground/80 hover:text-primary transition-colors duration-300 hover:translate-x-1 inline-block"
                     >
-                      {link.label}
+                      {link.name}
                     </Link>
                   )}
                 </li>
               ))}
             </ul>
-          </motion.div>
+          </div>
 
-          {/* Social & Contact */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="md:text-right"
-          >
-            <h4 className="text-lg font-bold text-primary-foreground mb-4">Connect With Me</h4>
-            <div className="flex gap-4 md:justify-end mb-6">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.label}
-                  href={social.href}
-                  aria-label={social.label}
-                  className="w-10 h-10 rounded-full border border-secondary/50 flex items-center justify-center text-secondary hover:bg-secondary hover:text-primary transition-all duration-300"
-                >
-                  <social.icon className="w-5 h-5" />
-                </a>
-              ))}
-            </div>
-            <p className="text-primary-foreground/70 text-sm">
-              contact@ashraywellness.com
-            </p>
-            <p className="text-primary-foreground/70 text-sm">
-              Available Worldwide
-            </p>
-          </motion.div>
+          {/* Contact Info */}
+          <div>
+            <h3 className="text-lg font-bold text-card-foreground mb-4">Get in Touch</h3>
+            <ul className="space-y-4">
+              <li className="flex items-start gap-3 text-foreground/80">
+                <Phone className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                <div>
+                  <a href="https://wa.me/919340216182" className="hover:text-primary transition-colors">
+                    +91 93402 16182
+                  </a>
+                </div>
+              </li>
+              <li className="flex items-start gap-3 text-foreground/80">
+                <Mail className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                <div>
+                  <a href="mailto:jainarchi023@gmail.com" className="hover:text-primary transition-colors break-all">
+                    jainarchi023@gmail.com
+                  </a>
+                </div>
+              </li>
+              <li className="flex items-start gap-3 text-foreground/80">
+                <MapPin className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                <div>
+                  Jabalpur, Madhya Pradesh<br />
+                  India
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-secondary/20 pt-8">
+        <div className="mt-12 pt-8 border-t border-border">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-primary-foreground/60 text-sm">
-              © {new Date().getFullYear()} Ashray Wellness. All rights reserved.
+            <p className="text-foreground/60 text-sm text-center md:text-left">
+              © {currentYear} Ashray Wellness. All rights reserved.
             </p>
-            <p className="text-primary-foreground/60 text-sm flex items-center gap-1">
-              Made with <Heart className="w-4 h-4 text-secondary fill-secondary" /> by Ashi Pawaiya Jain
+            <p className="text-foreground/60 text-sm text-center md:text-right">
+              Crafted with 💜 for your spiritual journey
             </p>
           </div>
         </div>
