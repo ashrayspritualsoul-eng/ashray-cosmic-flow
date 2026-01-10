@@ -53,18 +53,34 @@ const Services = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
       
-      {/* Hero Banner with Background Image */}
+      {/* Hero Banner - Works without image */}
       <section className="relative pt-32 pb-16 overflow-hidden">
+        {/* Animated gradient background - no image needed */}
         <div className="absolute inset-0 z-0">
-          <img 
-            src="/images/services-hero.jpg" 
-            alt="Services Background"
-            className="w-full h-full object-cover opacity-20"
-            onError={(e) => {
-              e.target.style.display = 'none';
-            }}
-          />
           <div className="absolute inset-0 gradient-cosmic opacity-90"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(120,119,198,0.3),transparent_50%),radial-gradient(circle_at_70%_80%,rgba(139,92,246,0.3),transparent_50%)]"></div>
+          {/* Floating particles effect */}
+          <div className="absolute inset-0">
+            {[...Array(20)].map((_, i) => (
+              <motion.div
+                key={i}
+                className="absolute w-1 h-1 bg-primary/30 rounded-full"
+                style={{
+                  left: `${Math.random() * 100}%`,
+                  top: `${Math.random() * 100}%`,
+                }}
+                animate={{
+                  y: [0, -30, 0],
+                  opacity: [0.2, 0.5, 0.2],
+                }}
+                transition={{
+                  duration: 3 + Math.random() * 2,
+                  repeat: Infinity,
+                  delay: Math.random() * 2,
+                }}
+              />
+            ))}
+          </div>
         </div>
         
         <div className="container mx-auto px-4 text-center relative z-10">
@@ -110,13 +126,13 @@ const Services = () => {
                 <Link to={service.href} className="block h-full">
                   <div className="h-full bg-card rounded-2xl border border-border shadow-soft hover:shadow-card transition-all duration-500 overflow-hidden group-hover:-translate-y-2">
                     {/* Service Image */}
-                    <div className="relative h-48 overflow-hidden">
+                    <div className="relative h-48 overflow-hidden bg-gradient-to-br from-primary/20 to-secondary/20">
                       <img 
                         src={service.image}
                         alt={service.title}
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                         onError={(e) => {
-                          e.target.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"%3E%3Crect fill="%23667eea" width="400" height="300"/%3E%3C/svg%3E';
+                          e.target.style.display = 'none';
                         }}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent opacity-60"></div>
@@ -158,18 +174,11 @@ const Services = () => {
         </div>
       </section>
 
-      {/* CTA Section with Background */}
+      {/* CTA Section with Gradient */}
       <section className="relative py-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img 
-            src="/images/cta-bg.jpg" 
-            alt="Book Consultation Background"
-            className="w-full h-full object-cover"
-            onError={(e) => {
-              e.target.style.display = 'none';
-            }}
-          />
           <div className="absolute inset-0 gradient-cosmic opacity-95"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(139,92,246,0.4),transparent_70%)]"></div>
         </div>
         
         <div className="container mx-auto px-4 text-center relative z-10">
