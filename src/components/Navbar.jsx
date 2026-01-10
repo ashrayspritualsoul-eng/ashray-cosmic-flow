@@ -48,17 +48,18 @@ const Navbar = () => {
           <div className="flex items-center justify-between">
             {/* Logo */}
             <Link to="/" className="flex items-center gap-3 group">
-              <div className="w-12 h-12 rounded-full overflow-hidden ring-2 ring-secondary/20 group-hover:ring-secondary/40 transition-all">
+              <div className="relative w-12 h-12">
                 <img 
                   src="/logo.png" 
                   alt="Ashray Wellness Logo" 
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain drop-shadow-lg group-hover:scale-110 transition-transform duration-300"
                   onError={(e) => {
                     e.target.style.display = 'none';
                     e.target.nextSibling.style.display = 'flex';
                   }}
                 />
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center" style={{display: 'none'}}>
+                {/* Fallback Logo */}
+                <div className="hidden w-12 h-12 rounded-full bg-gradient-to-br from-primary/30 to-secondary/30 backdrop-blur-sm items-center justify-center border-2 border-primary/20 group-hover:border-primary/40 transition-all">
                   <span className="text-xl font-bold text-primary">AW</span>
                 </div>
               </div>
