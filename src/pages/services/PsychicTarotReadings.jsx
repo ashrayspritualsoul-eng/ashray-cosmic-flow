@@ -27,8 +27,8 @@ const PsychicTarotReadings = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="max-w-4xl mx-auto text-center">
-            >
+            className="max-w-4xl mx-auto text-center"
+          >
             <div className="w-20 h-20 rounded-2xl gradient-golden flex items-center justify-center mx-auto mb-6 shadow-glow">
               <Sparkles className="w-10 h-10 text-primary" />
             </div>
