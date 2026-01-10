@@ -5,14 +5,11 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const services = [
-  { label: "Psychic Readings", href: "/services/psychic-readings" },
-  { label: "Tarot Readings & Teaching", href: "/services/tarot-readings" },
+  { label: "Psychic & Tarot Readings", href: "/services/psychic-tarot-readings" },
   { label: "Numerology Consultations", href: "/services/numerology" },
   { label: "Reiki Healing & Training", href: "/services/reiki-healing" },
-  { label: "Reiki Classes", href: "/services/reiki-classes" },
   { label: "Spiritual Remedies", href: "/services/spiritual-remedies" },
-  { label: "Therapy Sessions", href: "/services/therapy" },
-  { label: "Mental Health Support", href: "/services/mental-health" },
+  { label: "Therapy & Mental Health Support", href: "/services/therapy-mental-health" },
 ];
 
 const navLinks = [
