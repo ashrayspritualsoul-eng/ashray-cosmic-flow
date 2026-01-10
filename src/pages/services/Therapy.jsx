@@ -1,10 +1,10 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
-import { Flower2, Check } from "lucide-react";
+import { Brain, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const ReikiClasses = () => {
+const Therapy = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
@@ -17,13 +17,13 @@ const ReikiClasses = () => {
             className="max-w-4xl mx-auto text-center"
           >
             <div className="w-20 h-20 rounded-2xl gradient-golden flex items-center justify-center mx-auto mb-6">
-              <Flower2 className="w-10 h-10 text-primary" />
+              <Brain className="w-10 h-10 text-primary" />
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6">
-              Reiki Classes
+              Therapy Sessions
             </h1>
             <p className="text-primary-foreground/80 text-lg md:text-xl">
-              Comprehensive Reiki training from beginner to advanced practitioner
+              Holistic mental wellness combining spiritual wisdom with psychological understanding
             </p>
           </motion.div>
         </div>
@@ -38,12 +38,12 @@ const ReikiClasses = () => {
               viewport={{ once: true }}
               className="mb-16"
             >
-              <h2 className="text-3xl font-bold text-card-foreground mb-6">Learn Reiki</h2>
+              <h2 className="text-3xl font-bold text-card-foreground mb-6">Spiritual-Psychological Approach</h2>
               <p className="text-foreground leading-relaxed mb-4">
-                My Reiki classes are designed to provide comprehensive training in this sacred healing art. Whether you're a complete beginner or looking to advance your practice, I offer structured courses that combine traditional teachings with practical application.
+                My therapy sessions integrate traditional psychological approaches with spiritual healing practices to address mental and emotional challenges holistically. This unique approach recognizes that true healing occurs on multiple levels – mental, emotional, physical, and spiritual.
               </p>
               <p className="text-foreground leading-relaxed">
-                Classes include attunements, hands-on practice, theory, and ongoing support to help you develop your healing abilities.
+                Whether you're dealing with anxiety, depression, relationship issues, or life transitions, I provide a safe, non-judgmental space for healing and growth.
               </p>
             </motion.div>
 
@@ -53,17 +53,17 @@ const ReikiClasses = () => {
               viewport={{ once: true }}
               className="mb-16"
             >
-              <h2 className="text-3xl font-bold text-card-foreground mb-8">Course Features</h2>
+              <h2 className="text-3xl font-bold text-card-foreground mb-8">What We Address</h2>
               <div className="grid md:grid-cols-2 gap-6">
                 {[
-                  "Group and one-on-one classes",
-                  "Personalized learning pace",
-                  "Sacred attunement ceremonies",
-                  "Practical healing workshops",
-                  "Comprehensive study materials",
-                  "Certificate upon completion",
-                  "Lifetime support and guidance",
-                  "Flexible scheduling options"
+                  "Anxiety and stress management",
+                  "Depression and mood disorders",
+                  "Relationship challenges",
+                  "Life transitions and changes",
+                  "Self-esteem and confidence",
+                  "Grief and loss processing",
+                  "Spiritual crisis support",
+                  "Personal growth and development"
                 ].map((item, index) => (
                   <div key={index} className="flex items-start gap-3">
                     <div className="w-6 h-6 rounded-full gradient-golden flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -82,14 +82,14 @@ const ReikiClasses = () => {
               className="text-center"
             >
               <h2 className="text-3xl font-bold text-card-foreground mb-4">
-                Start Your Reiki Training
+                Begin Your Healing Journey
               </h2>
               <p className="text-foreground mb-8">
-                Join upcoming Reiki classes and become a certified healer
+                Schedule a confidential therapy session today
               </p>
               <Button variant="default" size="xl" asChild>
                 <a href="https://wa.me/919340216182" target="_blank" rel="noopener noreferrer">
-                  Enroll Now
+                  Book Session
                 </a>
               </Button>
             </motion.div>
@@ -102,4 +102,4 @@ const ReikiClasses = () => {
   );
 };
 
-export default ReikiClasses;
+export default Therapy;
