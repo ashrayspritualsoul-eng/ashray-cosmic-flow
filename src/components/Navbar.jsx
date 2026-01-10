@@ -126,11 +126,11 @@ const Navbar = () => {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 10 }}
                       transition={{ duration: 0.2 }}
-                      className="absolute top-full left-0 mt-2 w-72 bg-card/98 backdrop-blur-xl rounded-xl shadow-2xl border border-border/50 py-3 overflow-hidden"
+                      className="absolute top-full left-0 mt-2 w-72 bg-white/95 dark:bg-gray-900/95 backdrop-blur-xl rounded-xl shadow-2xl border border-gray-200 dark:border-gray-700 py-3 overflow-hidden"
                     >
                       <Link
                         to="/services"
-                        className="block px-5 py-3 text-sm font-semibold text-card-foreground hover:bg-primary/10 hover:text-primary transition-colors border-b border-border/30"
+                        className="block px-5 py-3 text-sm font-semibold text-gray-900 dark:text-white hover:bg-primary/10 hover:text-primary transition-colors border-b border-gray-200 dark:border-gray-700"
                       >
                         ✨ All Services
                       </Link>
@@ -138,7 +138,7 @@ const Navbar = () => {
                         <Link
                           key={service.href}
                           to={service.href}
-                          className="block px-5 py-2.5 text-sm text-foreground hover:bg-primary/5 hover:text-primary hover:pl-6 transition-all duration-200"
+                          className="block px-5 py-2.5 text-sm text-gray-700 dark:text-gray-200 hover:bg-primary/5 hover:text-primary hover:pl-6 transition-all duration-200"
                         >
                           {service.label}
                         </Link>
@@ -177,7 +177,7 @@ const Navbar = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="fixed top-[72px] left-0 right-0 bg-card/98 backdrop-blur-xl z-40 border-b border-border shadow-2xl md:hidden max-h-[calc(100vh-72px)] overflow-y-auto"
+            className="fixed top-[72px] left-0 right-0 bg-white/98 dark:bg-gray-900/98 backdrop-blur-xl z-40 border-b border-gray-200 dark:border-gray-700 shadow-2xl md:hidden max-h-[calc(100vh-72px)] overflow-y-auto"
           >
             <div className="container mx-auto px-4 py-6">
               <div className="flex flex-col gap-4">
@@ -187,7 +187,7 @@ const Navbar = () => {
                       key={link.label}
                       href={link.href}
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className="text-card-foreground font-medium py-2 hover:text-primary transition-colors"
+                      className="text-gray-900 dark:text-white font-medium py-2 hover:text-primary transition-colors"
                     >
                       {link.label}
                     </a>
@@ -196,7 +196,7 @@ const Navbar = () => {
                       key={link.label}
                       to={link.href}
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className="text-card-foreground font-medium py-2 hover:text-primary transition-colors"
+                      className="text-gray-900 dark:text-white font-medium py-2 hover:text-primary transition-colors"
                     >
                       {link.label}
                     </Link>
@@ -207,7 +207,7 @@ const Navbar = () => {
                 <div>
                   <button
                     onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
-                    className="text-card-foreground font-medium py-2 hover:text-primary transition-colors flex items-center gap-1 w-full"
+                    className="text-gray-900 dark:text-white font-medium py-2 hover:text-primary transition-colors flex items-center gap-1 w-full"
                   >
                     Services
                     <ChevronDown className={`w-4 h-4 transition-transform ${
@@ -230,7 +230,7 @@ const Navbar = () => {
                             setIsMobileMenuOpen(false);
                             setIsMobileServicesOpen(false);
                           }}
-                          className="block text-card-foreground py-2 hover:text-primary transition-colors text-sm font-semibold"
+                          className="block text-gray-900 dark:text-white py-2 hover:text-primary transition-colors text-sm font-semibold"
                         >
                           ✨ All Services
                         </Link>
@@ -242,7 +242,7 @@ const Navbar = () => {
                               setIsMobileMenuOpen(false);
                               setIsMobileServicesOpen(false);
                             }}
-                            className="block text-foreground py-2 hover:text-primary transition-colors text-sm"
+                            className="block text-gray-700 dark:text-gray-300 py-2 hover:text-primary transition-colors text-sm"
                           >
                             {service.label}
                           </Link>
