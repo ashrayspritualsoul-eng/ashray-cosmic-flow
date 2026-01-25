@@ -4,19 +4,28 @@ import { Instagram, Mail, Phone, MapPin } from "lucide-react";
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
-  const services = [
-    { name: "Psychic & Tarot Readings", href: "/services" },
-    { name: "Numerology Consultations", href: "/services" },
-    { name: "Reiki Healing & Training", href: "/services" },
-    { name: "Spiritual Remedies", href: "/services" },
-    { name: "Therapy & Mental Health Support", href: "/services" },
-    { name: "Corporate Services", href: "/corporate-services" },
+  const personalServices = [
+    { name: "Psychic Readings", href: "/services/psychic-readings" },
+    { name: "Tarot Readings & Teaching", href: "/services/tarot" },
+    { name: "Numerology Consultations", href: "/services/numerology" },
+    { name: "Reiki Healing & Training", href: "/services/reiki" },
+    { name: "Spiritual Remedies", href: "/services/spiritual-remedies" },
+    { name: "Individual Therapy", href: "/services/therapy" },
+  ];
+
+  const corporateServices = [
+    { name: "Corporate Mental Health", href: "/corporate-services/mental-health" },
+    { name: "Wellness & Burnout Prevention", href: "/corporate-services/wellness-burnout" },
+    { name: "Therapy & Counseling", href: "/corporate-services/therapy-counseling" },
+    { name: "Stress Management", href: "/corporate-services/stress-management" },
+    { name: "Emotional Intelligence", href: "/corporate-services/emotional-intelligence" },
+    { name: "Leadership & Mindfulness", href: "/corporate-services/leadership-mindfulness" },
+    { name: "Holistic Wellness Add-ons", href: "/corporate-services/holistic-wellness" },
   ];
 
   const quickLinks = [
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
-    { name: "Services", href: "/services" },
     { name: "Contact", href: "/#contact" },
   ];
 
@@ -32,9 +41,9 @@ const Footer = () => {
       </div>
 
       <div className="relative container mx-auto px-6 py-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-14">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
           {/* Brand */}
-          <div>
+          <div className="lg:col-span-1">
             <Link to="/" className="flex items-center gap-5 mb-6 group">
               <div className="w-24 h-24 rounded-full bg-white shadow-[0_0_45px_rgba(255,255,255,0.55)] ring-4 ring-white/60 group-hover:ring-white transition-all duration-300 flex items-center justify-center overflow-hidden">
                 <div className="w-24 h-24 rounded-full overflow-hidden">
@@ -45,11 +54,11 @@ const Footer = () => {
                   />
                 </div>
               </div>
-
-              <span className="text-2xl font-bold text-primary-foreground">
-                Ashray Wellness
-              </span>
             </Link>
+
+            <h2 className="text-2xl font-bold text-primary-foreground mb-4">
+              Ashray Wellness
+            </h2>
 
             <p className="text-primary-foreground/80 leading-relaxed mb-7 max-w-sm">
               Guiding individuals and organizations towards clarity, balance,
@@ -86,21 +95,36 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Services */}
+          {/* Personal Wellness Services */}
           <div>
             <h3 className="text-lg font-semibold text-primary-foreground mb-5">
-              Our Services
+              Personal Wellness
             </h3>
             <ul className="space-y-3">
-              {services.map((service) => (
+              {personalServices.map((service) => (
                 <li key={service.name}>
                   <Link
                     to={service.href}
-                    className={`text-primary-foreground/75 hover:text-secondary transition-all duration-300 hover:translate-x-1 inline-block ${
-                      service.name === "Corporate Services"
-                        ? "font-semibold"
-                        : ""
-                    }`}
+                    className="text-primary-foreground/75 hover:text-secondary transition-all duration-300 hover:translate-x-1 inline-block text-sm"
+                  >
+                    {service.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Corporate Services */}
+          <div>
+            <h3 className="text-lg font-semibold text-primary-foreground mb-5">
+              Corporate Services
+            </h3>
+            <ul className="space-y-3">
+              {corporateServices.map((service) => (
+                <li key={service.name}>
+                  <Link
+                    to={service.href}
+                    className="text-primary-foreground/75 hover:text-secondary transition-all duration-300 hover:translate-x-1 inline-block text-sm"
                   >
                     {service.name}
                   </Link>
@@ -144,28 +168,28 @@ const Footer = () => {
             </h3>
             <ul className="space-y-5">
               <li className="flex gap-4 text-primary-foreground/80">
-                <Phone className="w-5 h-5 text-secondary mt-0.5" />
+                <Phone className="w-5 h-5 text-secondary mt-0.5 flex-shrink-0" />
                 <a
                   href="https://wa.me/919340216182"
-                  className="hover:text-secondary"
+                  className="hover:text-secondary text-sm"
                 >
                   +91 93402 16182
                 </a>
               </li>
 
               <li className="flex gap-4 text-primary-foreground/80">
-                <Mail className="w-5 h-5 text-secondary mt-0.5" />
+                <Mail className="w-5 h-5 text-secondary mt-0.5 flex-shrink-0" />
                 <a
                   href="mailto:ashrayspritualsoul@gmail.com"
-                  className="hover:text-secondary break-all"
+                  className="hover:text-secondary break-all text-sm"
                 >
                   ashrayspritualsoul@gmail.com
                 </a>
               </li>
 
               <li className="flex gap-4 text-primary-foreground/80">
-                <MapPin className="w-5 h-5 text-secondary mt-0.5" />
-                <span>
+                <MapPin className="w-5 h-5 text-secondary mt-0.5 flex-shrink-0" />
+                <span className="text-sm">
                   Jabalpur, Madhya Pradesh
                   <br />
                   India
