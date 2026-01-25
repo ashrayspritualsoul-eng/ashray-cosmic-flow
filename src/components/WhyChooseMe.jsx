@@ -1,73 +1,76 @@
 import { motion } from "framer-motion";
-import { Globe, Sparkles, Users, Heart } from "lucide-react";
 
-const reasons = [
+const highlights = [
   {
-    icon: Globe,
-    title: "Global Reach",
-    description: "Trusted by clients from around the world, delivering transformative guidance across cultures and backgrounds.",
+    stat: "7+ Years",
+    title: "Professional Practice",
+    description:
+      "Extensive experience delivering structured wellness, healing, and guidance sessions with consistent results.",
   },
   {
-    icon: Sparkles,
-    title: "Diverse Expertise",
-    description: "A unique combination of spiritual wisdom and psychological mastery for holistic healing.",
+    stat: "Global",
+    title: "Client Reach",
+    description:
+      "Worked with individuals and organizations across India and international locations through online and offline sessions.",
   },
   {
-    icon: Users,
-    title: "Proven Experience",
-    description: "Collaborated with top platforms like Astrotalk and Nebula, and respected organizations like Accenture and the Airforce.",
+    stat: "Trusted By",
+    title: "Leading Platforms & Institutions",
+    description:
+      "Associated with well-known platforms such as Astrotalk and Nebula, and collaborated with organizations including Accenture and the Indian Airforce.",
   },
   {
-    icon: Heart,
-    title: "Personalized Approach",
-    description: "Tailored solutions designed to address each client's specific challenges and goals.",
+    stat: "Personalized",
+    title: "Client-Centric Methodology",
+    description:
+      "Every engagement is customized—whether personal or corporate—to align with specific emotional, psychological, and professional needs.",
   },
 ];
 
 const WhyChooseMe = () => {
   return (
-    <section className="py-20 lg:py-32 gradient-soft relative overflow-hidden">
-      {/* Background pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0 bg-gradient-to-br from-secondary/30 via-tertiary/20 to-secondary/30" />
-      </div>
-      
-      <div className="container mx-auto px-4 relative z-10">
-        {/* Section Header */}
+    <section className="py-20 lg:py-32 bg-background">
+      <div className="container mx-auto px-4">
+        {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="max-w-3xl mb-16"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-card-foreground">
-            Why Choose <span className="text-gradient">Ashray Wellness</span>?
+          <p className="text-sm font-semibold tracking-widest uppercase text-primary mb-3">
+            Why Choose Us
+          </p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-card-foreground leading-tight">
+            A Professional, Ethical & Results-Driven Wellness Practice
           </h2>
+          <p className="mt-5 text-foreground leading-relaxed">
+            Ashray Wellness operates with a clear focus on credibility,
+            confidentiality, and long-term impact—serving individuals,
+            professionals, and organizations with equal commitment.
+          </p>
         </motion.div>
 
-        {/* Reasons Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {reasons.map((reason, index) => (
+        {/* Proof Grid */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+          {highlights.map((item, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="text-center"
+              className="border-t border-border pt-6"
             >
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                className="w-20 h-20 mx-auto rounded-full bg-primary flex items-center justify-center mb-6 shadow-card"
-              >
-                <reason.icon className="w-10 h-10 text-primary-foreground" />
-              </motion.div>
-              <h3 className="text-xl font-bold text-card-foreground mb-3">
-                {reason.title}
+              <div className="text-3xl font-bold text-primary mb-2">
+                {item.stat}
+              </div>
+              <h3 className="text-lg font-semibold text-card-foreground mb-2">
+                {item.title}
               </h3>
-              <p className="text-foreground leading-relaxed">
-                {reason.description}
+              <p className="text-sm text-foreground leading-relaxed">
+                {item.description}
               </p>
             </motion.div>
           ))}
