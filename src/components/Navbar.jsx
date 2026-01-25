@@ -70,10 +70,8 @@ const Navbar = () => {
         initial={{ y: -80, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className={`sticky top-0 z-50 transition-all duration-300 ${
-          isScrolled
-            ? "bg-white/85 dark:bg-gray-900/85 backdrop-blur-md shadow-lg"
-            : "bg-gradient-to-b from-black/60 via-black/30 to-transparent backdrop-blur-md"
+        className={`sticky top-0 z-50 transition-all duration-300 bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg ${
+          isScrolled ? "shadow-lg" : ""
         }`}
       >
         <div className="container mx-auto px-6">
@@ -87,11 +85,7 @@ const Navbar = () => {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <span
-                className={`text-lg font-semibold tracking-wide transition-colors ${
-                  isScrolled ? "text-gray-900 dark:text-white" : "text-white"
-                }`}
-              >
+              <span className="text-lg font-semibold tracking-wide transition-colors text-gray-900 dark:text-white">
                 Ashray Wellness
               </span>
             </Link>
@@ -103,11 +97,7 @@ const Navbar = () => {
                   <a
                     key={link.label}
                     href={link.href}
-                    className={`text-sm font-medium transition-colors ${
-                      isScrolled
-                        ? "text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-primary"
-                        : "text-white/90 hover:text-white"
-                    }`}
+                    className="text-sm font-medium transition-colors text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-primary"
                   >
                     {link.label}
                   </a>
@@ -115,11 +105,7 @@ const Navbar = () => {
                   <Link
                     key={link.label}
                     to={link.href}
-                    className={`text-sm font-medium transition-colors ${
-                      isScrolled
-                        ? "text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-primary"
-                        : "text-white/90 hover:text-white"
-                    }`}
+                    className="text-sm font-medium transition-colors text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-primary"
                   >
                     {link.label}
                   </Link>
@@ -133,11 +119,7 @@ const Navbar = () => {
                 onMouseLeave={() => setIsCorporateOpen(false)}
               >
                 <button
-                  className={`flex items-center gap-1 text-sm font-medium transition-colors ${
-                    isScrolled
-                      ? "text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-primary"
-                      : "text-white/90 hover:text-white"
-                  }`}
+                  className="flex items-center gap-1 text-sm font-medium transition-colors text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-primary"
                 >
                   Corporate Services
                   <ChevronDown
@@ -154,7 +136,7 @@ const Navbar = () => {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 8 }}
                       transition={{ duration: 0.2 }}
-                      className="absolute left-0 top-full mt-2 w-80 rounded-xl bg-white dark:bg-gray-900 shadow-2xl border border-secondary/30 dark:border-secondary/20 overflow-hidden"
+                      className="absolute left-0 top-full mt-2 w-80 rounded-xl bg-white/95 dark:bg-gray-900/95 backdrop-blur-lg shadow-2xl border border-secondary/30 dark:border-secondary/20 overflow-hidden"
                     >
                       <Link
                         to="/corporate-services"
@@ -183,11 +165,7 @@ const Navbar = () => {
                 onMouseLeave={() => setIsPersonalOpen(false)}
               >
                 <button
-                  className={`flex items-center gap-1 text-sm font-medium transition-colors ${
-                    isScrolled
-                      ? "text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-primary"
-                      : "text-white/90 hover:text-white"
-                  }`}
+                  className="flex items-center gap-1 text-sm font-medium transition-colors text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-primary"
                 >
                   Personal Wellness Services
                   <ChevronDown
@@ -204,7 +182,7 @@ const Navbar = () => {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 8 }}
                       transition={{ duration: 0.2 }}
-                      className="absolute left-0 top-full mt-2 w-80 rounded-xl bg-white dark:bg-gray-900 shadow-2xl border border-secondary/30 dark:border-secondary/20 overflow-hidden"
+                      className="absolute left-0 top-full mt-2 w-80 rounded-xl bg-white/95 dark:bg-gray-900/95 backdrop-blur-lg shadow-2xl border border-secondary/30 dark:border-secondary/20 overflow-hidden"
                     >
                       <Link
                         to="/services"
@@ -238,9 +216,7 @@ const Navbar = () => {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileOpen(!isMobileOpen)}
-              className={`md:hidden transition-colors ${
-                isScrolled ? "text-gray-900 dark:text-white" : "text-white"
-              }`}
+              className="md:hidden transition-colors text-gray-900 dark:text-white"
             >
               {isMobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -256,7 +232,7 @@ const Navbar = () => {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
             transition={{ duration: 0.3 }}
-            className="fixed top-[72px] inset-0 z-40 bg-white dark:bg-gray-900 md:hidden overflow-y-auto"
+            className="fixed top-[72px] inset-0 z-40 bg-white/95 dark:bg-gray-900/95 backdrop-blur-lg md:hidden overflow-y-auto"
           >
             <div className="px-6 py-6 space-y-1">
               {navLinks.map((link) => (
