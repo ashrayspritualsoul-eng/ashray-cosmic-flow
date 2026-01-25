@@ -6,24 +6,35 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Send, Mail, Phone, MapPin, Sparkles } from "lucide-react";
 import { z } from "zod";
+import emailjs from "emailjs-com";
 
+const corporateServices = [
+  { label: "Corporate Mental Health Programs" },
+  { label: "Employee Wellness & Burnout Prevention" },
+  { label: "Therapy & Counseling Services" },
+  { label: "Stress Management Workshops" },
+  { label: "Emotional Intelligence & Resilience Training" },
+  { label: "Leadership & Mindfulness Programs" },
+  { label: "Holistic Wellness Add-ons" },
+];
+
+const personalServices = [
+  { label: "Psychic Readings" },
+  { label: "Tarot Readings & Teaching" },
+  { label: "Numerology Consultations" },
+  { label: "Reiki Healing & Training" },
+  { label: "Spiritual Remedies" },
+  { label: "Individual Therapy Sessions" },
+];
+
+// Zod schema for frontend validation
 const contactSchema = z.object({
-  name: z
-    .string()
-    .trim()
-    .min(1, "Name is required")
-    .max(100, "Name must be less than 100 characters"),
-  email: z
-    .string()
-    .trim()
-    .email("Please enter a valid email address")
-    .max(255, "Email must be less than 255 characters"),
-  phone: z.string().trim().max(20, "Phone number is too long").optional(),
-  message: z
-    .string()
-    .trim()
-    .min(1, "Message is required")
-    .max(1000, "Message must be less than 1000 characters"),
+  name: z.string().trim().min(1, "Name is required").max(100),
+  email: z.string().trim().email("Invalid email").max(255),
+  phone: z.string().trim().max(20).optional(),
+  message: z.string().trim().min(1, "Message is required").max(1000),
+  corporateService: z.string().optional(),
+  personalService: z.string().optional(),
 });
 
 const ContactForm = () => {
@@ -34,6 +45,8 @@ const ContactForm = () => {
     email: "",
     phone: "",
     message: "",
+    corporateService: "",
+    personalService: "",
   });
 
   const handleChange = (e) => {
@@ -47,15 +60,33 @@ const ContactForm = () => {
     try {
       const validatedData = contactSchema.parse(formData);
 
-      // Simulate form submission
-      await new Promise((resolve) => setTimeout(resolve, 1500));
+      // Add current timestamp for email template
+      const emailData = {
+        ...validatedData,
+        time: new Date().toLocaleString(),
+      };
+
+      // Send email via EmailJS
+      await emailjs.send(
+        "template_tyjx5dl", // replace with your EmailJS Service ID
+        "YOUR_TEMPLATE_ID", // replace with your EmailJS Template ID
+        emailData,
+        "5s1Ypz71xNFSSKepP", // replace with your EmailJS Public Key
+      );
 
       toast({
         title: "Message Sent! ✨",
         description: "Thank you for reaching out. I'll get back to you soon.",
       });
 
-      setFormData({ name: "", email: "", phone: "", message: "" });
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        message: "",
+        corporateService: "",
+        personalService: "",
+      });
     } catch (error) {
       if (error instanceof z.ZodError) {
         toast({
@@ -66,7 +97,8 @@ const ContactForm = () => {
       } else {
         toast({
           title: "Error",
-          description: "Something went wrong. Please try again.",
+          description:
+            error.message || "Something went wrong. Please try again.",
           variant: "destructive",
         });
       }
@@ -105,13 +137,13 @@ const ContactForm = () => {
                 {
                   icon: Mail,
                   label: "Email",
-                  value: "contact@ashraywellness.com",
+                  value: "ashrayspritualsoul@gmail.com",
                 },
-                { icon: Phone, label: "Phone", value: "+91 XXXXX XXXXX" },
+                { icon: Phone, label: "Phone", value: "+91 93402 16182" },
                 {
                   icon: MapPin,
                   label: "Location",
-                  value: "Available Worldwide",
+                  value: "Janakpuri Jumerati, Bhopal",
                 },
               ].map((item, index) => (
                 <motion.div
@@ -167,6 +199,7 @@ const ContactForm = () => {
               </h3>
 
               <div className="space-y-5">
+                {/* Name */}
                 <div>
                   <label
                     htmlFor="name"
@@ -185,6 +218,7 @@ const ContactForm = () => {
                   />
                 </div>
 
+                {/* Email */}
                 <div>
                   <label
                     htmlFor="email"
@@ -204,6 +238,7 @@ const ContactForm = () => {
                   />
                 </div>
 
+                {/* Phone */}
                 <div>
                   <label
                     htmlFor="phone"
@@ -222,6 +257,55 @@ const ContactForm = () => {
                   />
                 </div>
 
+                {/* Corporate Services Dropdown */}
+                <div>
+                  <label
+                    htmlFor="corporateService"
+                    className="block text-sm font-medium text-card-foreground mb-2"
+                  >
+                    Corporate Services
+                  </label>
+                  <select
+                    id="corporateService"
+                    name="corporateService"
+                    value={formData.corporateService}
+                    onChange={handleChange}
+                    className="h-12 w-full bg-muted border-border focus:border-primary rounded-md px-3"
+                  >
+                    <option value="">Select a corporate service</option>
+                    {corporateServices.map((service, idx) => (
+                      <option key={idx} value={service.label}>
+                        {service.label}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                {/* Personal Services Dropdown */}
+                <div>
+                  <label
+                    htmlFor="personalService"
+                    className="block text-sm font-medium text-card-foreground mb-2"
+                  >
+                    Personal Services
+                  </label>
+                  <select
+                    id="personalService"
+                    name="personalService"
+                    value={formData.personalService}
+                    onChange={handleChange}
+                    className="h-12 w-full bg-muted border-border focus:border-primary rounded-md px-3"
+                  >
+                    <option value="">Select a personal service</option>
+                    {personalServices.map((service, idx) => (
+                      <option key={idx} value={service.label}>
+                        {service.label}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                {/* Message */}
                 <div>
                   <label
                     htmlFor="message"
@@ -240,6 +324,7 @@ const ContactForm = () => {
                   />
                 </div>
 
+                {/* Submit Button */}
                 <Button
                   type="submit"
                   variant="default"
