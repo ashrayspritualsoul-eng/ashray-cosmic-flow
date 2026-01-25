@@ -48,14 +48,28 @@ const services = [
   },
 ];
 
+// Mixed list of services for the hero section
+const heroServicesList = [
+  "Psychic Readings",
+  "Tarot Readings & Teaching",
+  "Numerology Consultations",
+  "Reiki Healing & Training",
+  "Corporate Mental Health Programs",
+  "Stress Management Workshops",
+  "Spiritual Remedies",
+  "Employee Wellness Solutions",
+  "Individual Therapy Sessions",
+  "Leadership & Mindfulness Training"
+];
+
 const Services = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
       
-      {/* Hero Banner - Works without image */}
+      {/* Hero Banner */}
       <section className="relative pt-32 pb-16 overflow-hidden">
-        {/* Animated gradient background - no image needed */}
+        {/* Animated gradient background */}
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 gradient-cosmic opacity-90"></div>
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(120,119,198,0.3),transparent_50%),radial-gradient(circle_at_70%_80%,rgba(139,92,246,0.3),transparent_50%)]"></div>
@@ -89,7 +103,7 @@ const Services = () => {
             animate={{ opacity: 1, y: 0 }}
             className="text-secondary font-semibold tracking-widest uppercase text-sm mb-4"
           >
-            Our Services
+            Welcome To
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -103,16 +117,48 @@ const Services = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-primary-foreground/90 text-lg max-w-2xl mx-auto"
+            className="text-primary-foreground/90 text-lg max-w-3xl mx-auto mb-8"
           >
-            Each service is designed to help you connect with your higher self and navigate life with greater awareness and purpose.
+            Ashi Pawaiya Jain, known as Ashray Wellness, is a Psychic, Numerologist, Master Reikist, & Psychologist guiding individuals worldwide with personalized healing, clarity, and balance.
           </motion.p>
+
+          {/* Services List */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+            className="max-w-4xl mx-auto"
+          >
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-left">
+              {heroServicesList.map((service, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.4 + index * 0.05 }}
+                  className="flex items-center gap-3 text-primary-foreground/90 bg-white/5 backdrop-blur-sm rounded-lg px-4 py-3 border border-white/10 hover:bg-white/10 transition-colors"
+                >
+                  <div className="w-2 h-2 rounded-full bg-secondary flex-shrink-0" />
+                  <span className="text-sm md:text-base">{service}</span>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Services Grid with Images */}
       <section className="py-20 lg:py-32">
         <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              Personal Wellness Services
+            </h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              Each service is designed to help you connect with your higher self and navigate life with greater awareness and purpose.
+            </p>
+          </div>
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <motion.div
@@ -171,6 +217,26 @@ const Services = () => {
               </motion.div>
             ))}
           </div>
+
+          {/* Corporate Services CTA */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mt-16 text-center bg-gradient-to-r from-primary/10 to-secondary/10 rounded-2xl p-8 md:p-12 border border-primary/20"
+          >
+            <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+              Looking for Corporate Wellness Solutions?
+            </h3>
+            <p className="text-muted-foreground text-lg mb-6 max-w-2xl mx-auto">
+              We offer comprehensive corporate mental health programs, stress management workshops, and employee wellness solutions.
+            </p>
+            <Button variant="default" size="lg" asChild>
+              <Link to="/corporate-services">
+                Explore Corporate Services
+              </Link>
+            </Button>
+          </motion.div>
         </div>
       </section>
 

@@ -5,10 +5,10 @@ import {
   BookOpen,
   Hash,
   Heart,
-  Flower2,
   Star,
   Brain,
-  Moon,
+  Briefcase,
+  Users,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -19,13 +19,12 @@ const services = [
   { icon: BookOpen, title: "Tarot Readings & Teaching" },
   { icon: Hash, title: "Numerology Consultations" },
   { icon: Heart, title: "Reiki Healing & Training" },
-  { icon: Flower2, title: "Reiki Classes" },
   { icon: Star, title: "Spiritual Remedies" },
-  { icon: Brain, title: "Therapy Sessions" },
-  { icon: Moon, title: "Mental Health Support" },
+  { icon: Brain, title: "Individual Therapy Sessions" },
+  { icon: Briefcase, title: "Corporate Mental Health Programs" },
+  { icon: Users, title: "Employee Wellness & Burnout Prevention" },
 ];
 
-// Add your image URLs here
 const carouselImages = [
   "/images/healing1.jpg",
   "/images/tarot.webp",
@@ -37,11 +36,10 @@ const carouselImages = [
 const HomeServices = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Auto-play carousel
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % carouselImages.length);
-    }, 3000); // Change image every 3 seconds
+    }, 3000);
 
     return () => clearInterval(interval);
   }, []);
@@ -50,7 +48,6 @@ const HomeServices = () => {
     <section id="services" className="py-20 lg:py-32 gradient-cosmic">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Content Side */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -71,7 +68,6 @@ const HomeServices = () => {
               worldwide with personalized healing, clarity, and balance.
             </p>
 
-            {/* Services Grid */}
             <div className="grid grid-cols-2 gap-4 mb-8">
               {services.map((service, index) => (
                 <motion.div
@@ -95,7 +91,6 @@ const HomeServices = () => {
             </Button>
           </motion.div>
 
-          {/* Auto-playing Image Carousel */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -103,7 +98,6 @@ const HomeServices = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative hidden lg:block h-[500px]"
           >
-            {/* Carousel Container */}
             <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl">
               <AnimatePresence mode="wait">
                 <motion.img
@@ -118,11 +112,9 @@ const HomeServices = () => {
                 />
               </AnimatePresence>
 
-              {/* Overlay gradient for better text visibility if needed */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
             </div>
 
-            {/* Progress Indicators */}
             <div className="flex justify-center gap-2 mt-6">
               {carouselImages.map((_, index) => (
                 <div
@@ -136,7 +128,6 @@ const HomeServices = () => {
               ))}
             </div>
 
-            {/* Decorative elements */}
             <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-secondary rounded-full opacity-20 blur-2xl" />
             <div className="absolute -top-6 -right-6 w-32 h-32 bg-secondary rounded-full opacity-10 blur-2xl" />
           </motion.div>
