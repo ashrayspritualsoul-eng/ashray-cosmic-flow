@@ -66,163 +66,167 @@ const Navbar = () => {
 
   return (
     <>
-      <motion.nav
-        initial={{ y: -80, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-        className={`sticky top-0 z-50 transition-all duration-300 bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg ${
-          isScrolled ? "shadow-lg" : ""
-        }`}
-      >
-        <div className="container mx-auto px-6">
-          <div className="h-[72px] flex items-center justify-between">
-            {/* Logo */}
-            <Link to="/" className="flex items-center gap-3 group">
-              <div className="w-11 h-11 rounded-full overflow-hidden ring-2 ring-primary/40 group-hover:ring-primary transition">
-                <img
-                  src="/logo.png"
-                  alt="Ashray Wellness"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <span className="text-lg font-semibold tracking-wide transition-colors text-gray-900 dark:text-white">
-                Ashray Wellness
-              </span>
-            </Link>
-
-            {/* Desktop Menu */}
-            <div className="hidden md:flex items-center gap-6">
-              {navLinks.map((link) =>
-                link.href.startsWith("/#") ? (
-                  <a
-                    key={link.label}
-                    href={link.href}
-                    className="text-sm font-medium transition-colors text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-primary"
-                  >
-                    {link.label}
-                  </a>
-                ) : (
-                  <Link
-                    key={link.label}
-                    to={link.href}
-                    className="text-sm font-medium transition-colors text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-primary"
-                  >
-                    {link.label}
-                  </Link>
-                )
-              )}
-
-              {/* Corporate Services Dropdown */}
-              <div
-                className="relative"
-                onMouseEnter={() => setIsCorporateOpen(true)}
-                onMouseLeave={() => setIsCorporateOpen(false)}
-              >
-                <button
-                  className="flex items-center gap-1 text-sm font-medium transition-colors text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-primary"
-                >
-                  Corporate Services
-                  <ChevronDown
-                    className={`w-4 h-4 transition-transform duration-200 ${
-                      isCorporateOpen ? "rotate-180" : ""
-                    }`}
+      {/* Fixed Container with Padding */}
+      <div className="fixed top-0 left-0 right-0 z-50 px-4 pt-4">
+        <motion.nav
+          initial={{ y: -80, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="bg-gradient-to-r from-[#E8DCC4] via-[#D4C5A9] to-[#E8DCC4] backdrop-blur-sm shadow-lg rounded-full"
+        >
+          <div className="container mx-auto px-6 lg:px-8">
+            <div className="h-[72px] flex items-center justify-between">
+              {/* Logo */}
+              <Link to="/" className="flex items-center gap-3 group">
+                <div className="w-11 h-11 rounded-full overflow-hidden ring-2 ring-primary/40 group-hover:ring-primary transition">
+                  <img
+                    src="/logo.png"
+                    alt="Ashray Wellness"
+                    className="w-full h-full object-cover"
                   />
-                </button>
+                </div>
+                <span className="text-lg font-semibold tracking-wide transition-colors text-gray-900">
+                  Ashray Wellness
+                </span>
+              </Link>
 
-                <AnimatePresence>
-                  {isCorporateOpen && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 8 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 8 }}
-                      transition={{ duration: 0.2 }}
-                      className="absolute left-0 top-full mt-2 w-80 rounded-xl bg-white/95 dark:bg-gray-900/95 backdrop-blur-lg shadow-2xl border border-secondary/30 dark:border-secondary/20 overflow-hidden"
+              {/* Desktop Menu */}
+              <div className="hidden md:flex items-center gap-6">
+                {navLinks.map((link) =>
+                  link.href.startsWith("/#") ? (
+                    <a
+                      key={link.label}
+                      href={link.href}
+                      className="text-sm font-medium transition-colors text-gray-800 hover:text-primary"
                     >
-                      <Link
-                        to="/corporate-services"
-                        className="block px-5 py-3.5 font-semibold text-sm text-primary bg-secondary/5 hover:bg-secondary/10 transition-colors"
-                      >
-                        ✨ View All Corporate Services
-                      </Link>
-                      {corporateServices.map((service) => (
-                        <Link
-                          key={service.href}
-                          to={service.href}
-                          className="block px-5 py-2.5 text-sm text-gray-700 dark:text-gray-300 hover:bg-secondary/10 hover:text-secondary dark:hover:text-secondary transition-colors"
-                        >
-                          {service.label}
-                        </Link>
-                      ))}
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
+                      {link.label}
+                    </a>
+                  ) : (
+                    <Link
+                      key={link.label}
+                      to={link.href}
+                      className="text-sm font-medium transition-colors text-gray-800 hover:text-primary"
+                    >
+                      {link.label}
+                    </Link>
+                  )
+                )}
 
-              {/* Personal Wellness Services Dropdown */}
-              <div
-                className="relative"
-                onMouseEnter={() => setIsPersonalOpen(true)}
-                onMouseLeave={() => setIsPersonalOpen(false)}
-              >
-                <button
-                  className="flex items-center gap-1 text-sm font-medium transition-colors text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-primary"
+                {/* Corporate Services Dropdown */}
+                <div
+                  className="relative"
+                  onMouseEnter={() => setIsCorporateOpen(true)}
+                  onMouseLeave={() => setIsCorporateOpen(false)}
                 >
-                  Personal Wellness Services
-                  <ChevronDown
-                    className={`w-4 h-4 transition-transform duration-200 ${
-                      isPersonalOpen ? "rotate-180" : ""
-                    }`}
-                  />
-                </button>
+                  <button
+                    className="flex items-center gap-1 text-sm font-medium transition-colors text-gray-800 hover:text-primary"
+                  >
+                    Corporate Services
+                    <ChevronDown
+                      className={`w-4 h-4 transition-transform duration-200 ${
+                        isCorporateOpen ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
 
-                <AnimatePresence>
-                  {isPersonalOpen && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 8 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 8 }}
-                      transition={{ duration: 0.2 }}
-                      className="absolute left-0 top-full mt-2 w-80 rounded-xl bg-white/95 dark:bg-gray-900/95 backdrop-blur-lg shadow-2xl border border-secondary/30 dark:border-secondary/20 overflow-hidden"
-                    >
-                      <Link
-                        to="/services"
-                        className="block px-5 py-3.5 font-semibold text-sm text-primary bg-secondary/5 hover:bg-secondary/10 transition-colors"
+                  <AnimatePresence>
+                    {isCorporateOpen && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 8 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 8 }}
+                        transition={{ duration: 0.2 }}
+                        className="absolute left-0 top-full mt-2 w-80 rounded-2xl bg-gradient-to-br from-[#E8DCC4] to-[#D4C5A9] backdrop-blur-sm shadow-2xl border border-amber-200/50 overflow-hidden"
                       >
-                        ✨ View All Personal Services
-                      </Link>
-                      {personalServices.map((service) => (
                         <Link
-                          key={service.href}
-                          to={service.href}
-                          className="block px-5 py-2.5 text-sm text-gray-700 dark:text-gray-300 hover:bg-secondary/10 hover:text-secondary dark:hover:text-secondary transition-colors"
+                          to="/corporate-services"
+                          className="block px-5 py-3.5 font-semibold text-sm text-primary bg-white/20 hover:bg-white/30 transition-colors"
                         >
-                          {service.label}
+                          ✨ View All Corporate Services
                         </Link>
-                      ))}
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                        {corporateServices.map((service) => (
+                          <Link
+                            key={service.href}
+                            to={service.href}
+                            className="block px-5 py-2.5 text-sm text-gray-800 hover:bg-white/20 hover:text-primary transition-colors"
+                          >
+                            {service.label}
+                          </Link>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+
+                {/* Personal Wellness Services Dropdown */}
+                <div
+                  className="relative"
+                  onMouseEnter={() => setIsPersonalOpen(true)}
+                  onMouseLeave={() => setIsPersonalOpen(false)}
+                >
+                  <button
+                    className="flex items-center gap-1 text-sm font-medium transition-colors text-gray-800 hover:text-primary"
+                  >
+                    Personal Wellness Services
+                    <ChevronDown
+                      className={`w-4 h-4 transition-transform duration-200 ${
+                        isPersonalOpen ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
+
+                  <AnimatePresence>
+                    {isPersonalOpen && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 8 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 8 }}
+                        transition={{ duration: 0.2 }}
+                        className="absolute left-0 top-full mt-2 w-80 rounded-2xl bg-gradient-to-br from-[#E8DCC4] to-[#D4C5A9] backdrop-blur-sm shadow-2xl border border-amber-200/50 overflow-hidden"
+                      >
+                        <Link
+                          to="/services"
+                          className="block px-5 py-3.5 font-semibold text-sm text-primary bg-white/20 hover:bg-white/30 transition-colors"
+                        >
+                          ✨ View All Personal Services
+                        </Link>
+                        {personalServices.map((service) => (
+                          <Link
+                            key={service.href}
+                            to={service.href}
+                            className="block px-5 py-2.5 text-sm text-gray-800 hover:bg-white/20 hover:text-primary transition-colors"
+                          >
+                            {service.label}
+                          </Link>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+
+                {/* Book Consultation CTA */}
+                <Button
+                  asChild
+                  className="rounded-full px-6 bg-gradient-to-r from-primary to-secondary text-white shadow-lg hover:shadow-xl transition-all"
+                >
+                  <a href="/#contact">Book Consultation</a>
+                </Button>
               </div>
 
-              {/* Book Consultation CTA */}
-              <Button
-                asChild
-                className="rounded-full px-6 bg-gradient-to-r from-primary to-secondary text-white shadow-lg hover:shadow-xl transition-all"
+              {/* Mobile Menu Button */}
+              <button
+                onClick={() => setIsMobileOpen(!isMobileOpen)}
+                className="md:hidden transition-colors text-gray-900"
               >
-                <a href="/#contact">Book Consultation</a>
-              </Button>
+                {isMobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              </button>
             </div>
-
-            {/* Mobile Menu Button */}
-            <button
-              onClick={() => setIsMobileOpen(!isMobileOpen)}
-              className="md:hidden transition-colors text-gray-900 dark:text-white"
-            >
-              {isMobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
           </div>
-        </div>
-      </motion.nav>
+        </motion.nav>
+      </div>
+
+      {/* Spacer to prevent content from going under fixed navbar */}
+      <div className="h-[88px]" />
 
       {/* Mobile Menu Overlay */}
       <AnimatePresence>
@@ -232,7 +236,7 @@ const Navbar = () => {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
             transition={{ duration: 0.3 }}
-            className="fixed top-[72px] inset-0 z-40 bg-white/95 dark:bg-gray-900/95 backdrop-blur-lg md:hidden overflow-y-auto"
+            className="fixed top-[88px] inset-0 z-40 bg-gradient-to-br from-[#E8DCC4] to-[#D4C5A9] backdrop-blur-sm md:hidden overflow-y-auto"
           >
             <div className="px-6 py-6 space-y-1">
               {navLinks.map((link) => (
@@ -240,17 +244,17 @@ const Navbar = () => {
                   key={link.label}
                   to={link.href}
                   onClick={() => setIsMobileOpen(false)}
-                  className="block py-3 font-medium text-gray-900 dark:text-white hover:text-primary dark:hover:text-primary transition-colors"
+                  className="block py-3 font-medium text-gray-900 hover:text-primary transition-colors"
                 >
                   {link.label}
                 </Link>
               ))}
 
               {/* Mobile Corporate Services Accordion */}
-              <div className="border-t border-gray-200 dark:border-gray-700 pt-2">
+              <div className="border-t border-amber-300/50 pt-2">
                 <button
                   onClick={() => setIsMobileCorporateOpen(!isMobileCorporateOpen)}
-                  className="flex items-center justify-between w-full py-3 font-medium text-gray-900 dark:text-white"
+                  className="flex items-center justify-between w-full py-3 font-medium text-gray-900"
                 >
                   Corporate Services
                   <ChevronDown
@@ -282,7 +286,7 @@ const Navbar = () => {
                             key={service.href}
                             to={service.href}
                             onClick={() => setIsMobileOpen(false)}
-                            className="block py-2 text-sm text-gray-700 dark:text-gray-300 hover:text-secondary dark:hover:text-secondary transition-colors"
+                            className="block py-2 text-sm text-gray-800 hover:text-secondary transition-colors"
                           >
                             {service.label}
                           </Link>
@@ -294,10 +298,10 @@ const Navbar = () => {
               </div>
 
               {/* Mobile Personal Wellness Services Accordion */}
-              <div className="border-t border-gray-200 dark:border-gray-700 pt-2">
+              <div className="border-t border-amber-300/50 pt-2">
                 <button
                   onClick={() => setIsMobilePersonalOpen(!isMobilePersonalOpen)}
-                  className="flex items-center justify-between w-full py-3 font-medium text-gray-900 dark:text-white"
+                  className="flex items-center justify-between w-full py-3 font-medium text-gray-900"
                 >
                   Personal Wellness Services
                   <ChevronDown
@@ -329,7 +333,7 @@ const Navbar = () => {
                             key={service.href}
                             to={service.href}
                             onClick={() => setIsMobileOpen(false)}
-                            className="block py-2 text-sm text-gray-700 dark:text-gray-300 hover:text-secondary dark:hover:text-secondary transition-colors"
+                            className="block py-2 text-sm text-gray-800 hover:text-secondary transition-colors"
                           >
                             {service.label}
                           </Link>
@@ -341,7 +345,7 @@ const Navbar = () => {
               </div>
 
               {/* Mobile CTA Button */}
-              <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
+              <div className="pt-4 border-t border-amber-300/50">
                 <Button
                   asChild
                   className="w-full bg-gradient-to-r from-primary to-secondary text-white shadow-lg"
