@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Sparkles, Moon, Star } from "lucide-react";
 import heroBackground from "@/assets/hero-cosmic-bg.jpg";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -87,7 +88,7 @@ const Hero = () => {
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
             <Button variant="hero" size="xl" asChild>
-              <a href="#contact">Book a Consultation</a>
+              <Link to="/contact">Book a Consultation</Link>
             </Button>
             <Button variant="heroOutline" size="xl" asChild>
               <a href="#services">Explore Services</a>
