@@ -26,7 +26,7 @@ const TherapyCounseling = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-secondary/5">
       <Navbar />
-      
+
       <section className="pt-32 pb-20 px-6">
         <div className="container mx-auto max-w-5xl">
           <motion.div
@@ -41,8 +41,9 @@ const TherapyCounseling = () => {
               Therapy & Counseling Services
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Professional therapy and counseling support for your team members, providing a safe space 
-              to address challenges and promote emotional wellbeing.
+              Professional therapy and counseling support for your team members,
+              providing a safe space to address challenges and promote emotional
+              wellbeing.
             </p>
           </motion.div>
 
@@ -54,8 +55,10 @@ const TherapyCounseling = () => {
           >
             <h2 className="text-2xl font-bold mb-4">Program Overview</h2>
             <p className="text-muted-foreground leading-relaxed">
-              Our Therapy & Counseling Services provide employees with access to qualified mental health professionals 
-              who can help them navigate personal and professional challenges in a confidential, supportive environment.
+              Our Therapy & Counseling Services provide employees with access to
+              qualified mental health professionals who can help them navigate
+              personal and professional challenges in a confidential, supportive
+              environment.
             </p>
           </motion.div>
 
@@ -96,16 +99,19 @@ const TherapyCounseling = () => {
             transition={{ delay: 0.4 }}
             className="text-center bg-gradient-to-r from-primary/10 via-secondary/10 to-primary/10 rounded-2xl p-12"
           >
-            <h2 className="text-3xl font-bold mb-4">Support Your Team's Emotional Wellbeing</h2>
+            <h2 className="text-3xl font-bold mb-4">
+              Support Your Team's Emotional Wellbeing
+            </h2>
             <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Provide your employees with professional counseling services that make a real difference.
+              Provide your employees with professional counseling services that
+              make a real difference.
             </p>
             <Button
               asChild
               size="lg"
               className="bg-gradient-to-r from-primary to-secondary text-white px-8"
             >
-              <a href="/#contact">Schedule Consultation</a>
+              <a href="/contact">Schedule Consultation</a>
             </Button>
           </motion.div>
         </div>

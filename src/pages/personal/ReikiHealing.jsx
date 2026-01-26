@@ -30,7 +30,7 @@ const ReikiHealing = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-secondary/5">
       <Navbar />
-      
+
       <section className="pt-32 pb-20 px-6">
         <div className="container mx-auto max-w-5xl">
           <motion.div
@@ -45,8 +45,9 @@ const ReikiHealing = () => {
               Reiki Healing & Training
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Experience the transformative power of Reiki energy healing for physical, emotional, 
-              and spiritual balance, or learn to become a Reiki practitioner.
+              Experience the transformative power of Reiki energy healing for
+              physical, emotional, and spiritual balance, or learn to become a
+              Reiki practitioner.
             </p>
           </motion.div>
 
@@ -81,7 +82,9 @@ const ReikiHealing = () => {
                   className="bg-white dark:bg-gray-900 rounded-xl p-8 border border-gray-200 dark:border-gray-800 hover:border-primary/50 hover:shadow-lg transition-all"
                 >
                   <Icon className="w-12 h-12 text-primary mb-4" />
-                  <h3 className="text-2xl font-semibold mb-3">{service.title}</h3>
+                  <h3 className="text-2xl font-semibold mb-3">
+                    {service.title}
+                  </h3>
                   <p className="text-muted-foreground">{service.description}</p>
                 </div>
               );
@@ -94,16 +97,19 @@ const ReikiHealing = () => {
             transition={{ delay: 0.4 }}
             className="text-center bg-gradient-to-r from-primary/10 via-secondary/10 to-primary/10 rounded-2xl p-12"
           >
-            <h2 className="text-3xl font-bold mb-4">Experience Reiki Energy Healing</h2>
+            <h2 className="text-3xl font-bold mb-4">
+              Experience Reiki Energy Healing
+            </h2>
             <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Book a healing session or learn Reiki to bring balance and wellness into your life.
+              Book a healing session or learn Reiki to bring balance and
+              wellness into your life.
             </p>
             <Button
               asChild
               size="lg"
               className="bg-gradient-to-r from-primary to-secondary text-white px-8"
             >
-              <a href="/#contact">Book Your Session</a>
+              <a href="/contact">Book Your Session</a>
             </Button>
           </motion.div>
         </div>

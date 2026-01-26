@@ -26,7 +26,7 @@ const HolisticWellness = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-secondary/5">
       <Navbar />
-      
+
       <section className="pt-32 pb-20 px-6">
         <div className="container mx-auto max-w-5xl">
           <motion.div
@@ -41,8 +41,8 @@ const HolisticWellness = () => {
               Holistic Wellness Add-ons
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Complementary wellness services including energy healing and spiritual guidance to 
-              support holistic employee wellbeing.
+              Complementary wellness services including energy healing and
+              spiritual guidance to support holistic employee wellbeing.
             </p>
           </motion.div>
 
@@ -54,8 +54,10 @@ const HolisticWellness = () => {
           >
             <h2 className="text-2xl font-bold mb-4">Program Overview</h2>
             <p className="text-muted-foreground leading-relaxed">
-              Our Holistic Wellness Add-ons offer complementary healing modalities that address the energetic 
-              and spiritual dimensions of wellbeing, creating a truly comprehensive approach to employee health.
+              Our Holistic Wellness Add-ons offer complementary healing
+              modalities that address the energetic and spiritual dimensions of
+              wellbeing, creating a truly comprehensive approach to employee
+              health.
             </p>
           </motion.div>
 
@@ -96,16 +98,19 @@ const HolisticWellness = () => {
             transition={{ delay: 0.4 }}
             className="text-center bg-gradient-to-r from-primary/10 via-secondary/10 to-primary/10 rounded-2xl p-12"
           >
-            <h2 className="text-3xl font-bold mb-4">Embrace Holistic Wellness</h2>
+            <h2 className="text-3xl font-bold mb-4">
+              Embrace Holistic Wellness
+            </h2>
             <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Enhance your corporate wellness program with complementary holistic healing services.
+              Enhance your corporate wellness program with complementary
+              holistic healing services.
             </p>
             <Button
               asChild
               size="lg"
               className="bg-gradient-to-r from-primary to-secondary text-white px-8"
             >
-              <a href="/#contact">Schedule Consultation</a>
+              <a href="/contact">Schedule Consultation</a>
             </Button>
           </motion.div>
         </div>

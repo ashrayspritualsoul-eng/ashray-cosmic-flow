@@ -26,7 +26,7 @@ const LeadershipMindfulness = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-secondary/5">
       <Navbar />
-      
+
       <section className="pt-32 pb-20 px-6">
         <div className="container mx-auto max-w-5xl">
           <motion.div
@@ -41,8 +41,8 @@ const LeadershipMindfulness = () => {
               Leadership & Mindfulness Programs
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Develop mindful leaders who inspire and elevate their teams through conscious, 
-              present-focused leadership practices.
+              Develop mindful leaders who inspire and elevate their teams
+              through conscious, present-focused leadership practices.
             </p>
           </motion.div>
 
@@ -54,8 +54,10 @@ const LeadershipMindfulness = () => {
           >
             <h2 className="text-2xl font-bold mb-4">Program Overview</h2>
             <p className="text-muted-foreground leading-relaxed">
-              Our Leadership & Mindfulness Programs integrate ancient wisdom with modern leadership principles, 
-              helping leaders cultivate presence, clarity, and compassion in their decision-making and team interactions.
+              Our Leadership & Mindfulness Programs integrate ancient wisdom
+              with modern leadership principles, helping leaders cultivate
+              presence, clarity, and compassion in their decision-making and
+              team interactions.
             </p>
           </motion.div>
 
@@ -96,16 +98,19 @@ const LeadershipMindfulness = () => {
             transition={{ delay: 0.4 }}
             className="text-center bg-gradient-to-r from-primary/10 via-secondary/10 to-primary/10 rounded-2xl p-12"
           >
-            <h2 className="text-3xl font-bold mb-4">Cultivate Mindful Leadership</h2>
+            <h2 className="text-3xl font-bold mb-4">
+              Cultivate Mindful Leadership
+            </h2>
             <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Transform your leadership team with mindfulness practices that drive authentic, effective leadership.
+              Transform your leadership team with mindfulness practices that
+              drive authentic, effective leadership.
             </p>
             <Button
               asChild
               size="lg"
               className="bg-gradient-to-r from-primary to-secondary text-white px-8"
             >
-              <a href="/#contact">Schedule Consultation</a>
+              <a href="/contact">Schedule Consultation</a>
             </Button>
           </motion.div>
         </div>

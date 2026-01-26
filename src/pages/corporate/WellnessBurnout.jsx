@@ -26,7 +26,7 @@ const WellnessBurnout = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-secondary/5">
       <Navbar />
-      
+
       <section className="pt-32 pb-20 px-6">
         <div className="container mx-auto max-w-5xl">
           <motion.div
@@ -41,8 +41,9 @@ const WellnessBurnout = () => {
               Employee Wellness & Burnout Prevention
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Proactive strategies to maintain employee wellbeing and prevent workplace burnout, 
-              creating a sustainable and thriving work environment.
+              Proactive strategies to maintain employee wellbeing and prevent
+              workplace burnout, creating a sustainable and thriving work
+              environment.
             </p>
           </motion.div>
 
@@ -54,8 +55,10 @@ const WellnessBurnout = () => {
           >
             <h2 className="text-2xl font-bold mb-4">Program Overview</h2>
             <p className="text-muted-foreground leading-relaxed">
-              Our Employee Wellness & Burnout Prevention program helps organizations identify early warning signs, 
-              implement preventive measures, and create a culture that supports sustainable high performance without sacrificing wellbeing.
+              Our Employee Wellness & Burnout Prevention program helps
+              organizations identify early warning signs, implement preventive
+              measures, and create a culture that supports sustainable high
+              performance without sacrificing wellbeing.
             </p>
           </motion.div>
 
@@ -96,16 +99,19 @@ const WellnessBurnout = () => {
             transition={{ delay: 0.4 }}
             className="text-center bg-gradient-to-r from-primary/10 via-secondary/10 to-primary/10 rounded-2xl p-12"
           >
-            <h2 className="text-3xl font-bold mb-4">Prevent Burnout, Promote Wellness</h2>
+            <h2 className="text-3xl font-bold mb-4">
+              Prevent Burnout, Promote Wellness
+            </h2>
             <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Let's work together to create a workplace where your employees can thrive without burning out.
+              Let's work together to create a workplace where your employees can
+              thrive without burning out.
             </p>
             <Button
               asChild
               size="lg"
               className="bg-gradient-to-r from-primary to-secondary text-white px-8"
             >
-              <a href="/#contact">Schedule Consultation</a>
+              <a href="/contact">Schedule Consultation</a>
             </Button>
           </motion.div>
         </div>

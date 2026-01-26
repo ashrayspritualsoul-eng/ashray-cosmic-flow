@@ -34,7 +34,7 @@ const PsychicReadings = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-secondary/5">
       <Navbar />
-      
+
       <section className="pt-32 pb-20 px-6">
         <div className="container mx-auto max-w-5xl">
           {/* Header */}
@@ -50,8 +50,9 @@ const PsychicReadings = () => {
               Psychic Readings
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Connect with divine guidance and unlock clarity about your life path, relationships, 
-              career, and spiritual journey through intuitive psychic readings.
+              Connect with divine guidance and unlock clarity about your life
+              path, relationships, career, and spiritual journey through
+              intuitive psychic readings.
             </p>
           </motion.div>
 
@@ -80,7 +81,9 @@ const PsychicReadings = () => {
             transition={{ delay: 0.3 }}
             className="mb-12"
           >
-            <h2 className="text-2xl font-bold mb-8 text-center">Session Options</h2>
+            <h2 className="text-2xl font-bold mb-8 text-center">
+              Session Options
+            </h2>
             <div className="grid md:grid-cols-3 gap-6">
               {sessionTypes.map((session, index) => (
                 <div
@@ -88,9 +91,15 @@ const PsychicReadings = () => {
                   className="bg-white dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-800 hover:border-primary/50 hover:shadow-lg transition-all"
                 >
                   <Star className="w-8 h-8 text-primary mb-4" />
-                  <h3 className="text-xl font-semibold mb-2">{session.title}</h3>
-                  <p className="text-muted-foreground text-sm mb-4">{session.description}</p>
-                  <p className="text-2xl font-bold text-primary">{session.price}</p>
+                  <h3 className="text-xl font-semibold mb-2">
+                    {session.title}
+                  </h3>
+                  <p className="text-muted-foreground text-sm mb-4">
+                    {session.description}
+                  </p>
+                  <p className="text-2xl font-bold text-primary">
+                    {session.price}
+                  </p>
                 </div>
               ))}
             </div>
@@ -105,14 +114,15 @@ const PsychicReadings = () => {
           >
             <h2 className="text-3xl font-bold mb-4">Ready for Your Reading?</h2>
             <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Book your psychic reading session and receive divine guidance for your life journey.
+              Book your psychic reading session and receive divine guidance for
+              your life journey.
             </p>
             <Button
               asChild
               size="lg"
               className="bg-gradient-to-r from-primary to-secondary text-white px-8"
             >
-              <a href="/#contact">Book Your Reading</a>
+              <a href="/">Book Your Reading</a>
             </Button>
           </motion.div>
         </div>

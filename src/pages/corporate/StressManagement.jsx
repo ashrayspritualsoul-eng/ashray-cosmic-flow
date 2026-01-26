@@ -26,7 +26,7 @@ const StressManagement = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-secondary/5">
       <Navbar />
-      
+
       <section className="pt-32 pb-20 px-6">
         <div className="container mx-auto max-w-5xl">
           <motion.div
@@ -41,8 +41,9 @@ const StressManagement = () => {
               Stress Management Workshops
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Interactive workshops teaching practical stress management techniques that employees 
-              can apply immediately in their daily work and personal lives.
+              Interactive workshops teaching practical stress management
+              techniques that employees can apply immediately in their daily
+              work and personal lives.
             </p>
           </motion.div>
 
@@ -54,8 +55,10 @@ const StressManagement = () => {
           >
             <h2 className="text-2xl font-bold mb-4">Program Overview</h2>
             <p className="text-muted-foreground leading-relaxed">
-              Our Stress Management Workshops equip your team with evidence-based techniques to identify, 
-              manage, and reduce stress. Through interactive sessions, employees learn practical tools they can use immediately.
+              Our Stress Management Workshops equip your team with
+              evidence-based techniques to identify, manage, and reduce stress.
+              Through interactive sessions, employees learn practical tools they
+              can use immediately.
             </p>
           </motion.div>
 
@@ -96,16 +99,19 @@ const StressManagement = () => {
             transition={{ delay: 0.4 }}
             className="text-center bg-gradient-to-r from-primary/10 via-secondary/10 to-primary/10 rounded-2xl p-12"
           >
-            <h2 className="text-3xl font-bold mb-4">Empower Your Team to Manage Stress</h2>
+            <h2 className="text-3xl font-bold mb-4">
+              Empower Your Team to Manage Stress
+            </h2>
             <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Equip your employees with practical tools to reduce stress and improve wellbeing.
+              Equip your employees with practical tools to reduce stress and
+              improve wellbeing.
             </p>
             <Button
               asChild
               size="lg"
               className="bg-gradient-to-r from-primary to-secondary text-white px-8"
             >
-              <a href="/#contact">Schedule Consultation</a>
+              <a href="/contact">Schedule Consultation</a>
             </Button>
           </motion.div>
         </div>

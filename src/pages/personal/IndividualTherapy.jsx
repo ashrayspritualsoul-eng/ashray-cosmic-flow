@@ -26,7 +26,7 @@ const IndividualTherapy = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-secondary/5">
       <Navbar />
-      
+
       <section className="pt-32 pb-20 px-6">
         <div className="container mx-auto max-w-5xl">
           <motion.div
@@ -41,8 +41,8 @@ const IndividualTherapy = () => {
               Individual Therapy Sessions
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Professional one-on-one therapy sessions to support your mental health, emotional wellbeing, 
-              and personal growth journey.
+              Professional one-on-one therapy sessions to support your mental
+              health, emotional wellbeing, and personal growth journey.
             </p>
           </motion.div>
 
@@ -52,11 +52,14 @@ const IndividualTherapy = () => {
             transition={{ delay: 0.2 }}
             className="bg-white dark:bg-gray-900 rounded-2xl p-8 mb-12 border border-gray-200 dark:border-gray-800"
           >
-            <h2 className="text-2xl font-bold mb-4">Why Choose Individual Therapy?</h2>
+            <h2 className="text-2xl font-bold mb-4">
+              Why Choose Individual Therapy?
+            </h2>
             <p className="text-muted-foreground leading-relaxed mb-6">
-              Individual therapy provides a confidential, supportive environment where you can explore your thoughts, 
-              feelings, and behaviors with a qualified mental health professional. Together, we'll work towards 
-              your personal goals and improved wellbeing.
+              Individual therapy provides a confidential, supportive environment
+              where you can explore your thoughts, feelings, and behaviors with
+              a qualified mental health professional. Together, we'll work
+              towards your personal goals and improved wellbeing.
             </p>
             <ul className="grid md:grid-cols-2 gap-4">
               {benefits.map((benefit, index) => (
@@ -91,16 +94,19 @@ const IndividualTherapy = () => {
             transition={{ delay: 0.4 }}
             className="text-center bg-gradient-to-r from-primary/10 via-secondary/10 to-primary/10 rounded-2xl p-12"
           >
-            <h2 className="text-3xl font-bold mb-4">Start Your Healing Journey</h2>
+            <h2 className="text-3xl font-bold mb-4">
+              Start Your Healing Journey
+            </h2>
             <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Take the first step towards better mental health and emotional wellbeing.
+              Take the first step towards better mental health and emotional
+              wellbeing.
             </p>
             <Button
               asChild
               size="lg"
               className="bg-gradient-to-r from-primary to-secondary text-white px-8"
             >
-              <a href="/#contact">Book Therapy Session</a>
+              <a href="/contact">Book Therapy Session</a>
             </Button>
           </motion.div>
         </div>

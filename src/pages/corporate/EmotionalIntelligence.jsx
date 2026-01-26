@@ -26,7 +26,7 @@ const EmotionalIntelligence = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-secondary/5">
       <Navbar />
-      
+
       <section className="pt-32 pb-20 px-6">
         <div className="container mx-auto max-w-5xl">
           <motion.div
@@ -41,8 +41,8 @@ const EmotionalIntelligence = () => {
               Emotional Intelligence & Resilience Training
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Build emotional intelligence and resilience across your organization, creating stronger 
-              teams and more effective leaders.
+              Build emotional intelligence and resilience across your
+              organization, creating stronger teams and more effective leaders.
             </p>
           </motion.div>
 
@@ -54,8 +54,10 @@ const EmotionalIntelligence = () => {
           >
             <h2 className="text-2xl font-bold mb-4">Program Overview</h2>
             <p className="text-muted-foreground leading-relaxed">
-              Our Emotional Intelligence & Resilience Training helps employees develop crucial skills for navigating 
-              workplace challenges, building stronger relationships, and adapting to change with confidence and composure.
+              Our Emotional Intelligence & Resilience Training helps employees
+              develop crucial skills for navigating workplace challenges,
+              building stronger relationships, and adapting to change with
+              confidence and composure.
             </p>
           </motion.div>
 
@@ -96,16 +98,19 @@ const EmotionalIntelligence = () => {
             transition={{ delay: 0.4 }}
             className="text-center bg-gradient-to-r from-primary/10 via-secondary/10 to-primary/10 rounded-2xl p-12"
           >
-            <h2 className="text-3xl font-bold mb-4">Develop Emotionally Intelligent Teams</h2>
+            <h2 className="text-3xl font-bold mb-4">
+              Develop Emotionally Intelligent Teams
+            </h2>
             <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Transform your workplace culture with enhanced emotional intelligence and resilience.
+              Transform your workplace culture with enhanced emotional
+              intelligence and resilience.
             </p>
             <Button
               asChild
               size="lg"
               className="bg-gradient-to-r from-primary to-secondary text-white px-8"
             >
-              <a href="/#contact">Schedule Consultation</a>
+              <a href="/contact">Schedule Consultation</a>
             </Button>
           </motion.div>
         </div>

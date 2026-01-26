@@ -26,7 +26,7 @@ const SpiritualRemedies = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-secondary/5">
       <Navbar />
-      
+
       <section className="pt-32 pb-20 px-6">
         <div className="container mx-auto max-w-5xl">
           <motion.div
@@ -41,8 +41,8 @@ const SpiritualRemedies = () => {
               Spiritual Remedies
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Personalized spiritual remedies and practices to clear blockages, enhance positive energy, 
-              and support your spiritual wellbeing.
+              Personalized spiritual remedies and practices to clear blockages,
+              enhance positive energy, and support your spiritual wellbeing.
             </p>
           </motion.div>
 
@@ -52,7 +52,9 @@ const SpiritualRemedies = () => {
             transition={{ delay: 0.2 }}
             className="bg-white dark:bg-gray-900 rounded-2xl p-8 mb-12 border border-gray-200 dark:border-gray-800"
           >
-            <h2 className="text-2xl font-bold mb-6">Benefits of Spiritual Remedies</h2>
+            <h2 className="text-2xl font-bold mb-6">
+              Benefits of Spiritual Remedies
+            </h2>
             <ul className="grid md:grid-cols-2 gap-4">
               {benefits.map((benefit, index) => (
                 <li key={index} className="flex items-start gap-3">
@@ -88,14 +90,15 @@ const SpiritualRemedies = () => {
           >
             <h2 className="text-3xl font-bold mb-4">Transform Your Energy</h2>
             <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Book a consultation to receive personalized spiritual remedies for your unique needs.
+              Book a consultation to receive personalized spiritual remedies for
+              your unique needs.
             </p>
             <Button
               asChild
               size="lg"
               className="bg-gradient-to-r from-primary to-secondary text-white px-8"
             >
-              <a href="/#contact">Book Consultation</a>
+              <a href="/contact">Book Consultation</a>
             </Button>
           </motion.div>
         </div>

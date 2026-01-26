@@ -26,7 +26,7 @@ const MentalHealth = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-secondary/5">
       <Navbar />
-      
+
       <section className="pt-32 pb-20 px-6">
         <div className="container mx-auto max-w-5xl">
           {/* Header */}
@@ -42,8 +42,9 @@ const MentalHealth = () => {
               Corporate Mental Health Programs
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Comprehensive mental health support tailored for your organization's unique needs, 
-              fostering a healthier, more productive workplace.
+              Comprehensive mental health support tailored for your
+              organization's unique needs, fostering a healthier, more
+              productive workplace.
             </p>
           </motion.div>
 
@@ -56,9 +57,11 @@ const MentalHealth = () => {
           >
             <h2 className="text-2xl font-bold mb-4">Program Overview</h2>
             <p className="text-muted-foreground leading-relaxed">
-              Our Corporate Mental Health Programs are designed to create a supportive workplace 
-              environment where mental wellbeing is prioritized. We provide evidence-based interventions, 
-              resources, and ongoing support to help your team thrive mentally and emotionally.
+              Our Corporate Mental Health Programs are designed to create a
+              supportive workplace environment where mental wellbeing is
+              prioritized. We provide evidence-based interventions, resources,
+              and ongoing support to help your team thrive mentally and
+              emotionally.
             </p>
           </motion.div>
 
@@ -101,16 +104,19 @@ const MentalHealth = () => {
             transition={{ delay: 0.4 }}
             className="text-center bg-gradient-to-r from-primary/10 via-secondary/10 to-primary/10 rounded-2xl p-12"
           >
-            <h2 className="text-3xl font-bold mb-4">Invest in Your Team's Mental Health</h2>
+            <h2 className="text-3xl font-bold mb-4">
+              Invest in Your Team's Mental Health
+            </h2>
             <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Contact us to learn how our Corporate Mental Health Programs can transform your workplace culture.
+              Contact us to learn how our Corporate Mental Health Programs can
+              transform your workplace culture.
             </p>
             <Button
               asChild
               size="lg"
               className="bg-gradient-to-r from-primary to-secondary text-white px-8"
             >
-              <a href="/#contact">Schedule Consultation</a>
+              <a href="/contact">Schedule Consultation</a>
             </Button>
           </motion.div>
         </div>

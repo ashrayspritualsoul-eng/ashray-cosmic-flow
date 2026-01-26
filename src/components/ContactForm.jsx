@@ -68,8 +68,8 @@ const ContactForm = () => {
 
       // Send email via EmailJS
       await emailjs.send(
-        "template_tyjx5dl", // replace with your EmailJS Service ID
-        "YOUR_TEMPLATE_ID", // replace with your EmailJS Template ID
+        "service_djsisbs", // replace with your EmailJS Service ID
+        "template_tyjx5dl", // replace with your EmailJS Template ID
         emailData,
         "5s1Ypz71xNFSSKepP", // replace with your EmailJS Public Key
       );
