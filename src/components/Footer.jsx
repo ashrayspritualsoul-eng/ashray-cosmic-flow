@@ -47,7 +47,7 @@ const Footer = () => {
   const quickLinks = [
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
-    { name: "Contact", href: "/#contact" },
+    { name: "Contact", href: "/contact" },
   ];
 
   return (
@@ -99,7 +99,7 @@ const Footer = () => {
               </a>
 
               <a
-                href="mailto:ashrayspritualsoul@gmail.com"
+                href="mailto:ashrayspiritualsoul@gmail.com"
                 className="w-11 h-11 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center text-primary-foreground hover:bg-white hover:text-primary transition-all duration-300 hover:scale-110"
               >
                 <Mail className="w-5 h-5" />
@@ -162,21 +162,12 @@ const Footer = () => {
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.name}>
-                  {link.href.startsWith("/#") ? (
-                    <a
-                      href={link.href}
-                      className="text-primary-foreground/75 hover:text-secondary transition-all duration-300 hover:translate-x-1 inline-block"
-                    >
-                      {link.name}
-                    </a>
-                  ) : (
-                    <Link
-                      to={link.href}
-                      className="text-primary-foreground/75 hover:text-secondary transition-all duration-300 hover:translate-x-1 inline-block"
-                    >
-                      {link.name}
-                    </Link>
-                  )}
+                  <Link
+                    to={link.href}
+                    className="text-primary-foreground/75 hover:text-secondary transition-all duration-300 hover:translate-x-1 inline-block"
+                  >
+                    {link.name}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -201,10 +192,10 @@ const Footer = () => {
               <li className="flex gap-4 text-primary-foreground/80">
                 <Mail className="w-5 h-5 text-secondary mt-0.5 flex-shrink-0" />
                 <a
-                  href="mailto:ashrayspritualsoul@gmail.com"
+                  href="mailto:ashrayspiritualsoul@gmail.com"
                   className="hover:text-secondary break-all text-sm"
                 >
-                  ashrayspritualsoul@gmail.com
+                  ashrayspiritualsoul@gmail.com
                 </a>
               </li>
 
