@@ -64,6 +64,12 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const closeMobileMenu = () => {
+    setIsMobileOpen(false);
+    setIsMobileCorporateOpen(false);
+    setIsMobilePersonalOpen(false);
+  };
+
   return (
     <>
       <motion.nav
@@ -251,9 +257,124 @@ const Navbar = () => {
             initial={{ opacity: 0, x: "100%" }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
-            className="fixed top-[72px] inset-0 z-40 bg-white/90 dark:bg-gray-900/90 backdrop-blur-xl md:hidden"
+            transition={{ type: "tween", duration: 0.3 }}
+            className="fixed top-[72px] inset-0 z-40 bg-white/95 dark:bg-gray-900/95 backdrop-blur-xl md:hidden overflow-y-auto"
           >
-            {/* unchanged mobile content */}
+            <div className="container mx-auto px-6 py-8">
+              <div className="flex flex-col gap-6">
+                {/* Main Navigation Links */}
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.label}
+                    to={link.href}
+                    onClick={closeMobileMenu}
+                    className="text-lg font-medium text-gray-900 dark:text-white hover:text-primary transition-colors py-2 border-b border-gray-200 dark:border-gray-700"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+
+                {/* Corporate Services Accordion */}
+                <div className="border-b border-gray-200 dark:border-gray-700">
+                  <button
+                    onClick={() => setIsMobileCorporateOpen(!isMobileCorporateOpen)}
+                    className="w-full flex items-center justify-between text-lg font-medium text-gray-900 dark:text-white py-2"
+                  >
+                    Corporate Services
+                    <ChevronDown
+                      className={`w-5 h-5 transition-transform ${isMobileCorporateOpen ? "rotate-180" : ""}`}
+                    />
+                  </button>
+                  
+                  <AnimatePresence>
+                    {isMobileCorporateOpen && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="overflow-hidden"
+                      >
+                        <div className="pl-4 pb-4 flex flex-col gap-3">
+                          <Link
+                            to="/corporate-services"
+                            onClick={closeMobileMenu}
+                            className="text-sm font-semibold text-primary hover:text-secondary transition-colors py-1"
+                          >
+                            ✨ View All Corporate Services
+                          </Link>
+                          {corporateServices.map((service) => (
+                            <Link
+                              key={service.href}
+                              to={service.href}
+                              onClick={closeMobileMenu}
+                              className="text-sm text-gray-700 dark:text-gray-300 hover:text-secondary transition-colors py-1"
+                            >
+                              {service.label}
+                            </Link>
+                          ))}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+
+                {/* Personal Services Accordion */}
+                <div className="border-b border-gray-200 dark:border-gray-700">
+                  <button
+                    onClick={() => setIsMobilePersonalOpen(!isMobilePersonalOpen)}
+                    className="w-full flex items-center justify-between text-lg font-medium text-gray-900 dark:text-white py-2"
+                  >
+                    Personal Wellness Services
+                    <ChevronDown
+                      className={`w-5 h-5 transition-transform ${isMobilePersonalOpen ? "rotate-180" : ""}`}
+                    />
+                  </button>
+                  
+                  <AnimatePresence>
+                    {isMobilePersonalOpen && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="overflow-hidden"
+                      >
+                        <div className="pl-4 pb-4 flex flex-col gap-3">
+                          <Link
+                            to="/services"
+                            onClick={closeMobileMenu}
+                            className="text-sm font-semibold text-primary hover:text-secondary transition-colors py-1"
+                          >
+                            ✨ View All Personal Services
+                          </Link>
+                          {personalServices.map((service) => (
+                            <Link
+                              key={service.href}
+                              to={service.href}
+                              onClick={closeMobileMenu}
+                              className="text-sm text-gray-700 dark:text-gray-300 hover:text-secondary transition-colors py-1"
+                            >
+                              {service.label}
+                            </Link>
+                          ))}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+
+                {/* Book Consultation Button */}
+                <Button
+                  asChild
+                  className="w-full rounded-full py-6 bg-gradient-to-r from-primary to-secondary text-white shadow-lg text-base font-semibold mt-4"
+                >
+                  <a href="/contact" onClick={closeMobileMenu}>
+                    Book Consultation
+                  </a>
+                </Button>
+              </div>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
