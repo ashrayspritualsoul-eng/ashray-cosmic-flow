@@ -157,35 +157,38 @@ const MentalHealth = () => {
       <Navbar />
       
       <div className="bg-gradient-to-b from-muted/30 via-background to-background">
-        {/* Hero Section with Colored Background */}
-        <section className="relative overflow-hidden pt-32 pb-20 px-6 bg-gradient-to-br from-primary/10 via-secondary/5 to-tertiary/10">
+        {/* Hero Section with Dark Colored Background */}
+        <section className="relative overflow-hidden pt-32 pb-20 px-6 bg-gradient-to-br from-primary/90 via-primary/70 to-primary/50">
           {/* Animated Background Elements */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <motion.div
               animate={{
                 scale: [1, 1.2, 1],
-                opacity: [0.15, 0.25, 0.15],
+                opacity: [0.3, 0.5, 0.3],
               }}
               transition={{ duration: 8, repeat: Infinity }}
-              className="absolute top-20 -right-40 w-96 h-96 bg-primary/30 rounded-full blur-3xl"
+              className="absolute top-20 -right-40 w-96 h-96 bg-secondary/40 rounded-full blur-3xl"
             />
             <motion.div
               animate={{
                 scale: [1.2, 1, 1.2],
-                opacity: [0.15, 0.2, 0.15],
+                opacity: [0.2, 0.4, 0.2],
               }}
               transition={{ duration: 10, repeat: Infinity }}
-              className="absolute -bottom-20 -left-40 w-96 h-96 bg-secondary/40 rounded-full blur-3xl"
+              className="absolute -bottom-20 -left-40 w-96 h-96 bg-tertiary/30 rounded-full blur-3xl"
             />
             <motion.div
               animate={{
                 scale: [1, 1.3, 1],
-                opacity: [0.1, 0.2, 0.1],
+                opacity: [0.15, 0.3, 0.15],
               }}
               transition={{ duration: 12, repeat: Infinity, delay: 1 }}
-              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-tertiary/20 rounded-full blur-3xl"
+              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-white/10 rounded-full blur-3xl"
             />
           </div>
+
+          {/* Dark overlay for better text contrast */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-transparent" />
 
           <div className="container mx-auto max-w-7xl relative z-10">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -198,25 +201,25 @@ const MentalHealth = () => {
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
                   transition={{ duration: 0.5, delay: 0.2 }}
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/20 backdrop-blur-sm border border-primary/30 text-primary text-sm font-semibold mb-6"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-white text-sm font-semibold mb-6"
                 >
                   <Sparkles className="w-4 h-4" />
                   Corporate Wellness Solutions
                 </motion.div>
 
-                <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+                <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight text-white">
                   Corporate Mental Health
-                  <span className="text-gradient block mt-2">Programs</span>
+                  <span className="block mt-2 bg-gradient-to-r from-secondary to-tertiary bg-clip-text text-transparent">Programs</span>
                 </h1>
 
-                <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
+                <p className="text-xl text-white/90 mb-8 leading-relaxed">
                   Transform your workplace into a sanctuary of mental wellness. Our comprehensive programs support employees' psychological health, reduce stigma, and create a culture of care that drives both individual well-being and business success.
                 </p>
 
                 <div className="flex flex-wrap items-center gap-4">
                   <Button
                     size="lg"
-                    className="rounded-full px-8 py-6 bg-gradient-to-r from-primary to-primary/80 hover:shadow-glow transition-all duration-300 text-lg"
+                    className="rounded-full px-8 py-6 bg-white text-primary hover:bg-white/90 hover:shadow-2xl transition-all duration-300 text-lg font-semibold"
                     asChild
                   >
                     <a href="/contact">
@@ -228,7 +231,7 @@ const MentalHealth = () => {
                   <Button
                     size="lg"
                     variant="outline"
-                    className="rounded-full px-8 py-6 border-2 border-primary/30 hover:border-primary hover:bg-primary/5 transition-all duration-300 text-lg"
+                    className="rounded-full px-8 py-6 border-2 border-white/40 text-white hover:bg-white/10 hover:border-white transition-all duration-300 text-lg"
                     asChild
                   >
                     <a href="#offerings">Explore Services</a>
@@ -243,19 +246,19 @@ const MentalHealth = () => {
                 transition={{ duration: 0.8, delay: 0.3 }}
                 className="relative"
               >
-                <div className="relative rounded-3xl overflow-hidden shadow-2xl ring-4 ring-white/20">
+                <div className="relative rounded-3xl overflow-hidden shadow-2xl ring-4 ring-white/30">
                   <img
                     src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=1200&auto=format&fit=crop"
                     alt="Mental health and wellness in workplace"
                     className="w-full h-[500px] object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent" />
                 </div>
                 {/* Floating card */}
                 <motion.div
                   animate={{ y: [0, -10, 0] }}
                   transition={{ duration: 3, repeat: Infinity }}
-                  className="absolute -bottom-6 -left-6 bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-2xl max-w-xs backdrop-blur-sm border border-primary/20"
+                  className="absolute -bottom-6 -left-6 bg-white rounded-2xl p-6 shadow-2xl max-w-xs backdrop-blur-sm border border-white/20"
                 >
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-primary/60 flex items-center justify-center shadow-glow">
