@@ -1,132 +1,512 @@
 import { motion } from "framer-motion";
-import { Sparkles, CheckCircle2, Star } from "lucide-react";
+import { Eye, Sparkles, Moon, Heart, Compass, Star, CheckCircle2, ArrowRight, Zap, Brain, TrendingUp } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Button } from "@/components/ui/button";
 
 const PsychicReadings = () => {
   const benefits = [
-    "Gain clarity on life decisions",
-    "Connect with your higher self",
-    "Understand your life path",
-    "Receive spiritual guidance",
-    "Unlock hidden potential",
+    {
+      icon: Eye,
+      title: "Intuitive Clarity",
+      description: "Receive clear insights into your current situation, hidden influences, and potential outcomes through psychic perception",
+      stat: "90%",
+      image: "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=800&auto=format&fit=crop"
+    },
+    {
+      icon: Heart,
+      title: "Spiritual Connection",
+      description: "Connect with higher guidance, spirit guides, and universal wisdom for profound understanding and direction",
+      stat: "87%",
+      image: "https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=800&auto=format&fit=crop"
+    },
+    {
+      icon: Compass,
+      title: "Life Path Guidance",
+      description: "Gain perspective on your soul's journey, life purpose, and the paths available to you in the present moment",
+      stat: "85%",
+      image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&auto=format&fit=crop"
+    },
+    {
+      icon: Moon,
+      title: "Energy Reading",
+      description: "Understand the energetic dynamics affecting your relationships, career, and personal growth",
+      stat: "88%",
+      image: "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=800&auto=format&fit=crop"
+    },
   ];
 
-  const sessionTypes = [
+  const offerings = [
     {
-      title: "30-Minute Reading",
-      description: "Quick insights and guidance",
-      price: "₹2,500",
+      title: "Clairvoyant Reading",
+      description: "Visual intuitive insights into your past, present, and future through psychic seeing and perception.",
+      features: [
+        "Visual psychic impressions",
+        "Future possibility exploration",
+        "Past life influences",
+        "Spirit guide messages",
+      ],
+      image: "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=600&auto=format&fit=crop"
     },
     {
-      title: "60-Minute Reading",
-      description: "In-depth exploration and clarity",
-      price: "₹4,500",
+      title: "Mediumship Sessions",
+      description: "Connect with loved ones who have passed on for healing messages, closure, and continued connection.",
+      features: [
+        "Spirit communication",
+        "Healing messages delivery",
+        "Evidence of continuity",
+        "Closure & peace",
+      ],
+      image: "https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=600&auto=format&fit=crop"
     },
     {
-      title: "90-Minute Deep Dive",
-      description: "Comprehensive spiritual consultation",
-      price: "₹6,500",
+      title: "Psychic Love Reading",
+      description: "Gain clarity on romantic relationships, soulmate connections, and the energetic dynamics in your love life.",
+      features: [
+        "Relationship energy assessment",
+        "Soulmate connection insights",
+        "Future relationship potential",
+        "Healing guidance",
+      ],
+      image: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=600&auto=format&fit=crop"
+    },
+    {
+      title: "Career & Purpose Reading",
+      description: "Discover your soul's vocational calling and receive guidance on professional direction and opportunities.",
+      features: [
+        "Life purpose clarity",
+        "Career path guidance",
+        "Timing for opportunities",
+        "Blocks identification",
+      ],
+      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&auto=format&fit=crop"
+    },
+    {
+      title: "Akashic Records Reading",
+      description: "Access the universal records of your soul's journey across lifetimes for deep spiritual understanding.",
+      features: [
+        "Soul contract exploration",
+        "Past life patterns",
+        "Karmic lessons insight",
+        "Soul purpose revelation",
+      ],
+      image: "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=600&auto=format&fit=crop"
+    },
+    {
+      title: "Energy Healing Reading",
+      description: "Identify energetic blocks, imbalances, and receive guidance on clearing and healing your energy field.",
+      features: [
+        "Chakra assessment",
+        "Energy block identification",
+        "Healing recommendations",
+        "Protection guidance",
+      ],
+      image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&auto=format&fit=crop"
+    },
+  ];
+
+  const whyItMatters = [
+    {
+      stat: "90%",
+      label: "Of clients report gaining valuable clarity from psychic readings",
+      icon: Eye,
+    },
+    {
+      stat: "87%",
+      label: "Feel more connected to their spiritual path after readings",
+      icon: Sparkles,
+    },
+    {
+      stat: "85%",
+      label: "Say readings helped them make important life decisions",
+      icon: Brain,
+    },
+    {
+      stat: "88%",
+      label: "Would recommend psychic readings to friends or family",
+      icon: TrendingUp,
+    },
+  ];
+
+  const processSteps = [
+    {
+      step: "01",
+      title: "Set Your Intention",
+      description: "Share what areas of life you seek guidance on - relationships, career, spirituality, or life direction.",
+    },
+    {
+      step: "02",
+      title: "Psychic Connection",
+      description: "Reader connects with your energy field, spirit guides, and higher consciousness to receive intuitive information.",
+    },
+    {
+      step: "03",
+      title: "Insights & Messages",
+      description: "Receive psychic impressions, messages, and guidance specific to your situation and questions.",
+    },
+    {
+      step: "04",
+      title: "Integration & Clarity",
+      description: "Discuss the reading, ask follow-up questions, and receive practical guidance for applying insights.",
     },
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background to-secondary/5">
+    <div className="min-h-screen">
       <Navbar />
+      
+      <div className="bg-gradient-to-b from-muted/30 via-background to-background">
+        {/* Hero Section */}
+        <section className="relative overflow-hidden pt-32 pb-20 px-6 bg-gradient-to-br from-primary/90 via-primary/70 to-primary/50">
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <motion.div
+              animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
+              transition={{ duration: 8, repeat: Infinity }}
+              className="absolute top-20 -right-40 w-96 h-96 bg-secondary/40 rounded-full blur-3xl"
+            />
+            <motion.div
+              animate={{ scale: [1.2, 1, 1.2], opacity: [0.2, 0.4, 0.2] }}
+              transition={{ duration: 10, repeat: Infinity }}
+              className="absolute -bottom-20 -left-40 w-96 h-96 bg-tertiary/30 rounded-full blur-3xl"
+            />
+            <motion.div
+              animate={{ scale: [1, 1.3, 1], opacity: [0.15, 0.3, 0.15] }}
+              transition={{ duration: 12, repeat: Infinity, delay: 1 }}
+              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-white/10 rounded-full blur-3xl"
+            />
+          </div>
 
-      <section className="pt-32 pb-20 px-6">
-        <div className="container mx-auto max-w-5xl">
-          {/* Header */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-center mb-16"
-          >
-            <div className="w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
-              <Sparkles className="w-10 h-10 text-white" />
-            </div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Psychic Readings
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Connect with divine guidance and unlock clarity about your life
-              path, relationships, career, and spiritual journey through
-              intuitive psychic readings.
-            </p>
-          </motion.div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-transparent" />
 
-          {/* Benefits */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="bg-white dark:bg-gray-900 rounded-2xl p-8 mb-12 border border-gray-200 dark:border-gray-800"
-          >
-            <h2 className="text-2xl font-bold mb-6">What You'll Gain</h2>
-            <ul className="grid md:grid-cols-2 gap-4">
-              {benefits.map((benefit, index) => (
-                <li key={index} className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                  <span className="text-muted-foreground">{benefit}</span>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-
-          {/* Session Options */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-            className="mb-12"
-          >
-            <h2 className="text-2xl font-bold mb-8 text-center">
-              Session Options
-            </h2>
-            <div className="grid md:grid-cols-3 gap-6">
-              {sessionTypes.map((session, index) => (
-                <div
-                  key={index}
-                  className="bg-white dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-800 hover:border-primary/50 hover:shadow-lg transition-all"
+          <div className="container mx-auto max-w-7xl relative z-10">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+              >
+                <motion.div
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-white text-sm font-semibold mb-6"
                 >
-                  <Star className="w-8 h-8 text-primary mb-4" />
-                  <h3 className="text-xl font-semibold mb-2">
-                    {session.title}
-                  </h3>
-                  <p className="text-muted-foreground text-sm mb-4">
-                    {session.description}
-                  </p>
-                  <p className="text-2xl font-bold text-primary">
-                    {session.price}
-                  </p>
+                  <Sparkles className="w-4 h-4" />
+                  Personal Wellness Services
+                </motion.div>
+
+                <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight text-white">
+                  Psychic
+                  <span className="block mt-2 bg-gradient-to-r from-secondary to-tertiary bg-clip-text text-transparent">Readings</span>
+                </h1>
+
+                <p className="text-xl text-white/90 mb-8 leading-relaxed">
+                  Connect with intuitive wisdom beyond the physical realm. Receive clear guidance, spiritual insights, and profound clarity about your life's path through experienced psychic readings.
+                </p>
+
+                <div className="flex flex-wrap items-center gap-4">
+                  <Button
+                    size="lg"
+                    className="rounded-full px-8 py-6 bg-white text-primary hover:bg-white/90 hover:shadow-2xl transition-all duration-300 text-lg font-semibold"
+                    asChild
+                  >
+                    <a href="/contact">
+                      Book Reading
+                      <ArrowRight className="ml-2 w-5 h-5" />
+                    </a>
+                  </Button>
+
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="rounded-full px-8 py-6 border-2 border-white/40 text-white hover:bg-white/10 hover:border-white transition-all duration-300 text-lg"
+                    asChild
+                  >
+                    <a href="#offerings">Explore Readings</a>
+                  </Button>
                 </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                className="relative"
+              >
+                <div className="relative rounded-3xl overflow-hidden shadow-2xl ring-4 ring-white/30">
+                  <img
+                    src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=1200&auto=format&fit=crop"
+                    alt="Psychic reading session with spiritual guidance"
+                    className="w-full h-[500px] object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent" />
+                </div>
+                <motion.div
+                  animate={{ y: [0, -10, 0] }}
+                  transition={{ duration: 3, repeat: Infinity }}
+                  className="absolute -bottom-6 -left-6 bg-white rounded-2xl p-6 shadow-2xl max-w-xs backdrop-blur-sm border border-white/20"
+                >
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-primary/60 flex items-center justify-center shadow-glow">
+                      <Eye className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <p className="font-bold text-2xl text-gradient">90%</p>
+                      <p className="text-sm text-muted-foreground">Gain Clarity</p>
+                    </div>
+                  </div>
+                </motion.div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* Why It Matters */}
+        <section className="py-20 px-6 bg-gradient-soft">
+          <div className="container mx-auto max-w-7xl">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold mb-4">
+                Intuitive <span className="text-gradient">Guidance</span>
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Psychic readings provide access to wisdom beyond ordinary perception, offering profound clarity and direction.
+              </p>
+            </motion.div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {whyItMatters.map((item, index) => {
+                const Icon = item.icon;
+                return (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    whileHover={{ y: -8, scale: 1.02 }}
+                  >
+                    <div className="bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-card hover:shadow-glow transition-all duration-500 border border-border/50 h-full">
+                      <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary to-primary/60 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <Icon className="w-7 h-7 text-white" />
+                      </div>
+                      <div className="text-5xl font-bold text-gradient mb-3">{item.stat}</div>
+                      <p className="text-muted-foreground font-medium">{item.label}</p>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        {/* Benefits */}
+        <section className="py-20 px-6">
+          <div className="container mx-auto max-w-7xl">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold mb-4">
+                Divine <span className="text-gradient">Insights</span>
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Experience the transformative power of connecting with higher guidance and intuitive wisdom
+              </p>
+            </motion.div>
+
+            <div className="grid md:grid-cols-2 gap-8">
+              {benefits.map((benefit, index) => {
+                const Icon = benefit.icon;
+                return (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    whileHover={{ scale: 1.03 }}
+                  >
+                    <div className="relative bg-white dark:bg-gray-900 rounded-3xl shadow-card hover:shadow-glow transition-all duration-500 border border-border/50 overflow-hidden h-full">
+                      <div className="relative h-48 overflow-hidden">
+                        <img
+                          src={benefit.image}
+                          alt={benefit.title}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                      </div>
+                      <div className="p-8">
+                        <div className="flex items-start justify-between mb-6">
+                          <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+                            <Icon className="w-8 h-8 text-white" />
+                          </div>
+                          <div className="text-4xl font-bold text-gradient">{benefit.stat}</div>
+                        </div>
+                        <h3 className="text-2xl font-bold mb-3">{benefit.title}</h3>
+                        <p className="text-muted-foreground leading-relaxed">{benefit.description}</p>
+                      </div>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        {/* Offerings */}
+        <section id="offerings" className="py-20 px-6 bg-gradient-soft">
+          <div className="container mx-auto max-w-7xl">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold mb-4">
+                Reading <span className="text-gradient">Types</span>
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+                Choose the psychic reading that aligns with your current needs and spiritual questions
+              </p>
+            </motion.div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {offerings.map((offering, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  whileHover={{ y: -10 }}
+                >
+                  <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-card hover:shadow-glow transition-all duration-500 border border-border/50 h-full flex flex-col overflow-hidden">
+                    <div className="relative h-48 overflow-hidden">
+                      <img
+                        src={offering.image}
+                        alt={offering.title}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                      <div className="absolute bottom-4 left-4">
+                        <div className="w-12 h-12 rounded-xl bg-white/90 backdrop-blur-sm flex items-center justify-center">
+                          <Zap className="w-6 h-6 text-primary" />
+                        </div>
+                      </div>
+                    </div>
+                    <div className="p-8 flex-grow flex flex-col">
+                      <h3 className="text-xl font-bold mb-3">{offering.title}</h3>
+                      <p className="text-muted-foreground mb-6 leading-relaxed flex-grow">{offering.description}</p>
+                      <div className="space-y-2">
+                        {offering.features.map((feature, fIndex) => (
+                          <div key={fIndex} className="flex items-center gap-2 text-sm">
+                            <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
+                            <span className="text-muted-foreground">{feature}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
               ))}
             </div>
-          </motion.div>
+          </div>
+        </section>
 
-          {/* CTA */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.4 }}
-            className="text-center bg-gradient-to-r from-primary/10 via-secondary/10 to-primary/10 rounded-2xl p-12"
-          >
-            <h2 className="text-3xl font-bold mb-4">Ready for Your Reading?</h2>
-            <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Book your psychic reading session and receive divine guidance for
-              your life journey.
-            </p>
-            <Button
-              asChild
-              size="lg"
-              className="bg-gradient-to-r from-primary to-secondary text-white px-8"
+        {/* Process */}
+        <section className="py-20 px-6">
+          <div className="container mx-auto max-w-7xl">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
             >
-              <a href="/">Book Your Reading</a>
-            </Button>
-          </motion.div>
-        </div>
-      </section>
+              <h2 className="text-4xl md:text-5xl font-bold mb-4">
+                Your Reading <span className="text-gradient">Experience</span>
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                A sacred journey from connection to clarity through intuitive guidance
+              </p>
+            </motion.div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {processSteps.map((step, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.15 }}
+                  className="relative"
+                >
+                  <div className="bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-card hover:shadow-glow transition-all duration-500 border border-border/50 h-full">
+                    <div className="text-6xl font-bold text-primary/20 mb-4">{step.step}</div>
+                    <h3 className="text-xl font-bold mb-3">{step.title}</h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed">{step.description}</p>
+                  </div>
+                  {index < processSteps.length - 1 && (
+                    <div className="hidden lg:block absolute top-1/2 -right-3 transform -translate-y-1/2">
+                      <ArrowRight className="w-6 h-6 text-primary/30" />
+                    </div>
+                  )}
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA */}
+        <section className="py-20 px-6 bg-gradient-cosmic text-white relative overflow-hidden">
+          <div className="absolute inset-0 opacity-10">
+            <div className="absolute top-10 left-10 w-64 h-64 bg-white rounded-full blur-3xl animate-float" />
+            <div className="absolute bottom-10 right-10 w-96 h-96 bg-secondary rounded-full blur-3xl animate-float" style={{ animationDelay: "2s" }} />
+          </div>
+
+          <div className="container mx-auto max-w-4xl text-center relative z-10">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                Ready to Connect with Divine Guidance?
+              </h2>
+              <p className="text-xl mb-8 text-white/90 leading-relaxed">
+                Open yourself to intuitive wisdom and profound clarity. Book your psychic reading today.
+              </p>
+              <div className="flex flex-wrap items-center justify-center gap-4">
+                <Button
+                  size="lg"
+                  className="rounded-full px-8 py-6 bg-white text-primary hover:bg-white/90 hover:scale-105 transition-all duration-300 text-lg font-semibold"
+                  asChild
+                >
+                  <a href="/contact">
+                    Book Your Reading
+                    <ArrowRight className="ml-2 w-5 h-5" />
+                  </a>
+                </Button>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="rounded-full px-8 py-6 border-2 border-white text-white hover:bg-white/10 transition-all duration-300 text-lg"
+                  asChild
+                >
+                  <Link to="/services">View All Services</Link>
+                </Button>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+      </div>
 
       <Footer />
     </div>
