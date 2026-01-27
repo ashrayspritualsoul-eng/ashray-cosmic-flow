@@ -157,25 +157,33 @@ const MentalHealth = () => {
       <Navbar />
       
       <div className="bg-gradient-to-b from-muted/30 via-background to-background">
-        {/* Hero Section */}
-        <section className="relative overflow-hidden pt-32 pb-20 px-6">
+        {/* Hero Section with Colored Background */}
+        <section className="relative overflow-hidden pt-32 pb-20 px-6 bg-gradient-to-br from-primary/10 via-secondary/5 to-tertiary/10">
           {/* Animated Background Elements */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <motion.div
               animate={{
                 scale: [1, 1.2, 1],
-                opacity: [0.1, 0.2, 0.1],
+                opacity: [0.15, 0.25, 0.15],
               }}
               transition={{ duration: 8, repeat: Infinity }}
-              className="absolute top-20 -right-40 w-96 h-96 bg-primary/20 rounded-full blur-3xl"
+              className="absolute top-20 -right-40 w-96 h-96 bg-primary/30 rounded-full blur-3xl"
             />
             <motion.div
               animate={{
                 scale: [1.2, 1, 1.2],
-                opacity: [0.1, 0.15, 0.1],
+                opacity: [0.15, 0.2, 0.15],
               }}
               transition={{ duration: 10, repeat: Infinity }}
-              className="absolute -bottom-20 -left-40 w-96 h-96 bg-secondary/30 rounded-full blur-3xl"
+              className="absolute -bottom-20 -left-40 w-96 h-96 bg-secondary/40 rounded-full blur-3xl"
+            />
+            <motion.div
+              animate={{
+                scale: [1, 1.3, 1],
+                opacity: [0.1, 0.2, 0.1],
+              }}
+              transition={{ duration: 12, repeat: Infinity, delay: 1 }}
+              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-tertiary/20 rounded-full blur-3xl"
             />
           </div>
 
@@ -190,7 +198,7 @@ const MentalHealth = () => {
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
                   transition={{ duration: 0.5, delay: 0.2 }}
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-6"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/20 backdrop-blur-sm border border-primary/30 text-primary text-sm font-semibold mb-6"
                 >
                   <Sparkles className="w-4 h-4" />
                   Corporate Wellness Solutions
@@ -235,22 +243,22 @@ const MentalHealth = () => {
                 transition={{ duration: 0.8, delay: 0.3 }}
                 className="relative"
               >
-                <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+                <div className="relative rounded-3xl overflow-hidden shadow-2xl ring-4 ring-white/20">
                   <img
                     src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=1200&auto=format&fit=crop"
                     alt="Mental health and wellness in workplace"
                     className="w-full h-[500px] object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent" />
                 </div>
                 {/* Floating card */}
                 <motion.div
                   animate={{ y: [0, -10, 0] }}
                   transition={{ duration: 3, repeat: Infinity }}
-                  className="absolute -bottom-6 -left-6 bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-2xl max-w-xs"
+                  className="absolute -bottom-6 -left-6 bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-2xl max-w-xs backdrop-blur-sm border border-primary/20"
                 >
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-primary/60 flex items-center justify-center">
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-primary/60 flex items-center justify-center shadow-glow">
                       <Heart className="w-6 h-6 text-white" />
                     </div>
                     <div>
