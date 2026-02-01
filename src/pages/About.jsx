@@ -30,10 +30,10 @@ const About = () => {
   ];
 
   const stats = [
-    { value: "7+", label: "Years Experience" },
+    { value: "8+", label: "Years Experience" },
     { value: "15+", label: "Expertise Areas" },
-    { value: "3K+", label: "Consultations Delivered" },
-    { value: "15K+", label: "Happy Clients" },
+    { value: "17K+", label: "Consultations Delivered" },
+    { value: "20K+", label: "Happy Clients" },
   ];
 
   const corporateFeatures = [
