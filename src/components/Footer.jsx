@@ -61,19 +61,19 @@ const Footer = () => {
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary/20 rounded-full blur-3xl" />
       </div>
 
-      <div className="relative container mx-auto px-6 py-20">
+      <div className="relative container mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <Link to="/" className="inline-block mb-6 group">
+            <Link to="/" className="inline-block mb-3 group">
               <img
                 src="/logo.png"
                 alt="Ashray Wellness Logo"
-                className="h-32 w-auto object-contain transition-transform group-hover:scale-105"
+                className="h-40 w-auto object-contain transition-transform group-hover:scale-105"
               />
             </Link>
 
-            <p className="text-primary-foreground/80 leading-relaxed mb-7 max-w-sm">
+            <p className="text-primary-foreground/80 leading-relaxed mb-6 max-w-sm">
               Guiding individuals and organizations towards clarity, balance,
               and growth through spiritual wisdom and holistic wellness
               solutions.
@@ -204,7 +204,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom */}
-        <div className="mt-16 pt-8 border-t border-white/10">
+        <div className="mt-12 pt-6 border-t border-white/10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-primary-foreground/60 text-sm">
               © {currentYear} Ashray Wellness. All rights reserved.
