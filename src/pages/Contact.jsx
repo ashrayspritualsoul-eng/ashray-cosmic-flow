@@ -71,7 +71,7 @@ const Contact = () => {
 
       toast({
         title: "Message Sent ✨",
-        description: "We’ll get back to you very soon.",
+        description: "We'll get back to you very soon.",
       });
 
       setFormData({
@@ -115,10 +115,10 @@ const Contact = () => {
               Get in Touch
             </p>
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
-              Let’s Begin Your Healing Journey
+              Let's Begin Your Healing Journey
             </h1>
             <p className="text-white/90 max-w-2xl mx-auto">
-              Personal wellness or corporate wellbeing — we’re here to guide
+              Personal wellness or corporate wellbeing — we're here to guide
               you.
             </p>
           </motion.div>
@@ -141,7 +141,7 @@ const Contact = () => {
               </h2>
 
               <p className="text-lg text-muted-foreground">
-                Whether you’re seeking personal clarity or building a healthier
+                Whether you're seeking personal clarity or building a healthier
                 workplace, your first step starts here.
               </p>
 
@@ -167,7 +167,7 @@ const Contact = () => {
                 </div>
                 <div className="flex items-center gap-4">
                   <MapPin className="text-secondary" />
-                  <span>Jabalpur, Madhya Pradesh</span>
+                  <span>Bhopal, Madhya Pradesh, India</span>
                 </div>
               </div>
             </motion.div>
