@@ -65,21 +65,13 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <Link to="/" className="flex items-center gap-5 mb-6 group">
-              <div className="w-24 h-24 rounded-full bg-white shadow-[0_0_45px_rgba(255,255,255,0.55)] ring-4 ring-white/60 group-hover:ring-white transition-all duration-300 flex items-center justify-center overflow-hidden">
-                <div className="w-24 h-24 rounded-full overflow-hidden">
-                  <img
-                    src="/logo.png"
-                    alt="Ashray Wellness Logo"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
+            <Link to="/" className="inline-block mb-6 group">
+              <img
+                src="/logo.png"
+                alt="Ashray Wellness Logo"
+                className="h-16 w-auto object-contain transition-transform group-hover:scale-105"
+              />
             </Link>
-
-            <h2 className="text-2xl font-bold text-primary-foreground mb-4">
-              Ashray Wellness
-            </h2>
 
             <p className="text-primary-foreground/80 leading-relaxed mb-7 max-w-sm">
               Guiding individuals and organizations towards clarity, balance,
