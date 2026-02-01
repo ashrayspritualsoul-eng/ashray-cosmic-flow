@@ -87,20 +87,11 @@ const Navbar = () => {
           <div className="h-[72px] flex items-center justify-between">
             {/* Logo */}
             <Link to="/" className="flex items-center gap-3 group">
-              <div className="w-11 h-11 rounded-full overflow-hidden ring-2 ring-primary/40 group-hover:ring-primary transition">
-                <img
-                  src="/logo.png"
-                  alt="Ashray Wellness"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <span
-                className={`text-lg font-semibold tracking-wide transition-colors ${
-                  isScrolled ? "text-gray-900 dark:text-white" : "text-white"
-                }`}
-              >
-                Ashray Wellness
-              </span>
+              <img
+                src="/logo.png"
+                alt="Ashray Wellness"
+                className="h-12 w-auto object-contain transition-transform group-hover:scale-105"
+              />
             </Link>
 
             {/* Desktop Menu */}
