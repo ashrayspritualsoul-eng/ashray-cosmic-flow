@@ -64,7 +64,7 @@ const About = () => {
       <Navbar />
 
       {/* HERO WITH IMAGE */}
-      <section className="relative pt-32 pb-16">
+      <section className="relative pt-40 pb-32">
         {/* Banner Image */}
         <img
           src="/images/about-banner.jpg"
@@ -80,7 +80,7 @@ const About = () => {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-secondary font-semibold tracking-widest uppercase text-sm mb-4"
+            className="text-secondary font-semibold tracking-widest uppercase text-base mb-6"
           >
             About The
           </motion.p>
@@ -89,7 +89,7 @@ const About = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6"
+            className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8"
           >
             Ashray Wellness
           </motion.h1>
@@ -98,7 +98,7 @@ const About = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-white/80 text-lg max-w-2xl mx-auto"
+            className="text-white/80 text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed"
           >
             Whether you're seeking emotional healing, spiritual guidance, or
             practical solutions
