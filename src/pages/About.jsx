@@ -232,7 +232,7 @@ const About = () => {
               Transforming Organizations Through{" "}
               <span className="text-gradient">Holistic Wellness</span>
             </h2>
-            <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
+            <p className="text-card-foreground text-lg max-w-3xl mx-auto">
               Beyond individual consultations, Ashray Wellness partners with organizations 
               to create thriving, balanced workplaces. We understand that employee well-being 
               directly impacts organizational success, and we're committed to fostering 
@@ -257,7 +257,7 @@ const About = () => {
                 <h3 className="text-xl font-bold text-card-foreground mb-3">
                   {feature.title}
                 </h3>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-card-foreground leading-relaxed">
                   {feature.description}
                 </p>
               </motion.div>
@@ -274,7 +274,7 @@ const About = () => {
             <h3 className="text-2xl md:text-3xl font-bold text-card-foreground mb-4">
               Trusted by Leading Organizations
             </h3>
-            <p className="text-muted-foreground text-lg mb-6 max-w-2xl mx-auto">
+            <p className="text-card-foreground text-lg mb-6 max-w-2xl mx-auto">
               We've had the privilege of collaborating with esteemed organizations including 
               <strong> Accenture</strong> and the <strong>Indian Air Force</strong>, delivering 
               wellness programs that enhance employee mental health, reduce burnout, and boost 
