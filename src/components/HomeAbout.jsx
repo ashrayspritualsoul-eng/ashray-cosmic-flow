@@ -30,7 +30,7 @@ const contactInfo = [
   { icon: Phone, label: "+91 93402 16182" },
   { icon: Mail, label: "ashrayspritualsoul@gmail.com" },
   { icon: MessageCircle, label: "+91 93402 16182" },
-  { icon: MapPin, label: "Janakpuri Jumerati, Bhopal" },
+  { icon: MapPin, label: "Bhopal, Madhya Pradesh, India" },
 ];
 
 const HomeAbout = () => {
