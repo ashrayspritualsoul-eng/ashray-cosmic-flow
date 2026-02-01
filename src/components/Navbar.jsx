@@ -84,13 +84,13 @@ const Navbar = () => {
           }`}
       >
         <div className="container mx-auto px-6">
-          <div className="h-[72px] flex items-center justify-between">
+          <div className="h-[80px] flex items-center justify-between">
             {/* Logo */}
             <Link to="/" className="flex items-center gap-3 group">
               <img
                 src="/logo.png"
                 alt="Ashray Wellness"
-                className="h-16 w-auto object-contain transition-transform group-hover:scale-105"
+                className="h-20 w-auto object-contain transition-transform group-hover:scale-105"
               />
             </Link>
 
@@ -249,7 +249,7 @@ const Navbar = () => {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
             transition={{ type: "tween", duration: 0.3 }}
-            className="fixed top-[72px] inset-0 z-40 bg-white/95 dark:bg-gray-900/95 backdrop-blur-xl md:hidden overflow-y-auto"
+            className="fixed top-[80px] inset-0 z-40 bg-white/95 dark:bg-gray-900/95 backdrop-blur-xl md:hidden overflow-y-auto"
           >
             <div className="container mx-auto px-6 py-8">
               <div className="flex flex-col gap-6">
