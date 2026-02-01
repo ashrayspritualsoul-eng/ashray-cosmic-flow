@@ -64,7 +64,7 @@ const About = () => {
       <Navbar />
 
       {/* HERO WITH IMAGE */}
-      <section className="relative pt-40 pb-32">
+      <section className="relative pt-28 pb-80 min-h-[650px]">
         {/* Banner Image */}
         <img
           src="/images/about-banner.jpg"
