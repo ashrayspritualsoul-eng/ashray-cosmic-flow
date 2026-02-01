@@ -143,11 +143,11 @@ const About = () => {
                 My Story
               </p>
 
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-card-foreground mb-6">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-6">
                 Your Guide to <span className="text-gradient">Inner Peace</span>
               </h2>
 
-              <div className="space-y-4 text-foreground leading-relaxed">
+              <div className="space-y-4 text-black leading-relaxed">
                 <p>
                   I'm <strong>Ashi Pawaiya Jain</strong>, known as Ashray
                   Wellness. I'm a Psychic, Numerologist, Master Reikist, &
@@ -228,11 +228,11 @@ const About = () => {
             <p className="text-primary font-semibold tracking-widest uppercase text-sm mb-4">
               Corporate Wellness
             </p>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-card-foreground mb-6">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-6">
               Transforming Organizations Through{" "}
               <span className="text-gradient">Holistic Wellness</span>
             </h2>
-            <p className="text-card-foreground text-lg max-w-3xl mx-auto">
+            <p className="text-black text-lg max-w-3xl mx-auto">
               Beyond individual consultations, Ashray Wellness partners with organizations 
               to create thriving, balanced workplaces. We understand that employee well-being 
               directly impacts organizational success, and we're committed to fostering 
@@ -254,10 +254,10 @@ const About = () => {
                 <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center mb-6">
                   <feature.icon className="w-7 h-7 text-primary" />
                 </div>
-                <h3 className="text-xl font-bold text-card-foreground mb-3">
+                <h3 className="text-xl font-bold text-black mb-3">
                   {feature.title}
                 </h3>
-                <p className="text-card-foreground leading-relaxed">
+                <p className="text-black leading-relaxed">
                   {feature.description}
                 </p>
               </motion.div>
@@ -271,10 +271,10 @@ const About = () => {
             viewport={{ once: true }}
             className="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-2xl p-8 md:p-12 border border-primary/20 text-center"
           >
-            <h3 className="text-2xl md:text-3xl font-bold text-card-foreground mb-4">
+            <h3 className="text-2xl md:text-3xl font-bold text-black mb-4">
               Trusted by Leading Organizations
             </h3>
-            <p className="text-card-foreground text-lg mb-6 max-w-2xl mx-auto">
+            <p className="text-black text-lg mb-6 max-w-2xl mx-auto">
               We've had the privilege of collaborating with esteemed organizations including 
               <strong> Accenture</strong> and the <strong>Indian Air Force</strong>, delivering 
               wellness programs that enhance employee mental health, reduce burnout, and boost 
