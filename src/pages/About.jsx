@@ -309,7 +309,7 @@ const About = () => {
 
               <div className="flex items-center gap-4 p-4 bg-card rounded-xl border md:col-span-2">
                 <MapPin />
-                <p>Jabalpur, Madhya Pradesh, India</p>
+                <p>Bhopal, Madhya Pradesh, India</p>
               </div>
             </div>
 
