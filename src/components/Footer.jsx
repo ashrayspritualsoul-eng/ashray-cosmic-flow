@@ -69,7 +69,7 @@ const Footer = () => {
               <img
                 src="/logo.png"
                 alt="Ashray Wellness Logo"
-                className="h-16 w-auto object-contain transition-transform group-hover:scale-105"
+                className="h-32 w-auto object-contain transition-transform group-hover:scale-105"
               />
             </Link>
 
