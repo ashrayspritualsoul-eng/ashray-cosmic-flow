@@ -98,12 +98,11 @@ const About = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-white/80 text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed"
+            className="text-white/80 text-xl md:text-2xl max-w-4xl mx-auto leading-relaxed"
           >
-            Whether you're seeking emotional healing, spiritual guidance, or
-            practical solutions
-            <br /> to life's challenges, Ashray Wellness is here to guide you
-            every step of the way.
+            Whether you're seeking emotional healing, spiritual guidance, or practical solutions to life's challenges,
+            <br />
+            Ashray Wellness is here to guide you every step of the way.
           </motion.p>
         </div>
       </section>
