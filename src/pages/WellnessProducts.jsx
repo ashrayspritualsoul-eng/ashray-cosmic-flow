@@ -92,7 +92,7 @@ const ProductShowcase = ({ onWhatsApp, onCall }) => {
                   }}
                 >
                   <motion.img
-                    src="/images/fuel-ignite.jpg"
+                    src="/images/fuel-ignite.jpeg"
                     alt="Fuel Ignite - Holistic Wellness Powder"
                     className="w-full h-full object-contain rounded-xl"
                     animate={{ y: [0, -10, 0] }}
