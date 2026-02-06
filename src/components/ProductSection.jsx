@@ -42,7 +42,7 @@ const ProductSection = () => {
           <h2 
             className="text-4xl md:text-6xl font-bold text-transparent bg-clip-text mb-4"
             style={{
-              backgroundImage: 'linear-gradient(135deg, hsl(38 100% 82%) 0%, hsl(33 100% 86%) 100%)'
+              backgroundImage: 'linear-gradient(135deg, hsl(315 44% 38%) 0%, hsl(280 50% 25%) 100%)'
             }}
           >
             Discover Fuel Ignite
