@@ -316,9 +316,9 @@ const IngredientsSection = () => {
           className="text-center mb-12"
         >
           <h2 
-            className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text mb-4"
+            className="text-4xl md:text-5xl font-bold mb-4"
             style={{
-              backgroundImage: 'linear-gradient(135deg, hsl(38 100% 82%) 0%, hsl(33 100% 86%) 100%)'
+              color: 'hsl(315 44% 38%)'
             }}
           >
             Pure Ayurvedic Ingredients
@@ -466,13 +466,13 @@ const WhySpecialSection = () => {
                 transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                 className="inline-block"
               >
-                <Sparkles className="w-16 h-16 mx-auto" style={{ color: 'hsl(38 100% 82%)' }} />
+                <Sparkles className="w-16 h-16 mx-auto" style={{ color: 'hsl(315 44% 38%)' }} />
               </motion.div>
               
               <h2 
-                className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text"
+                className="text-4xl md:text-5xl font-bold mb-4"
                 style={{
-                  backgroundImage: 'linear-gradient(135deg, hsl(38 100% 82%) 0%, hsl(33 100% 86%) 100%)'
+                  color: 'hsl(315 44% 38%)'
                 }}
               >
                 Handmade with Sacred Intention
@@ -588,7 +588,7 @@ const WellnessProducts = () => {
   return (
     <>
       <Navbar />
-      <div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50 pt-20">
+      <div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50">
         <HeroSection />
         <ProductShowcase onWhatsApp={handleWhatsApp} onCall={handleCall} />
         <BenefitsSection />
