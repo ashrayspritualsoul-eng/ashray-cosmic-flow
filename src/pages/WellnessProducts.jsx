@@ -167,7 +167,7 @@ const ProductShowcase = ({ onWhatsApp, onCall }) => {
                     Fuel Ignite
                   </motion.h2>
                   <p className="text-gray-600 text-lg mb-2">
-                    Holistic Wellness Powder
+                    Holistic Wellness Powder(140 grams)
                   </p>
                   <p className="text-gray-500 text-sm">
                     by Ashray Wellness
@@ -555,7 +555,8 @@ const CTASection = ({ onWhatsApp, onCall }) => {
           <div className="flex items-center justify-center gap-2 text-3xl font-bold" style={{ color: 'hsl(315 44% 38%)' }}>
             <IndianRupee className="w-8 h-8" />
             <span>350</span>
-            <span className="text-lg text-gray-600 font-normal">per pack</span>
+            
+            <span className="text-lg text-gray-600 font-normal">per pack(140 grams)</span>
           </div>
           
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
