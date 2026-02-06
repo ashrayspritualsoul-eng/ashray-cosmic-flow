@@ -47,6 +47,7 @@ const personalServices = [
 const navLinks = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
+  { label: "Wellness Products", href: "/wellness-products" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -177,7 +178,7 @@ const Navbar = () => {
               <div
                 className="relative"
                 onMouseEnter={() => setIsPersonalOpen(true)}
-                onMouseLeave={() => setIsPersonalOpen(false)}
+                onMouseLeave={() => setIsPersonalOpen(false)>
               >
                 <button
                   className={`flex items-center gap-1 text-sm font-medium transition-colors ${
