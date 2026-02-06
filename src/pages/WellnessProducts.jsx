@@ -2,6 +2,8 @@ import { motion } from 'framer-motion';
 import { Phone, MessageCircle, Sparkles, Leaf, Heart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 
 const HeroSection = () => {
   return (
@@ -426,15 +428,19 @@ const WellnessProducts = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50">
-      <HeroSection />
-      <ProductShowcase onWhatsApp={handleWhatsApp} onCall={handleCall} />
-      <BenefitsSection />
-      <IngredientsSection />
-      <HowToUseSection />
-      <WhySpecialSection />
-      <CTASection onWhatsApp={handleWhatsApp} onCall={handleCall} />
-    </div>
+    <>
+      <Navbar />
+      <div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50 pt-20">
+        <HeroSection />
+        <ProductShowcase onWhatsApp={handleWhatsApp} onCall={handleCall} />
+        <BenefitsSection />
+        <IngredientsSection />
+        <HowToUseSection />
+        <WhySpecialSection />
+        <CTASection onWhatsApp={handleWhatsApp} onCall={handleCall} />
+      </div>
+      <Footer />
+    </>
   );
 };
 
