@@ -8,6 +8,7 @@ import About from "./pages/About";
 import Services from "./pages/Services";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import WellnessProducts from "./pages/WellnessProducts";
 
 // Personal Wellness Service Pages
 import PsychicReadings from "./pages/personal/PsychicReadings";
@@ -39,6 +40,9 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          
+          {/* Wellness Products */}
+          <Route path="/wellness-products" element={<WellnessProducts />} />
           
           {/* Personal Wellness Services */}
           <Route path="/services" element={<Services />} />
