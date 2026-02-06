@@ -86,17 +86,29 @@ const ProductShowcase = ({ onWhatsApp, onCall }) => {
                 className="relative"
               >
                 <div 
-                  className="aspect-square rounded-2xl flex items-center justify-center shadow-lg"
+                  className="aspect-square rounded-2xl flex items-center justify-center shadow-2xl overflow-hidden p-4"
                   style={{
                     background: 'linear-gradient(135deg, hsl(38 100% 82%) 0%, hsl(33 100% 86%) 100%)'
                   }}
                 >
-                  <motion.div
+                  <motion.img
+                    src="/images/fuel-ignite.jpg"
+                    alt="Fuel Ignite - Holistic Wellness Powder"
+                    className="w-full h-full object-contain rounded-xl"
                     animate={{ y: [0, -10, 0] }}
                     transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                    className="text-center space-y-4"
+                    onError={(e) => {
+                      // Fallback to icon if image not found
+                      e.target.style.display = 'none';
+                      e.target.nextSibling.style.display = 'flex';
+                    }}
+                  />
+                  {/* Fallback icon display */}
+                  <div 
+                    className="hidden flex-col items-center justify-center gap-4"
+                    style={{ display: 'none' }}
                   >
-                    <Leaf className="w-24 h-24 mx-auto" style={{ color: 'hsl(315 44% 38%)' }} />
+                    <Leaf className="w-24 h-24" style={{ color: 'hsl(315 44% 38%)' }} />
                     <div 
                       className="text-4xl font-bold text-transparent bg-clip-text"
                       style={{
@@ -105,11 +117,11 @@ const ProductShowcase = ({ onWhatsApp, onCall }) => {
                     >
                       Fuel Ignite
                     </div>
-                    <div className="flex items-center justify-center gap-2 text-2xl font-bold" style={{ color: 'hsl(315 44% 38%)' }}>
+                    <div className="flex items-center gap-2 text-2xl font-bold" style={{ color: 'hsl(315 44% 38%)' }}>
                       <IndianRupee className="w-6 h-6" />
                       <span>350</span>
                     </div>
-                  </motion.div>
+                  </div>
                 </div>
                 
                 {/* Floating badge */}
@@ -123,6 +135,21 @@ const ProductShowcase = ({ onWhatsApp, onCall }) => {
                   }}
                 >
                   Handcrafted
+                </motion.div>
+
+                {/* Price badge */}
+                <motion.div
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ delay: 0.7, type: "spring" }}
+                  className="absolute -bottom-4 -left-4 text-white px-6 py-3 rounded-full font-bold shadow-lg flex items-center gap-2"
+                  style={{
+                    background: 'linear-gradient(135deg, hsl(38 100% 82%) 0%, hsl(33 100% 86%) 100%)',
+                    color: 'hsl(315 44% 38%)'
+                  }}
+                >
+                  <IndianRupee className="w-5 h-5" />
+                  <span className="text-xl">350</span>
                 </motion.div>
               </motion.div>
 
