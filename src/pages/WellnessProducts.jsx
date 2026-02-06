@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Phone, MessageCircle, Sparkles, Leaf, Heart } from 'lucide-react';
+import { Phone, MessageCircle, Sparkles, Leaf, Heart, Clock, IndianRupee, MapPin, Calendar } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import Navbar from '@/components/Navbar';
@@ -43,13 +43,17 @@ const HeroSection = () => {
               backgroundImage: 'linear-gradient(135deg, hsl(38 100% 82%) 0%, hsl(33 100% 86%) 100%)'
             }}
           >
-            Wellness Products
+            Fuel Ignite
           </h1>
           
           <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto">
-            Handcrafted with intention, infused with cosmic energy. 
-            Nourish your body, elevate your spirit.
+            Handcrafted Holistic Wellness Powder by Ashray Wellness
           </p>
+          
+          <div className="flex items-center justify-center gap-2 text-white/80">
+            <MapPin className="w-4 h-4" />
+            <span>Janakpuri, Bhopal, Madhya Pradesh – 462001</span>
+          </div>
         </motion.div>
       </div>
     </motion.section>
@@ -101,6 +105,10 @@ const ProductShowcase = ({ onWhatsApp, onCall }) => {
                     >
                       Fuel Ignite
                     </div>
+                    <div className="flex items-center justify-center gap-2 text-2xl font-bold" style={{ color: 'hsl(315 44% 38%)' }}>
+                      <IndianRupee className="w-6 h-6" />
+                      <span>350</span>
+                    </div>
                   </motion.div>
                 </div>
                 
@@ -131,8 +139,11 @@ const ProductShowcase = ({ onWhatsApp, onCall }) => {
                   >
                     Fuel Ignite
                   </motion.h2>
-                  <p className="text-gray-600 text-lg">
-                    Edible Holistic Wellness Product
+                  <p className="text-gray-600 text-lg mb-2">
+                    Holistic Wellness Powder
+                  </p>
+                  <p className="text-gray-500 text-sm">
+                    by Ashray Wellness
                   </p>
                 </div>
 
@@ -147,15 +158,23 @@ const ProductShowcase = ({ onWhatsApp, onCall }) => {
                   </div>
                   <div className="flex items-center gap-3 text-gray-700">
                     <Leaf className="w-5 h-5" style={{ color: 'hsl(280 50% 25%)' }} />
-                    <span>100% natural ingredients</span>
+                    <span>100% natural Ayurvedic ingredients</span>
+                  </div>
+                  <div className="flex items-center gap-3 text-gray-700">
+                    <Calendar className="w-5 h-5" style={{ color: 'hsl(315 44% 38%)' }} />
+                    <span>10 months shelf life from manufacturing</span>
                   </div>
                 </div>
 
-                <p className="text-gray-600 leading-relaxed">
-                  A harmonious blend of ancient wisdom and modern wellness. 
-                  Each batch is lovingly handcrafted to support your journey 
-                  toward balance, vitality, and inner radiance.
-                </p>
+                <div className="p-4 rounded-lg" style={{ background: 'linear-gradient(135deg, hsl(38 100% 90%) 0%, hsl(33 100% 92%) 100%)' }}>
+                  <div className="flex items-center justify-between">
+                    <span className="text-gray-700 font-semibold">Price:</span>
+                    <div className="flex items-center gap-1 text-2xl font-bold" style={{ color: 'hsl(315 44% 38%)' }}>
+                      <IndianRupee className="w-6 h-6" />
+                      <span>350</span>
+                    </div>
+                  </div>
+                </div>
 
                 {/* CTA Buttons */}
                 <div className="flex flex-col sm:flex-row gap-4 pt-4">
@@ -195,27 +214,33 @@ const BenefitsSection = () => {
   const benefits = [
     {
       icon: <Sparkles className="w-8 h-8" />,
-      title: "Ignite Your Energy",
-      description: "Awakens your inner vitality with sustainable, natural fuel for body and mind.",
+      title: "Physical Energy",
+      description: "Awakens your inner vitality with sustainable, natural fuel for sustained physical stamina.",
       color: 'hsl(315 44% 38%)'
     },
     {
       icon: <Heart className="w-8 h-8" />,
-      title: "Nourish Deeply",
-      description: "Supports holistic wellness from the inside out with nutrient-rich ingredients.",
+      title: "Mental Clarity",
+      description: "Enhances focus, concentration, and cognitive function for sharper thinking.",
       color: 'hsl(280 50% 25%)'
     },
     {
       icon: <Leaf className="w-8 h-8" />,
-      title: "Balance & Harmony",
-      description: "Promotes equilibrium in your physical, mental, and spiritual being.",
+      title: "Biological Health",
+      description: "Supports overall wellness from the inside out with nutrient-rich Ayurvedic herbs.",
       color: 'hsl(38 100% 82%)'
     },
     {
-      icon: <Sparkles className="w-8 h-8" />,
-      title: "Elevate Consciousness",
-      description: "Enhances clarity, focus, and connection to your higher self.",
+      icon: <Heart className="w-8 h-8" />,
+      title: "Emotional Balance",
+      description: "Promotes emotional stability and helps manage stress for inner peace.",
       color: 'hsl(33 100% 86%)'
+    },
+    {
+      icon: <Sparkles className="w-8 h-8" />,
+      title: "Big Fulfilment",
+      description: "Experience a profound sense of completeness and holistic well-being.",
+      color: 'hsl(315 44% 38%)'
     }
   ];
 
@@ -236,10 +261,10 @@ const BenefitsSection = () => {
           >
             Transformative Benefits
           </h2>
-          <p className="text-gray-600 text-lg">Experience the power of intentional wellness</p>
+          <p className="text-gray-600 text-lg">Experience holistic wellness in every aspect of life</p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {benefits.map((benefit, index) => (
             <motion.div
               key={index}
@@ -249,7 +274,7 @@ const BenefitsSection = () => {
               transition={{ delay: index * 0.1 }}
               whileHover={{ scale: 1.05, y: -5 }}
             >
-              <Card className="p-6 backdrop-blur-xl bg-white/60 border-white/20 shadow-lg hover:shadow-2xl transition-all">
+              <Card className="p-6 backdrop-blur-xl bg-white/60 border-white/20 shadow-lg hover:shadow-2xl transition-all h-full">
                 <div style={{ color: benefit.color }} className="mb-4">{benefit.icon}</div>
                 <h3 className="text-xl font-semibold text-gray-800 mb-2">{benefit.title}</h3>
                 <p className="text-gray-600">{benefit.description}</p>
@@ -264,12 +289,21 @@ const BenefitsSection = () => {
 
 const IngredientsSection = () => {
   const ingredients = [
-    { name: "Sacred Herbs", purpose: "Energy & vitality" },
-    { name: "Ancient Spices", purpose: "Digestive harmony" },
-    { name: "Pure Honey", purpose: "Natural sweetness" },
-    { name: "Superfood Blend", purpose: "Nutrient density" },
-    { name: "Botanical Extracts", purpose: "Holistic balance" },
-    { name: "Cosmic Intention", purpose: "Energetic infusion" }
+    { 
+      name: "Ashwagandha", 
+      purpose: "Adaptogenic herb for stress relief and vitality",
+      description: "Known as Indian Ginseng, reduces stress and boosts energy naturally"
+    },
+    { 
+      name: "Brahmi", 
+      purpose: "Brain tonic for mental clarity",
+      description: "Enhances memory, focus, and cognitive function"
+    },
+    { 
+      name: "Natural Seeds", 
+      purpose: "Nutrient-dense superfood blend",
+      description: "Provides essential vitamins, minerals, and healthy fats"
+    }
   ];
 
   return (
@@ -287,31 +321,33 @@ const IngredientsSection = () => {
               backgroundImage: 'linear-gradient(135deg, hsl(38 100% 82%) 0%, hsl(33 100% 86%) 100%)'
             }}
           >
-            Pure Ingredients
+            Pure Ayurvedic Ingredients
           </h2>
-          <p className="text-gray-600 text-lg">Sourced with care, crafted with love</p>
+          <p className="text-gray-600 text-lg">Ancient herbs backed by traditional wisdom</p>
         </motion.div>
 
-        <Card className="backdrop-blur-xl bg-white/40 border-white/20 shadow-xl p-8">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {ingredients.map((ingredient, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="flex items-start gap-3"
-              >
-                <Leaf className="w-6 h-6 flex-shrink-0 mt-1" style={{ color: 'hsl(315 44% 38%)' }} />
-                <div>
-                  <h4 className="font-semibold text-gray-800">{ingredient.name}</h4>
-                  <p className="text-sm text-gray-600">{ingredient.purpose}</p>
+        <div className="grid md:grid-cols-3 gap-6">
+          {ingredients.map((ingredient, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+            >
+              <Card className="p-6 backdrop-blur-xl bg-white/60 border-white/20 shadow-lg hover:shadow-xl transition-all h-full">
+                <div className="flex items-start gap-3 mb-4">
+                  <Leaf className="w-8 h-8 flex-shrink-0" style={{ color: 'hsl(315 44% 38%)' }} />
+                  <div>
+                    <h3 className="text-xl font-bold text-gray-800 mb-1">{ingredient.name}</h3>
+                    <p className="text-sm font-semibold" style={{ color: 'hsl(280 50% 25%)' }}>{ingredient.purpose}</p>
+                  </div>
                 </div>
-              </motion.div>
-            ))}
-          </div>
-        </Card>
+                <p className="text-gray-600 text-sm">{ingredient.description}</p>
+              </Card>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -321,18 +357,18 @@ const HowToUseSection = () => {
   const steps = [
     {
       step: 1,
-      title: "Set Your Intention",
-      description: "Take a moment to connect with your wellness goals and desired transformation."
+      title: "Measure 2 Teaspoons",
+      description: "Take 2 teaspoons of Fuel Ignite powder for the perfect serving."
     },
     {
       step: 2,
-      title: "Consume Mindfully",
-      description: "Take one serving daily, preferably in the morning or as guided by your intuition."
+      title: "Choose Your Time",
+      description: "Consume in the morning for an energized start or evening for sustained wellness."
     },
     {
       step: 3,
-      title: "Embrace the Journey",
-      description: "Allow the nourishment to integrate, supporting your body's natural wisdom."
+      title: "Mix & Enjoy",
+      description: "Can be taken with or without milk. Works better with milk for enhanced taste and absorption."
     }
   ];
 
@@ -353,7 +389,7 @@ const HowToUseSection = () => {
           >
             How to Use
           </h2>
-          <p className="text-gray-600 text-lg">A simple ritual for profound transformation</p>
+          <p className="text-gray-600 text-lg">A simple daily ritual for profound transformation</p>
         </motion.div>
 
         <div className="space-y-8">
@@ -384,6 +420,24 @@ const HowToUseSection = () => {
             </motion.div>
           ))}
         </div>
+
+        {/* Dosage Info Card */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-8"
+        >
+          <Card className="p-6 backdrop-blur-xl border-white/20 shadow-xl" style={{ background: 'linear-gradient(135deg, hsl(38 100% 90%) 0%, hsl(33 100% 92%) 100%)' }}>
+            <div className="flex items-start gap-4">
+              <Clock className="w-6 h-6 flex-shrink-0 mt-1" style={{ color: 'hsl(315 44% 38%)' }} />
+              <div>
+                <h4 className="font-bold text-gray-800 mb-2">Recommended Dosage</h4>
+                <p className="text-gray-700"><strong>2 teaspoons</strong> daily • <strong>Morning or Evening</strong> • <strong>With or without milk</strong> (better with milk)</p>
+              </div>
+            </div>
+          </Card>
+        </motion.div>
       </div>
     </section>
   );
@@ -425,15 +479,25 @@ const WhySpecialSection = () => {
               </h2>
               
               <p className="text-gray-700 text-lg leading-relaxed">
-                Every batch of Fuel Ignite is crafted in small quantities with mindful presence and loving intention. 
-                We honor ancient wellness traditions while embracing modern nutritional wisdom. Each ingredient is 
-                carefully selected, blessed, and combined during optimal cosmic alignments to maximize its energetic potency.
+                Every batch of Fuel Ignite is crafted in small quantities with mindful presence and loving intention at our facility in Janakpuri, Bhopal. We honor ancient Ayurvedic traditions while embracing modern nutritional wisdom. Each ingredient is carefully selected, blessed, and combined during optimal cosmic alignments to maximize its energetic potency.
               </p>
               
               <p className="text-gray-700 text-lg leading-relaxed">
-                This is not mass-produced wellness—this is artisanal alchemy for your body, mind, and spirit. 
-                When you receive Fuel Ignite, you're receiving a transmission of healing energy, created just for you.
+                This is not mass-produced wellness—this is artisanal alchemy for your body, mind, and spirit. When you receive Fuel Ignite, you're receiving a transmission of healing energy, created just for you.
               </p>
+
+              <div className="grid md:grid-cols-2 gap-4 mt-8">
+                <div className="p-4 rounded-lg bg-white/60">
+                  <Calendar className="w-6 h-6 mx-auto mb-2" style={{ color: 'hsl(315 44% 38%)' }} />
+                  <p className="text-sm font-semibold text-gray-800">Shelf Life</p>
+                  <p className="text-sm text-gray-600">10 months from manufacturing</p>
+                </div>
+                <div className="p-4 rounded-lg bg-white/60">
+                  <MapPin className="w-6 h-6 mx-auto mb-2" style={{ color: 'hsl(315 44% 38%)' }} />
+                  <p className="text-sm font-semibold text-gray-800">Made in Bhopal</p>
+                  <p className="text-sm text-gray-600">Janakpuri, MP – 462001</p>
+                </div>
+              </div>
             </div>
           </Card>
         </motion.div>
@@ -460,6 +524,12 @@ const CTASection = ({ onWhatsApp, onCall }) => {
           >
             Begin Your Wellness Journey
           </h2>
+          
+          <div className="flex items-center justify-center gap-2 text-3xl font-bold" style={{ color: 'hsl(315 44% 38%)' }}>
+            <IndianRupee className="w-8 h-8" />
+            <span>350</span>
+            <span className="text-lg text-gray-600 font-normal">per pack</span>
+          </div>
           
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
             Connect with us to order your handcrafted Fuel Ignite and step into 
@@ -493,6 +563,10 @@ const CTASection = ({ onWhatsApp, onCall }) => {
               Call Now
             </Button>
           </div>
+
+          <p className="text-sm text-gray-500 mt-6">
+            📍 Ashray Wellness • Janakpuri, Bhopal, Madhya Pradesh – 462001
+          </p>
         </motion.div>
       </div>
     </section>
@@ -500,12 +574,11 @@ const CTASection = ({ onWhatsApp, onCall }) => {
 };
 
 const WellnessProducts = () => {
-  // TODO: Update these with actual contact numbers
-  const whatsappNumber = "919876543210"; // Format: country code + number (no + or spaces)
-  const phoneNumber = "+919876543210";   // Format: +country code + number
+  const whatsappNumber = "919340216182";
+  const phoneNumber = "+919340216182";
 
   const handleWhatsApp = () => {
-    window.open(`https://wa.me/${whatsappNumber}?text=Hi, I'm interested in Fuel Ignite`, '_blank');
+    window.open(`https://wa.me/${whatsappNumber}?text=Hi, I'm interested in ordering Fuel Ignite (₹350). Please share more details.`, '_blank');
   };
 
   const handleCall = () => {
