@@ -76,7 +76,7 @@ const ProductSection = () => {
                 >
                   {/* Image */}
                   <motion.img
-                    src="/images/fuel-ignite.jpg"
+                    src="/images/fuel-ignite.jpeg"
                     alt="Fuel Ignite - Holistic Wellness Powder"
                     className="w-full h-full object-contain p-8"
                     animate={{ y: [0, -10, 0] }}
