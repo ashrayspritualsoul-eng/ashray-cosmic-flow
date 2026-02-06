@@ -178,7 +178,7 @@ const Navbar = () => {
               <div
                 className="relative"
                 onMouseEnter={() => setIsPersonalOpen(true)}
-                onMouseLeave={() => setIsPersonalOpen(false)>
+                onMouseLeave={() => setIsPersonalOpen(false)}
               >
                 <button
                   className={`flex items-center gap-1 text-sm font-medium transition-colors ${
