@@ -2,7 +2,6 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
-import viteCompression from 'vite-plugin-compression';
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
@@ -13,144 +12,42 @@ export default defineConfig(({ mode }) => ({
   plugins: [
     react(),
     mode === "development" && componentTagger(),
-    
-    // GZIP Compression
-    mode === 'production' && viteCompression({
-      verbose: true,
-      disable: false,
-      threshold: 10240, // Only compress files > 10KB
-      algorithm: 'gzip',
-      ext: '.gz',
-      deleteOriginFile: false,
-    }),
-    
-    // Brotli Compression (better than gzip)
-    mode === 'production' && viteCompression({
-      verbose: true,
-      disable: false,
-      threshold: 10240,
-      algorithm: 'brotliCompress',
-      ext: '.br',
-      deleteOriginFile: false,
-    }),
   ].filter(Boolean),
   
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
-    // Prevent duplicate React instances
-    dedupe: ['react', 'react-dom'],
+    // Critical: Prevent duplicate React instances
+    dedupe: ['react', 'react-dom', 'react-router-dom'],
   },
   
-  // ============================================
-  // PERFORMANCE OPTIMIZATIONS
-  // ============================================
   build: {
-    // Use esbuild instead of terser - faster and more reliable
+    // Use esbuild minification (default, fast, reliable)
     minify: 'esbuild',
     
-    // Enable CSS code splitting for better caching
-    cssCodeSplit: true,
+    // Simpler target for better compatibility
+    target: 'es2015',
     
-    // Source maps only in development
-    sourcemap: mode === 'development',
+    // Increase chunk size limit
+    chunkSizeWarningLimit: 1000,
     
-    // Chunk size warnings
-    chunkSizeWarningLimit: 500,
-    
-    // Aggressive code splitting for better caching and parallel loading
+    // Simplified rollup options
     rollupOptions: {
       output: {
-        // Manual chunk splitting for optimal loading
-        manualChunks: (id) => {
-          // Vendor chunks
-          if (id.includes('node_modules')) {
-            // Separate framer-motion (large animation library)
-            if (id.includes('framer-motion')) {
-              return 'framer-motion';
-            }
-            
-            // React core libraries
-            if (id.includes('react') || id.includes('react-dom') || id.includes('react-router')) {
-              return 'react-vendor';
-            }
-            
-            // UI libraries (shadcn, radix-ui)
-            if (id.includes('@radix-ui') || id.includes('class-variance-authority') || id.includes('clsx')) {
-              return 'ui-vendor';
-            }
-            
-            // Query libraries
-            if (id.includes('@tanstack') || id.includes('query')) {
-              return 'query-vendor';
-            }
-            
-            // Other vendor code
-            return 'vendor';
-          }
-          
-          // Split SEO components
-          if (id.includes('/components/SEO/')) {
-            return 'seo';
-          }
-          
-          // Split landing pages
-          if (id.includes('/pages/landing/')) {
-            return 'landing';
-          }
-          
-          // Split corporate pages
-          if (id.includes('/pages/corporate/')) {
-            return 'corporate';
-          }
-          
-          // Split personal service pages
-          if (id.includes('/pages/personal/')) {
-            return 'personal';
-          }
-        },
-        
-        // Optimize chunk naming for better caching
-        chunkFileNames: (chunkInfo) => {
-          const facadeModuleId = chunkInfo.facadeModuleId ? chunkInfo.facadeModuleId.split('/').pop() : 'chunk';
-          return `assets/js/[name]-[hash].js`;
-        },
-        assetFileNames: (assetInfo) => {
-          const info = assetInfo.name.split('.');
-          const ext = info[info.length - 1];
-          if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(ext)) {
-            return `assets/images/[name]-[hash][extname]`;
-          } else if (/woff|woff2|eot|ttf|otf/i.test(ext)) {
-            return `assets/fonts/[name]-[hash][extname]`;
-          }
-          return `assets/[name]-[hash][extname]`;
-        },
-        entryFileNames: `assets/js/[name]-[hash].js`,
+        // Let Vite handle chunking automatically
+        manualChunks: undefined,
       },
-    },
-    
-    // Increase worker pool for faster builds
-    target: 'esnext',
-    
-    // Optimize dependencies
-    commonjsOptions: {
-      include: [/node_modules/],
-      transformMixedEsModules: true,
     },
   },
   
-  // Optimize dependencies pre-bundling
+  // Pre-bundle React to avoid issues
   optimizeDeps: {
     include: [
       'react',
       'react-dom',
+      'react/jsx-runtime',
       'react-router-dom',
-      '@tanstack/react-query',
-    ],
-    exclude: [
-      // Exclude large libraries from pre-bundling to allow code splitting
-      'framer-motion',
     ],
   },
 }));
