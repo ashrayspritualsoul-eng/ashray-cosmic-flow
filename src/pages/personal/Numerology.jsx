@@ -236,7 +236,7 @@ const Numerology = () => {
               >
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl ring-4 ring-white/30">
                   <img
-                    src="https://images.unsplash.com/photo-1509228468518-180dd4864904?w=1200&auto=format&fit=crop"
+                    src="/images/NumerologyPage.jpeg"
                     alt="Numerology numbers and calculations"
                     className="w-full h-[500px] object-cover"
                   />

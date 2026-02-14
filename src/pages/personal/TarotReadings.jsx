@@ -236,7 +236,7 @@ const TarotReadings = () => {
               >
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl ring-4 ring-white/30">
                   <img
-                    src="https://images.unsplash.com/photo-1551803091-e20673f15770?w=1200&auto=format&fit=crop"
+                    src="/images/tarotPage.jpeg"
                     alt="Tarot card reading session"
                     className="w-full h-[500px] object-cover"
                   />

@@ -236,7 +236,7 @@ const PsychicReadings = () => {
               >
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl ring-4 ring-white/30">
                   <img
-                    src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=1200&auto=format&fit=crop"
+                    src="/images/psychicPage.jpeg"
                     alt="Psychic reading session with spiritual guidance"
                     className="w-full h-[500px] object-cover"
                   />
