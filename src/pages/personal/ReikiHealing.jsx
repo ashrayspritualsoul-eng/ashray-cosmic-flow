@@ -12,28 +12,28 @@ const ReikiHealing = () => {
       title: "Deep Relaxation",
       description: "Experience profound states of relaxation as universal life force energy flows through your body, releasing tension and stress",
       stat: "94%",
-      image: "https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=800&auto=format&fit=crop"
+      image: "/images/deep.jpeg"
     },
     {
       icon: Zap,
       title: "Energy Balance",
       description: "Restore harmony to your body's energy centers (chakras) and clear energetic blockages that cause discomfort",
       stat: "89%",
-      image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&auto=format&fit=crop"
+      image: "/images/ReikiEnergy.jpeg"
     },
     {
       icon: Shield,
       title: "Healing Support",
       description: "Support your body's natural healing processes for physical pain, emotional wounds, and spiritual disconnection",
       stat: "87%",
-      image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&auto=format&fit=crop"
+      image: "/images/support.jpeg"
     },
     {
       icon: Sun,
       title: "Emotional Release",
       description: "Gently release stored emotional pain, trauma, and negative patterns, creating space for joy and peace",
       stat: "91%",
-      image: "https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=800&auto=format&fit=crop"
+      image: "/images/emotional.jpeg"
     },
   ];
 
@@ -47,7 +47,7 @@ const ReikiHealing = () => {
         "Energy assessment",
         "Post-session guidance",
       ],
-      image: "https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=600&auto=format&fit=crop"
+      image: "/images/Traditional.jpeg"
     },
     {
       title: "Distance Reiki Healing",
@@ -58,7 +58,7 @@ const ReikiHealing = () => {
         "Detailed session report",
         "Follow-up support",
       ],
-      image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&auto=format&fit=crop"
+      image: "/images/distance.jpeg"
     },
     {
       title: "Chakra Healing Session",
@@ -69,7 +69,7 @@ const ReikiHealing = () => {
         "Crystal enhancement",
         "Balancing techniques",
       ],
-      image: "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=600&auto=format&fit=crop"
+      image: "/images/chakra.jpeg"
     },
     {
       title: "Emotional Healing Reiki",
@@ -80,7 +80,7 @@ const ReikiHealing = () => {
         "Heart chakra focus",
         "Integration guidance",
       ],
-      image: "https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=600&auto=format&fit=crop"
+      image: "/images/emotionalReiki.jpeg"
     },
     {
       title: "Physical Pain Relief",
@@ -91,7 +91,7 @@ const ReikiHealing = () => {
         "Inflammation support",
         "Recovery enhancement",
       ],
-      image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&auto=format&fit=crop"
+      image: "/images/physicalReiki.jpeg"
     },
     {
       title: "Reiki Attunement & Training",
@@ -102,7 +102,7 @@ const ReikiHealing = () => {
         "Practice sessions",
         "Certification included",
       ],
-      image: "https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=600&auto=format&fit=crop"
+      image: "/images/attunement.jpeg"
     },
   ];
 
@@ -236,7 +236,7 @@ const ReikiHealing = () => {
               >
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl ring-4 ring-white/30">
                   <img
-                    src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=1200&auto=format&fit=crop"
+                    src="/images/ReikiPage.jpeg"
                     alt="Reiki energy healing session"
                     className="w-full h-[500px] object-cover"
                   />
@@ -335,7 +335,7 @@ const ReikiHealing = () => {
                     whileHover={{ scale: 1.03 }}
                   >
                     <div className="relative bg-white dark:bg-gray-900 rounded-3xl shadow-card hover:shadow-glow transition-all duration-500 border border-border/50 overflow-hidden h-full">
-                      <div className="relative h-48 overflow-hidden">
+                      <div className="relative h-80 overflow-hidden">
                         <img
                           src={benefit.image}
                           alt={benefit.title}

@@ -12,28 +12,28 @@ const TarotReadings = () => {
       title: "Clarity & Insight",
       description: "Gain deeper understanding of your current situation, past influences, and potential future outcomes",
       stat: "92%",
-      image: "https://images.unsplash.com/photo-1551803091-e20673f15770?w=800&auto=format&fit=crop"
+      image: "/images/clarity.jpeg"
     },
     {
       icon: Compass,
       title: "Guidance & Direction",
       description: "Receive intuitive guidance to navigate life decisions, transitions, and crossroads with confidence",
       stat: "88%",
-      image: "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=800&auto=format&fit=crop"
+      image: "/images/guidance.jpeg"
     },
     {
       icon: Heart,
       title: "Relationship Understanding",
       description: "Explore relationship dynamics, patterns, and possibilities for deeper connection and resolution",
       stat: "85%",
-      image: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=800&auto=format&fit=crop"
+      image: "/images/relationship.jpeg"
     },
     {
       icon: Star,
       title: "Personal Empowerment",
       description: "Discover your strengths, overcome obstacles, and align with your highest path and purpose",
       stat: "90%",
-      image: "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=800&auto=format&fit=crop"
+      image: "/images/personal.jpeg"
     },
   ];
 
@@ -47,7 +47,7 @@ const TarotReadings = () => {
         "Life path guidance",
         "Recorded session available",
       ],
-      image: "https://images.unsplash.com/photo-1551803091-e20673f15770?w=600&auto=format&fit=crop"
+      image: "/images/general.jpeg"
     },
     {
       title: "Love & Relationship Reading",
@@ -58,7 +58,7 @@ const TarotReadings = () => {
         "Future potential exploration",
         "Communication guidance",
       ],
-      image: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=600&auto=format&fit=crop"
+      image: "/images/love.jpeg"
     },
     {
       title: "Career & Success Reading",
@@ -80,7 +80,7 @@ const TarotReadings = () => {
         "Soul contract insights",
         "Intuition development",
       ],
-      image: "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=600&auto=format&fit=crop"
+      image: "/images/spritual.jpeg"
     },
     {
       title: "Yes/No Question Reading",
@@ -91,7 +91,7 @@ const TarotReadings = () => {
         "Action recommendations",
         "Up to 3 questions",
       ],
-      image: "https://images.unsplash.com/photo-1551803091-e20673f15770?w=600&auto=format&fit=crop"
+      image: "/images/yes.jpeg"
     },
     {
       title: "Tarot Learning & Workshops",
@@ -102,7 +102,7 @@ const TarotReadings = () => {
         "Intuitive reading development",
         "Practice sessions",
       ],
-      image: "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=600&auto=format&fit=crop"
+      image: "/images/tarotlearning.jpeg"
     },
   ];
 
@@ -335,7 +335,7 @@ const TarotReadings = () => {
                     whileHover={{ scale: 1.03 }}
                   >
                     <div className="relative bg-white dark:bg-gray-900 rounded-3xl shadow-card hover:shadow-glow transition-all duration-500 border border-border/50 overflow-hidden h-full">
-                      <div className="relative h-48 overflow-hidden">
+                      <div className="relative h-80 overflow-hidden">
                         <img
                           src={benefit.image}
                           alt={benefit.title}

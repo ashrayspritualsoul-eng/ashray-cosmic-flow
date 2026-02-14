@@ -12,28 +12,28 @@ const Numerology = () => {
       title: "Life Path Clarity",
       description: "Discover your soul's purpose and the unique journey you're destined to walk in this lifetime",
       stat: "89%",
-      image: "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=800&auto=format&fit=crop"
+      image: "/images/life.jpeg"
     },
     {
       icon: Brain,
       title: "Personality Insights",
       description: "Understand your core traits, strengths, challenges, and how numbers shape your character",
       stat: "86%",
-      image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800&auto=format&fit=crop"
+      image: "/images/personality.jpeg"
     },
     {
       icon: Heart,
       title: "Relationship Compatibility",
       description: "Explore numerological harmony with partners, family, and friends for deeper connections",
       stat: "82%",
-      image: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=800&auto=format&fit=crop"
+      image: "/images/NumerologyRelationship.jpeg"
     },
     {
       icon: Star,
       title: "Timing & Cycles",
       description: "Identify favorable periods for major decisions, changes, and new beginnings in your life",
       stat: "91%",
-      image: "https://images.unsplash.com/photo-1495364141860-b0d03eccd065?w=800&auto=format&fit=crop"
+      image: "/images/timing.jpeg"
     },
   ];
 
@@ -47,7 +47,7 @@ const Numerology = () => {
         "Natural strengths & talents",
         "Life challenges guidance",
       ],
-      image: "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=600&auto=format&fit=crop"
+      image: "/images/numerologypath.jpeg"
     },
     {
       title: "Name Numerology Analysis",
@@ -58,7 +58,7 @@ const Numerology = () => {
         "Personality number meaning",
         "Name change recommendations",
       ],
-      image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=600&auto=format&fit=crop"
+      image: "/images/name.jpeg"
     },
     {
       title: "Personal Year Forecast",
@@ -69,7 +69,7 @@ const Numerology = () => {
         "Opportunity identification",
         "Challenge preparation",
       ],
-      image: "https://images.unsplash.com/photo-1495364141860-b0d03eccd065?w=600&auto=format&fit=crop"
+      image: "/images/yearForecast.jpeg"
     },
     {
       title: "Relationship Compatibility",
@@ -102,7 +102,7 @@ const Numerology = () => {
         "Challenges & opportunities",
         "Higher purpose alignment",
       ],
-      image: "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=600&auto=format&fit=crop"
+      image: "/images/master.jpeg"
     },
   ];
 
@@ -335,7 +335,7 @@ const Numerology = () => {
                     whileHover={{ scale: 1.03 }}
                   >
                     <div className="relative bg-white dark:bg-gray-900 rounded-3xl shadow-card hover:shadow-glow transition-all duration-500 border border-border/50 overflow-hidden h-full">
-                      <div className="relative h-48 overflow-hidden">
+                      <div className="relative h-80 overflow-hidden">
                         <img
                           src={benefit.image}
                           alt={benefit.title}

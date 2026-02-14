@@ -12,14 +12,14 @@ const IndividualTherapy = () => {
       title: "Mental Clarity & Insight",
       description: "Gain deeper understanding of your thoughts, emotions, and behavioral patterns through guided self-exploration",
       stat: "85%",
-      image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&auto=format&fit=crop"
+      image: "/images/individualClarity.jpeg"
     },
     {
       icon: Shield,
       title: "Emotional Resilience",
       description: "Build stronger coping skills and psychological flexibility to navigate life's challenges with confidence",
       stat: "78%",
-      image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&auto=format&fit=crop"
+      image: "/images/resilience.jpeg"
     },
     {
       icon: Heart,
@@ -236,7 +236,7 @@ const IndividualTherapy = () => {
               >
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl ring-4 ring-white/30">
                   <img
-                    src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=1200&auto=format&fit=crop"
+                    src="/images/therapyPage.jpeg"
                     alt="Individual therapy counseling session"
                     className="w-full h-[500px] object-cover"
                   />

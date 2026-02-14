@@ -12,7 +12,7 @@ const PsychicReadings = () => {
       title: "Intuitive Clarity",
       description: "Receive clear insights into your current situation, hidden influences, and potential outcomes through psychic perception",
       stat: "90%",
-      image: "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=800&auto=format&fit=crop"
+      image: "/images/intuitiveClarity.jpeg"
     },
     {
       icon: Heart,
@@ -33,7 +33,7 @@ const PsychicReadings = () => {
       title: "Energy Reading",
       description: "Understand the energetic dynamics affecting your relationships, career, and personal growth",
       stat: "88%",
-      image: "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=800&auto=format&fit=crop"
+      image: "/images/EnergyReading.jpeg"
     },
   ];
 
@@ -47,7 +47,7 @@ const PsychicReadings = () => {
         "Past life influences",
         "Spirit guide messages",
       ],
-      image: "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=600&auto=format&fit=crop"
+      image: "/images/clairvoyant.jpeg"
     },
     {
       title: "Mediumship Sessions",
@@ -58,7 +58,7 @@ const PsychicReadings = () => {
         "Evidence of continuity",
         "Closure & peace",
       ],
-      image: "https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=600&auto=format&fit=crop"
+      image: "/images/mediumship.jpeg"
     },
     {
       title: "Psychic Love Reading",
@@ -69,7 +69,7 @@ const PsychicReadings = () => {
         "Future relationship potential",
         "Healing guidance",
       ],
-      image: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=600&auto=format&fit=crop"
+      image: "/images/psychicLove.jpeg"
     },
     {
       title: "Career & Purpose Reading",
@@ -91,7 +91,7 @@ const PsychicReadings = () => {
         "Karmic lessons insight",
         "Soul purpose revelation",
       ],
-      image: "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=600&auto=format&fit=crop"
+      image: "/images/akashic.jpeg"
     },
     {
       title: "Energy Healing Reading",
@@ -335,7 +335,7 @@ const PsychicReadings = () => {
                     whileHover={{ scale: 1.03 }}
                   >
                     <div className="relative bg-white dark:bg-gray-900 rounded-3xl shadow-card hover:shadow-glow transition-all duration-500 border border-border/50 overflow-hidden h-full">
-                      <div className="relative h-48 overflow-hidden">
+                      <div className="relative h-80 overflow-hidden">
                         <img
                           src={benefit.image}
                           alt={benefit.title}
