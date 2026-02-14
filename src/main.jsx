@@ -1,5 +1,6 @@
 import { createRoot } from "react-dom/client";
 import App from "./App.jsx";
+import "./fonts.css"; // Font optimization - MUST load before index.css
 import "./index.css";
 
 const rootElement = document.getElementById("root");
