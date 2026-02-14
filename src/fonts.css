@@ -1,0 +1,57 @@
+/**
+ * Font Optimization CSS
+ * 
+ * Performance optimizations:
+ * - font-display: swap for immediate text rendering
+ * - Preload only critical font weights
+ * - Subset fonts to reduce file size
+ * - Use system fonts as fallback
+ */
+
+/* System font stack for instant rendering */
+:root {
+  --font-system: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Google Fonts with font-display: swap */
+/* Only load essential weights: 400 (regular) and 600 (semi-bold) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+/* Apply fonts with system font fallback */
+body {
+  font-family: 'Inter', var(--font-system);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Ensure font-display: swap is applied */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Inter'), local('Inter-Regular');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: local('Inter'), local('Inter-SemiBold');
+}
+
+/* Prevent invisible text during font load */
+.font-loading {
+  font-family: var(--font-system);
+}
+
+/* Optional: Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
