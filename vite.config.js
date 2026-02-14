@@ -39,24 +39,16 @@ export default defineConfig(({ mode }) => ({
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
+    // Prevent duplicate React instances
+    dedupe: ['react', 'react-dom'],
   },
   
   // ============================================
   // PERFORMANCE OPTIMIZATIONS
   // ============================================
   build: {
-    // Enable minification with terser for better compression
-    minify: 'terser',
-    terserOptions: {
-      compress: {
-        drop_console: mode === 'production',
-        drop_debugger: mode === 'production',
-        pure_funcs: mode === 'production' ? ['console.log', 'console.info'] : [],
-      },
-      format: {
-        comments: false,
-      },
-    },
+    // Use esbuild instead of terser - faster and more reliable
+    minify: 'esbuild',
     
     // Enable CSS code splitting for better caching
     cssCodeSplit: true,
