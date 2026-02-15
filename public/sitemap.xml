@@ -28,10 +28,10 @@
   </url>
 
   <url>
-    <loc>https://ashray-wellness.com/corporate-services</loc>
+    <loc>https://ashray-wellness.com/contact</loc>
     <lastmod>2026-02-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 
   <url>
@@ -41,23 +41,16 @@
     <priority>0.8</priority>
   </url>
 
-  <url>
-    <loc>https://ashray-wellness.com/contact</loc>
-    <lastmod>2026-02-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
   <!-- Personal Wellness Services -->
   <url>
-    <loc>https://ashray-wellness.com/services/tarot</loc>
+    <loc>https://ashray-wellness.com/services/psychic-readings</loc>
     <lastmod>2026-02-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://ashray-wellness.com/services/psychic-readings</loc>
+    <loc>https://ashray-wellness.com/services/tarot</loc>
     <lastmod>2026-02-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -91,7 +84,15 @@
     <priority>0.9</priority>
   </url>
 
-  <!-- Corporate Services -->
+  <!-- Corporate Services Overview -->
+  <url>
+    <loc>https://ashray-wellness.com/corporate-services</loc>
+    <lastmod>2026-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Corporate Services Pages -->
   <url>
     <loc>https://ashray-wellness.com/corporate-services/mental-health</loc>
     <lastmod>2026-02-15</lastmod>
@@ -101,6 +102,13 @@
 
   <url>
     <loc>https://ashray-wellness.com/corporate-services/wellness-burnout</loc>
+    <lastmod>2026-02-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://ashray-wellness.com/corporate-services/therapy-counseling</loc>
     <lastmod>2026-02-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -128,17 +136,18 @@
   </url>
 
   <url>
-    <loc>https://ashray-wellness.com/corporate-services/therapy-counseling</loc>
+    <loc>https://ashray-wellness.com/corporate-services/holistic-wellness</loc>
     <lastmod>2026-02-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
+  <!-- SEO Landing Pages -->
   <url>
-    <loc>https://ashray-wellness.com/corporate-services/holistic-wellness</loc>
+    <loc>https://ashray-wellness.com/tarot-reading</loc>
     <lastmod>2026-02-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.95</priority>
   </url>
 
 </urlset>
