@@ -36,9 +36,9 @@ export const seoConfig = {
 
   // Contact Information
   contact: {
-    email: 'info@ashraywellness.com',
-    phone: '+91-XXXXXXXXXX',
-    whatsapp: '+91-XXXXXXXXXX',
+    email: 'ashrayspritualsoul@gmail.com',
+    phone: '+91-9340216182',
+    whatsapp: '+91-9340216182',
   },
 
   // Organization Details (for Schema)
@@ -66,7 +66,7 @@ export const seoConfig = {
     contactPoint: {
       '@type': 'ContactPoint',
       contactType: 'Customer Service',
-      email: 'info@ashraywellness.com',
+      email: 'ashrayspritualsoul@gmail.com',
       availableLanguage: ['English', 'Hindi'],
     },
   },

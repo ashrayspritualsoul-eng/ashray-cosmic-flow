@@ -195,7 +195,7 @@ const Footer = () => {
               <li className="flex gap-4 text-primary-foreground/80">
                 <MapPin className="w-5 h-5 text-secondary mt-0.5 flex-shrink-0" />
                 <span className="text-sm">
-                  Jabalpur, Madhya Pradesh
+                  Janakpuri Jumerati Bhopal, Madhya Pradesh
                   <br />
                   India
                 </span>
