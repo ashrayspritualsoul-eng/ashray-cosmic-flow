@@ -35,6 +35,13 @@
   </url>
 
   <url>
+    <loc>https://ashray-wellness.com/wellness-products</loc>
+    <lastmod>2026-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
     <loc>https://ashray-wellness.com/contact</loc>
     <lastmod>2026-02-15</lastmod>
     <changefreq>monthly</changefreq>
