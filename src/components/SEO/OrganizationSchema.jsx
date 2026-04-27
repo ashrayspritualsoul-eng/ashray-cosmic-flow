@@ -5,7 +5,7 @@ const OrganizationSchema = () => {
     "name": "Ashray Wellness",
     "alternateName": "Ashray Cosmic Flow",
     "url": "https://ashraywellness.com",
-    "logo": "https://ashraywellness.com/logo.png",
+    "logo": "https://ashraywellness.com/logo.svg",
     "description": "Leading spiritual wellness and corporate wellness provider in India. Offering tarot readings, psychic consultations, reiki healing, numerology, and comprehensive corporate wellness programs.",
     "foundingDate": "2022",
     "founder": {

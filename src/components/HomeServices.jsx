@@ -1,36 +1,25 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-  Sparkles,
-  BookOpen,
-  Hash,
-  Heart,
-  Star,
-  Brain,
-  Briefcase,
-  Users,
-} from "lucide-react";
+import { Brain, Briefcase, Users, HeartPulse, Shield, LineChart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 const services = [
-  { icon: Sparkles, title: "Psychic Readings" },
-  { icon: BookOpen, title: "Tarot Readings & Teaching" },
-  { icon: Hash, title: "Numerology Consultations" },
-  { icon: Heart, title: "Reiki Healing & Training" },
-  { icon: Star, title: "Spiritual Remedies" },
-  { icon: Brain, title: "Individual Therapy Sessions" },
-  { icon: Briefcase, title: "Corporate Mental Health Programs" },
-  { icon: Users, title: "Employee Wellness & Burnout Prevention" },
+  { icon: Brain, title: "Corporate Mental Health Programs" },
+  { icon: Users, title: "Burnout Prevention & Employee Support" },
+  { icon: HeartPulse, title: "Therapy & Counseling Services" },
+  { icon: Shield, title: "Stress Management Workshops" },
+  { icon: LineChart, title: "Emotional Intelligence Training" },
+  { icon: Briefcase, title: "Leadership & Mindfulness Programs" },
 ];
 
 const carouselImages = [
-  "/images/healing1.jpg",
-  "/images/tarot.webp",
-  "/images/reiki.webp",
-  "/images/meditation.jpg",
+  "/images/services-hero.jpg",
   "/images/therapy.jpg",
+  "/images/meditation.jpg",
+  "/images/psychology.jpg",
+  "/images/contact-banner.jpg",
 ];
 
 const HomeServices = () => {
@@ -45,9 +34,9 @@ const HomeServices = () => {
   }, []);
 
   return (
-    <section id="services" className="py-20 lg:py-32 gradient-cosmic">
-      <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+    <section id="services" className="py-16 sm:py-20 lg:py-28 gradient-cosmic">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -55,20 +44,20 @@ const HomeServices = () => {
             transition={{ duration: 0.8 }}
           >
             <p className="text-secondary font-semibold tracking-widest uppercase text-sm mb-4">
-              Welcome To
+              Corporate Focus
             </p>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground mb-6 leading-tight">
-              World Of Healing
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground mb-5 leading-tight">
+              Mental Wellness Programs
               <br />
-              And Transformation
+              Built for Modern Teams
             </h2>
-            <p className="text-primary-foreground/80 text-lg mb-8 leading-relaxed">
-              Ashi Pawaiya Jain, known as Ashray Wellness, is a Psychic,
-              Numerologist, Master Reikist, & Psychologist guiding individuals
-              worldwide with personalized healing, clarity, and balance.
+            <p className="text-primary-foreground/80 text-base sm:text-lg mb-7 leading-relaxed">
+              Ashray Wellness now centers on corporate mental wellness with
+              practical support for stress, burnout, emotional resilience,
+              leadership health, and employee care.
             </p>
 
-            <div className="grid grid-cols-2 gap-4 mb-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-8">
               {services.map((service, index) => (
                 <motion.div
                   key={index}
@@ -76,19 +65,24 @@ const HomeServices = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.05 }}
-                  className="flex items-center gap-3"
+                  className="flex items-start gap-3 rounded-xl bg-white/8 px-3 py-3 sm:bg-transparent sm:px-0 sm:py-0"
                 >
-                  <div className="w-3 h-3 rounded-full bg-secondary flex-shrink-0" />
-                  <span className="text-primary-foreground font-medium text-sm md:text-base">
+                  <div className="w-2.5 h-2.5 rounded-full bg-secondary flex-shrink-0 mt-1.5" />
+                  <span className="text-primary-foreground font-medium text-sm md:text-base leading-relaxed">
                     {service.title}
                   </span>
                 </motion.div>
               ))}
             </div>
 
-            <Button variant="golden" size="lg" asChild>
-              <Link to="/services">View Services</Link>
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+              <Button variant="golden" size="lg" asChild className="w-full sm:w-auto">
+                <Link to="/corporate-services">Explore Corporate Services</Link>
+              </Button>
+              <Button variant="heroOutline" size="lg" asChild className="w-full sm:w-auto">
+                <Link to="/services/therapy">Individual Therapy</Link>
+              </Button>
+            </div>
           </motion.div>
 
           <motion.div
@@ -96,14 +90,14 @@ const HomeServices = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative hidden lg:block h-[500px]"
+            className="relative hidden lg:block h-[460px] xl:h-[500px]"
           >
             <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl">
               <AnimatePresence mode="wait">
                 <motion.img
                   key={currentIndex}
                   src={carouselImages[currentIndex]}
-                  alt={`Service showcase ${currentIndex + 1}`}
+                  alt={`Wellness showcase ${currentIndex + 1}`}
                   initial={{ opacity: 0, scale: 1.1 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.9 }}
@@ -127,9 +121,6 @@ const HomeServices = () => {
                 />
               ))}
             </div>
-
-            <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-secondary rounded-full opacity-20 blur-2xl" />
-            <div className="absolute -top-6 -right-6 w-32 h-32 bg-secondary rounded-full opacity-10 blur-2xl" />
           </motion.div>
         </div>
       </div>

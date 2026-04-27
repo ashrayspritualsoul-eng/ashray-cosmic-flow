@@ -47,6 +47,7 @@ const personalServices = [
 const navLinks = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
+  { label: "Services", href: "/services" },
   { label: "Wellness Products", href: "/wellness-products" },
   { label: "Contact", href: "/contact" },
 ];
@@ -77,55 +78,39 @@ const Navbar = () => {
         initial={{ y: -80, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className={`fixed top-0 inset-x-0 z-50 backdrop-blur-xl transition-all duration-300
-          ${
-            isScrolled
-              ? "bg-white/20 dark:bg-gray-900/30 shadow-lg"
-              : "bg-white/10 dark:bg-gray-900/20"
-          }`}
+        className={`fixed top-0 inset-x-0 z-50 backdrop-blur-xl transition-all duration-300 ${
+          isScrolled
+            ? "bg-white/20 dark:bg-gray-900/30 shadow-lg"
+            : "bg-white/10 dark:bg-gray-900/20"
+        }`}
       >
-        <div className="container mx-auto px-6">
-          <div className="h-[80px] flex items-center justify-between">
-            {/* Logo */}
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="h-[72px] sm:h-[80px] flex items-center justify-between gap-3">
             <Link to="/" className="flex items-center gap-3 group">
-              <img
-                src="/logo.png"
-                alt="Ashray Wellness"
-                className="h-20 w-auto object-contain transition-transform group-hover:scale-105"
-              />
+              <div className="flex h-14 w-14 sm:h-16 sm:w-16 lg:h-20 lg:w-20 items-center justify-center overflow-hidden rounded-full bg-white/95 p-2 shadow-lg ring-1 ring-white/60 transition-transform group-hover:scale-105">
+                <img
+                  src="/logo.svg"
+                  alt="Ashray Wellness"
+                  className="h-full w-full object-contain"
+                />
+              </div>
             </Link>
 
-            {/* Desktop Menu */}
             <div className="hidden md:flex items-center gap-6">
-              {navLinks.map((link) =>
-                link.href.startsWith("/") ? (
-                  <a
-                    key={link.label}
-                    href={link.href}
-                    className={`text-sm font-medium transition-colors ${
-                      isScrolled
-                        ? "text-gray-700 dark:text-gray-200 hover:text-primary"
-                        : "text-white/90 hover:text-white"
-                    }`}
-                  >
-                    {link.label}
-                  </a>
-                ) : (
-                  <Link
-                    key={link.label}
-                    to={link.href}
-                    className={`text-sm font-medium transition-colors ${
-                      isScrolled
-                        ? "text-gray-700 dark:text-gray-200 hover:text-primary"
-                        : "text-white/90 hover:text-white"
-                    }`}
-                  >
-                    {link.label}
-                  </Link>
-                ),
-              )}
+              {navLinks.map((link) => (
+                <Link
+                  key={link.label}
+                  to={link.href}
+                  className={`text-sm font-medium transition-colors ${
+                    isScrolled
+                      ? "text-gray-700 dark:text-gray-200 hover:text-primary"
+                      : "text-white/90 hover:text-white"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              ))}
 
-              {/* Corporate Services Dropdown */}
               <div
                 className="relative"
                 onMouseEnter={() => setIsCorporateOpen(true)}
@@ -140,7 +125,9 @@ const Navbar = () => {
                 >
                   Corporate Services
                   <ChevronDown
-                    className={`w-4 h-4 transition-transform ${isCorporateOpen ? "rotate-180" : ""}`}
+                    className={`w-4 h-4 transition-transform ${
+                      isCorporateOpen ? "rotate-180" : ""
+                    }`}
                   />
                 </button>
 
@@ -150,15 +137,13 @@ const Navbar = () => {
                       initial={{ opacity: 0, y: 8 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 8 }}
-                      className="absolute left-0 top-full mt-2 w-80 rounded-xl
-                        bg-white/90 dark:bg-gray-900/90 backdrop-blur-xl
-                        shadow-2xl border border-white/20 overflow-hidden"
+                      className="absolute left-0 top-full mt-2 w-80 rounded-xl bg-white/90 dark:bg-gray-900/90 backdrop-blur-xl shadow-2xl border border-white/20 overflow-hidden"
                     >
                       <Link
                         to="/corporate-services"
                         className="block px-5 py-3.5 font-semibold text-sm text-primary bg-secondary/10"
                       >
-                        ✨ View All Corporate Services
+                        View All Corporate Services
                       </Link>
                       {corporateServices.map((service) => (
                         <Link
@@ -174,7 +159,6 @@ const Navbar = () => {
                 </AnimatePresence>
               </div>
 
-              {/* Personal Services Dropdown */}
               <div
                 className="relative"
                 onMouseEnter={() => setIsPersonalOpen(true)}
@@ -187,9 +171,11 @@ const Navbar = () => {
                       : "text-white/90 hover:text-white"
                   }`}
                 >
-                  Personal Wellness Services
+                  Personal Services
                   <ChevronDown
-                    className={`w-4 h-4 transition-transform ${isPersonalOpen ? "rotate-180" : ""}`}
+                    className={`w-4 h-4 transition-transform ${
+                      isPersonalOpen ? "rotate-180" : ""
+                    }`}
                   />
                 </button>
 
@@ -199,15 +185,13 @@ const Navbar = () => {
                       initial={{ opacity: 0, y: 8 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 8 }}
-                      className="absolute left-0 top-full mt-2 w-80 rounded-xl
-                        bg-white/90 dark:bg-gray-900/90 backdrop-blur-xl
-                        shadow-2xl border border-white/20 overflow-hidden"
+                      className="absolute left-0 top-full mt-2 w-80 rounded-xl bg-white/90 dark:bg-gray-900/90 backdrop-blur-xl shadow-2xl border border-white/20 overflow-hidden"
                     >
                       <Link
                         to="/services"
                         className="block px-5 py-3.5 font-semibold text-sm text-primary bg-secondary/10"
                       >
-                        ✨ View All Personal Services
+                        View All Personal Services
                       </Link>
                       {personalServices.map((service) => (
                         <Link
@@ -227,14 +211,15 @@ const Navbar = () => {
                 asChild
                 className="rounded-full px-6 bg-gradient-to-r from-primary to-secondary text-white shadow-lg"
               >
-                <a href="/contact">Book Consultation</a>
+                <Link to="/contact">Book Consultation</Link>
               </Button>
             </div>
 
-            {/* Mobile Button */}
             <button
               onClick={() => setIsMobileOpen(!isMobileOpen)}
-              className={`md:hidden ${isScrolled ? "text-gray-900 dark:text-white" : "text-white"}`}
+              className={`md:hidden ${
+                isScrolled ? "text-gray-900 dark:text-white" : "text-white"
+              }`}
             >
               {isMobileOpen ? <X /> : <Menu />}
             </button>
@@ -242,7 +227,6 @@ const Navbar = () => {
         </div>
       </motion.nav>
 
-      {/* Mobile Menu */}
       <AnimatePresence>
         {isMobileOpen && (
           <motion.div
@@ -250,120 +234,97 @@ const Navbar = () => {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
             transition={{ type: "tween", duration: 0.3 }}
-            className="fixed top-[80px] inset-0 z-40 bg-white/95 dark:bg-gray-900/95 backdrop-blur-xl md:hidden overflow-y-auto"
+            className="fixed top-[72px] sm:top-[80px] inset-x-0 bottom-0 z-40 bg-white/95 dark:bg-gray-900/95 backdrop-blur-xl md:hidden overflow-y-auto"
           >
-            <div className="container mx-auto px-6 py-8">
+            <div className="container mx-auto px-4 sm:px-6 py-6">
               <div className="flex flex-col gap-6">
-                {/* Main Navigation Links */}
                 {navLinks.map((link) => (
                   <Link
                     key={link.label}
                     to={link.href}
                     onClick={closeMobileMenu}
-                    className="text-lg font-medium text-gray-900 dark:text-white hover:text-primary transition-colors py-2 border-b border-gray-200 dark:border-gray-700"
+                    className="text-base sm:text-lg font-medium text-foreground"
                   >
                     {link.label}
                   </Link>
                 ))}
 
-                {/* Corporate Services Accordion */}
-                <div className="border-b border-gray-200 dark:border-gray-700">
+                <div className="border-t border-border pt-4">
                   <button
-                    onClick={() => setIsMobileCorporateOpen(!isMobileCorporateOpen)}
-                    className="w-full flex items-center justify-between text-lg font-medium text-gray-900 dark:text-white py-2"
+                    onClick={() =>
+                      setIsMobileCorporateOpen(!isMobileCorporateOpen)
+                    }
+                    className="flex w-full items-center justify-between text-base sm:text-lg font-medium text-foreground"
                   >
                     Corporate Services
                     <ChevronDown
-                      className={`w-5 h-5 transition-transform ${isMobileCorporateOpen ? "rotate-180" : ""}`}
+                      className={`w-5 h-5 transition-transform ${
+                        isMobileCorporateOpen ? "rotate-180" : ""
+                      }`}
                     />
                   </button>
-                  
-                  <AnimatePresence>
-                    {isMobileCorporateOpen && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.3 }}
-                        className="overflow-hidden"
+                  {isMobileCorporateOpen && (
+                    <div className="mt-4 ml-3 flex flex-col gap-3">
+                      <Link
+                        to="/corporate-services"
+                        onClick={closeMobileMenu}
+                        className="text-sm font-semibold text-primary"
                       >
-                        <div className="pl-4 pb-4 flex flex-col gap-3">
-                          <Link
-                            to="/corporate-services"
-                            onClick={closeMobileMenu}
-                            className="text-sm font-semibold text-primary hover:text-secondary transition-colors py-1"
-                          >
-                            ✨ View All Corporate Services
-                          </Link>
-                          {corporateServices.map((service) => (
-                            <Link
-                              key={service.href}
-                              to={service.href}
-                              onClick={closeMobileMenu}
-                              className="text-sm text-gray-700 dark:text-gray-300 hover:text-secondary transition-colors py-1"
-                            >
-                              {service.label}
-                            </Link>
-                          ))}
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
+                        View All Corporate Services
+                      </Link>
+                      {corporateServices.map((service) => (
+                        <Link
+                          key={service.href}
+                          to={service.href}
+                          onClick={closeMobileMenu}
+                          className="text-sm text-muted-foreground"
+                        >
+                          {service.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
                 </div>
 
-                {/* Personal Services Accordion */}
-                <div className="border-b border-gray-200 dark:border-gray-700">
+                <div className="border-t border-border pt-4">
                   <button
                     onClick={() => setIsMobilePersonalOpen(!isMobilePersonalOpen)}
-                    className="w-full flex items-center justify-between text-lg font-medium text-gray-900 dark:text-white py-2"
+                    className="flex w-full items-center justify-between text-base sm:text-lg font-medium text-foreground"
                   >
-                    Personal Wellness Services
+                    Personal Services
                     <ChevronDown
-                      className={`w-5 h-5 transition-transform ${isMobilePersonalOpen ? "rotate-180" : ""}`}
+                      className={`w-5 h-5 transition-transform ${
+                        isMobilePersonalOpen ? "rotate-180" : ""
+                      }`}
                     />
                   </button>
-                  
-                  <AnimatePresence>
-                    {isMobilePersonalOpen && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.3 }}
-                        className="overflow-hidden"
+                  {isMobilePersonalOpen && (
+                    <div className="mt-4 ml-3 flex flex-col gap-3">
+                      <Link
+                        to="/services"
+                        onClick={closeMobileMenu}
+                        className="text-sm font-semibold text-primary"
                       >
-                        <div className="pl-4 pb-4 flex flex-col gap-3">
-                          <Link
-                            to="/services"
-                            onClick={closeMobileMenu}
-                            className="text-sm font-semibold text-primary hover:text-secondary transition-colors py-1"
-                          >
-                            ✨ View All Personal Services
-                          </Link>
-                          {personalServices.map((service) => (
-                            <Link
-                              key={service.href}
-                              to={service.href}
-                              onClick={closeMobileMenu}
-                              className="text-sm text-gray-700 dark:text-gray-300 hover:text-secondary transition-colors py-1"
-                            >
-                              {service.label}
-                            </Link>
-                          ))}
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
+                        View All Personal Services
+                      </Link>
+                      {personalServices.map((service) => (
+                        <Link
+                          key={service.href}
+                          to={service.href}
+                          onClick={closeMobileMenu}
+                          className="text-sm text-muted-foreground"
+                        >
+                          {service.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
                 </div>
 
-                {/* Book Consultation Button */}
-                <Button
-                  asChild
-                  className="w-full rounded-full py-6 bg-gradient-to-r from-primary to-secondary text-white shadow-lg text-base font-semibold mt-4"
-                >
-                  <a href="/contact" onClick={closeMobileMenu}>
+                <Button asChild className="mt-4 w-full">
+                  <Link to="/contact" onClick={closeMobileMenu}>
                     Book Consultation
-                  </a>
+                  </Link>
                 </Button>
               </div>
             </div>

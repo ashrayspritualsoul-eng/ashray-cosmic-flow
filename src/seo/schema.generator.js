@@ -17,7 +17,7 @@ export const generateOrganizationSchema = () => {
     '@context': 'https://schema.org',
     ...seoConfig.organization,
     url: getFullUrl(''),
-    logo: getFullUrl('/logo.png'),
+    logo: getFullUrl('/logo.svg'),
     sameAs: [
       seoConfig.social.facebook,
       seoConfig.social.instagram,
@@ -42,7 +42,7 @@ export const generateWebsiteSchema = () => {
       name: seoConfig.brand.name,
       logo: {
         '@type': 'ImageObject',
-        url: getFullUrl('/logo.png'),
+        url: getFullUrl('/logo.svg'),
       },
     },
     potentialAction: {
@@ -139,7 +139,7 @@ export const generateArticleSchema = (blogData) => {
       name: seoConfig.brand.name,
       logo: {
         '@type': 'ImageObject',
-        url: getFullUrl('/logo.png'),
+        url: getFullUrl('/logo.svg'),
       },
     },
     mainEntityOfPage: {

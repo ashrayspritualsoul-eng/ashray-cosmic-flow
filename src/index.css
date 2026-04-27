@@ -70,15 +70,22 @@
 
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
     font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-bold text-card-foreground tracking-tight;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
   }
 }
 

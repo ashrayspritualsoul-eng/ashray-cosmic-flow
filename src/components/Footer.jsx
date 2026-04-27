@@ -5,11 +5,6 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const personalServices = [
-    { name: "Psychic Readings", href: "/services/psychic-readings" },
-    { name: "Tarot Readings & Teaching", href: "/services/tarot" },
-    { name: "Numerology Consultations", href: "/services/numerology" },
-    { name: "Reiki Healing & Training", href: "/services/reiki" },
-    { name: "Spiritual Remedies", href: "/services/spiritual-remedies" },
     { name: "Individual Therapy", href: "/services/therapy" },
   ];
 
@@ -47,41 +42,40 @@ const Footer = () => {
   const quickLinks = [
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
+    { name: "Services", href: "/services" },
     { name: "Wellness Products", href: "/wellness-products" },
     { name: "Contact", href: "/contact" },
   ];
 
   return (
     <footer className="relative overflow-hidden">
-      {/* Background */}
       <div className="absolute inset-0 gradient-cosmic" />
 
-      {/* Soft cosmic glow */}
       <div className="absolute inset-0 pointer-events-none opacity-30">
         <div className="absolute top-16 left-10 w-72 h-72 bg-primary/20 rounded-full blur-3xl" />
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary/20 rounded-full blur-3xl" />
       </div>
 
-      <div className="relative container mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
-          {/* Brand */}
+      <div className="relative container mx-auto px-4 sm:px-6 py-14 sm:py-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 sm:gap-10 lg:gap-12">
           <div className="lg:col-span-1">
             <Link to="/" className="inline-block mb-3 group">
-              <img
-                src="/logo.png"
-                alt="Ashray Wellness Logo"
-                className="h-40 w-auto object-contain transition-transform group-hover:scale-105"
-              />
+              <div className="flex h-24 w-24 sm:h-28 sm:w-28 lg:h-32 lg:w-32 items-center justify-center overflow-hidden rounded-full bg-white/95 p-3 shadow-xl ring-1 ring-white/40 transition-transform group-hover:scale-105">
+                <img
+                  src="/logo.svg"
+                  alt="Ashray Wellness Logo"
+                  className="h-full w-full object-contain"
+                />
+              </div>
             </Link>
 
             <p className="text-primary-foreground/80 leading-relaxed mb-6 max-w-sm">
-              Guiding individuals and organizations towards clarity, balance,
-              and growth through spiritual wisdom and holistic wellness
-              solutions.
+              Supporting healthier workplaces and healthier lives through
+              thoughtful mental wellness programs, therapy, and leadership
+              support.
             </p>
 
-            {/* Socials */}
-            <div className="flex gap-4">
+            <div className="flex gap-3 sm:gap-4">
               <a
                 href="https://www.instagram.com/ashraywellnesss/"
                 target="_blank"
@@ -109,10 +103,9 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Personal Wellness Services */}
           <div>
             <h3 className="text-lg font-semibold text-primary-foreground mb-5">
-              Personal Wellness
+              Personal Support
             </h3>
             <ul className="space-y-3">
               {personalServices.map((service) => (
@@ -128,7 +121,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Corporate Services */}
           <div>
             <h3 className="text-lg font-semibold text-primary-foreground mb-5">
               Corporate Services
@@ -147,7 +139,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Quick Links */}
           <div>
             <h3 className="text-lg font-semibold text-primary-foreground mb-5">
               Quick Links
@@ -166,7 +157,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact */}
           <div>
             <h3 className="text-lg font-semibold text-primary-foreground mb-5">
               Get in Touch
@@ -204,14 +194,13 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Bottom */}
-        <div className="mt-12 pt-6 border-t border-white/10">
+          <div className="mt-10 sm:mt-12 pt-6 border-t border-white/10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-primary-foreground/60 text-sm">
               © {currentYear} Ashray Wellness. All rights reserved.
             </p>
             <p className="text-primary-foreground/60 text-sm">
-              Crafted with 💜 for personal & corporate growth
+              Built for personal and workplace mental wellness
             </p>
           </div>
         </div>

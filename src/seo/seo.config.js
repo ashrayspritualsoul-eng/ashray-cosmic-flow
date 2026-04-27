@@ -48,7 +48,7 @@ export const seoConfig = {
     alternateName: 'Ashray Cosmic Flow',
     description: 'Leading provider of spiritual and corporate wellness services in India, offering tarot reading, psychic guidance, reiki healing, numerology, and corporate wellness programs.',
     url: 'https://ashraywellness.com',
-    logo: 'https://ashraywellness.com/logo.png',
+    logo: 'https://ashraywellness.com/logo.svg',
     foundingDate: '2020',
     founder: {
       '@type': 'Person',

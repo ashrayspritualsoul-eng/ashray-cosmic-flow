@@ -18,16 +18,8 @@ const corporateServices = [
   { label: "Holistic Wellness Add-ons" },
 ];
 
-const personalServices = [
-  { label: "Psychic Readings" },
-  { label: "Tarot Readings & Teaching" },
-  { label: "Numerology Consultations" },
-  { label: "Reiki Healing & Training" },
-  { label: "Spiritual Remedies" },
-  { label: "Individual Therapy Sessions" },
-];
+const personalServices = [{ label: "Individual Therapy Sessions" }];
 
-// Zod schema for frontend validation
 const contactSchema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100),
   email: z.string().trim().email("Invalid email").max(255),
@@ -59,24 +51,21 @@ const ContactForm = () => {
 
     try {
       const validatedData = contactSchema.parse(formData);
-
-      // Add current timestamp for email template
       const emailData = {
         ...validatedData,
         time: new Date().toLocaleString(),
       };
 
-      // Send email via EmailJS
       await emailjs.send(
-        "service_djsisbs", // replace with your EmailJS Service ID
-        "template_tyjx5dl", // replace with your EmailJS Template ID
+        "service_djsisbs",
+        "template_tyjx5dl",
         emailData,
-        "5s1Ypz71xNFSSKepP", // replace with your EmailJS Public Key
+        "5s1Ypz71xNFSSKepP",
       );
 
       toast({
-        title: "Message Sent! ✨",
-        description: "Thank you for reaching out. I'll get back to you soon.",
+        title: "Message Sent",
+        description: "Thank you for reaching out. We will get back to you soon.",
       });
 
       setFormData({
@@ -108,10 +97,9 @@ const ContactForm = () => {
   };
 
   return (
-    <section id="contact" className="py-20 lg:py-32 bg-background">
-      <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
-          {/* Contact Info */}
+    <section id="contact" className="py-16 sm:py-20 lg:py-28 bg-background">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -121,17 +109,16 @@ const ContactForm = () => {
             <p className="text-primary font-semibold tracking-widest uppercase text-sm mb-4">
               Get in Touch
             </p>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-card-foreground mb-6 leading-tight">
-              Begin Your{" "}
-              <span className="text-gradient">Spiritual Journey</span>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-card-foreground mb-5 leading-tight">
+              Start the Conversation About
+              <span className="text-gradient"> Mental Wellness</span>
             </h2>
-            <p className="text-foreground text-lg leading-relaxed mb-10">
-              Ready to explore the cosmos and discover your true path? Reach out
-              for a consultation or simply say hello. Every great journey begins
-              with a single step.
+            <p className="text-foreground text-base sm:text-lg leading-relaxed mb-8 sm:mb-10">
+              Whether you are planning a workplace wellness initiative or
+              looking for one-on-one therapeutic support, we are here to help
+              you take the next step with clarity.
             </p>
 
-            {/* Contact Details */}
             <div className="space-y-6">
               {[
                 {
@@ -167,7 +154,6 @@ const ContactForm = () => {
               ))}
             </div>
 
-            {/* Decorative */}
             <div className="mt-12 p-6 rounded-2xl gradient-golden/30 border border-secondary">
               <div className="flex items-center gap-3 mb-3">
                 <Sparkles className="w-5 h-5 text-primary" />
@@ -176,14 +162,13 @@ const ContactForm = () => {
                 </h3>
               </div>
               <p className="text-foreground text-sm">
-                After submitting your message, you'll receive a response within
-                24-48 hours. We'll discuss your needs and schedule a
-                consultation at your convenience.
+                After you submit your message, you can expect a response within
+                24-48 hours to discuss your needs, timelines, and the best fit
+                for your team or individual goals.
               </p>
             </div>
           </motion.div>
 
-          {/* Contact Form */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -192,14 +177,13 @@ const ContactForm = () => {
           >
             <form
               onSubmit={handleSubmit}
-              className="bg-card p-8 rounded-2xl border border-border shadow-card"
+              className="bg-card p-5 sm:p-6 lg:p-8 rounded-2xl border border-border shadow-card"
             >
               <h3 className="text-2xl font-bold text-card-foreground mb-6">
                 Send a Message
               </h3>
 
               <div className="space-y-5">
-                {/* Name */}
                 <div>
                   <label
                     htmlFor="name"
@@ -218,7 +202,6 @@ const ContactForm = () => {
                   />
                 </div>
 
-                {/* Email */}
                 <div>
                   <label
                     htmlFor="email"
@@ -238,7 +221,6 @@ const ContactForm = () => {
                   />
                 </div>
 
-                {/* Phone */}
                 <div>
                   <label
                     htmlFor="phone"
@@ -257,7 +239,6 @@ const ContactForm = () => {
                   />
                 </div>
 
-                {/* Corporate Services Dropdown */}
                 <div>
                   <label
                     htmlFor="corporateService"
@@ -270,7 +251,7 @@ const ContactForm = () => {
                     name="corporateService"
                     value={formData.corporateService}
                     onChange={handleChange}
-                    className="h-12 w-full bg-muted border-border focus:border-primary rounded-md px-3"
+                    className="h-12 w-full bg-muted border border-border focus:border-primary rounded-md px-3 text-sm sm:text-base"
                   >
                     <option value="">Select a corporate service</option>
                     {corporateServices.map((service, idx) => (
@@ -281,22 +262,21 @@ const ContactForm = () => {
                   </select>
                 </div>
 
-                {/* Personal Services Dropdown */}
                 <div>
                   <label
                     htmlFor="personalService"
                     className="block text-sm font-medium text-card-foreground mb-2"
                   >
-                    Personal Services
+                    Personal Support
                   </label>
                   <select
                     id="personalService"
                     name="personalService"
                     value={formData.personalService}
                     onChange={handleChange}
-                    className="h-12 w-full bg-muted border-border focus:border-primary rounded-md px-3"
+                    className="h-12 w-full bg-muted border border-border focus:border-primary rounded-md px-3 text-sm sm:text-base"
                   >
-                    <option value="">Select a personal service</option>
+                    <option value="">Select personal support</option>
                     {personalServices.map((service, idx) => (
                       <option key={idx} value={service.label}>
                         {service.label}
@@ -305,7 +285,6 @@ const ContactForm = () => {
                   </select>
                 </div>
 
-                {/* Message */}
                 <div>
                   <label
                     htmlFor="message"
@@ -318,13 +297,12 @@ const ContactForm = () => {
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    placeholder="Tell me about your spiritual needs or questions..."
+                    placeholder="Tell us about your workplace wellness needs or what kind of support you are looking for."
                     className="min-h-[140px] bg-muted border-border focus:border-primary resize-none"
                     required
                   />
                 </div>
 
-                {/* Submit Button */}
                 <Button
                   type="submit"
                   variant="default"

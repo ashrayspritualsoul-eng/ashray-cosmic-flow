@@ -5,7 +5,7 @@ const SEOHead = ({
   description,
   keywords,
   canonical,
-  ogImage = 'https://ashraywellness.com/logo.png',
+  ogImage = 'https://ashraywellness.com/logo.svg',
   ogType = 'website',
   schema,
   noindex = false,
