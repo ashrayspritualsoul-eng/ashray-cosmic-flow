@@ -74,12 +74,12 @@ export const seoConfig = {
   // Default SEO Templates
   templates: {
     // Title Templates
-    titleTemplate: '{title} | Ashray Wellness – Spiritual & Corporate Wellness',
+    titleTemplate: '{title} | Ashray Wellness – Corporate Mental Wellness & Personal Care',
     titleTemplateShort: '{title} | Ashray Wellness',
-    homepageTitle: 'Ashray Wellness | Expert Astrology, Tarot, Reiki & Corporate Wellness in India',
+    homepageTitle: 'Ashray Wellness | Corporate Mental Wellness & Personal Care in India',
     
     // Description Templates
-    descriptionTemplate: 'Experience {title} with Ashray Wellness. {description} Trusted spiritual and corporate wellness solutions in India by Ashi Pawaiya Jain.',
+    descriptionTemplate: 'Experience {title} with Ashray Wellness. {description} Trusted corporate mental wellness and personal care solutions in India by Ashi Pawaiya Jain.',
     
     // Service Description Template
     serviceDescriptionTemplate: 'Professional {serviceName} services in India. {description} Book your consultation with expert practitioners. Available in English & Hindi.',
@@ -90,11 +90,11 @@ export const seoConfig = {
 
   // Default Meta Tags
   defaults: {
-    title: 'Ashray Wellness – Spiritual & Corporate Wellness Solutions in India',
-    description: 'Discover your cosmic path with Ashray Wellness. Expert astrology, tarot readings, numerology, reiki healing, and corporate wellness programs in India. Book your consultation today.',
-    keywords: 'spiritual wellness, corporate wellness, tarot reading, astrology, reiki healing, numerology, psychic reading, meditation, yoga, mental health, stress management',
+    title: 'Ashray Wellness – Corporate Mental Wellness & Personal Care Solutions in India',
+    description: 'Discover corporate mental wellness and personal care with Ashray Wellness. Expert workplace wellbeing programs, counseling, and holistic mental health support across India. Book your personalized care today.',
+    keywords: 'corporate mental wellness, personal care, workplace wellbeing, mental health support, stress management, employee wellness, executive counseling, corporate wellness, holistic care',
     image: '/images/og-default.jpg',
-    imageAlt: 'Ashray Wellness - Spiritual and Corporate Wellness',
+    imageAlt: 'Ashray Wellness - Corporate Mental Wellness and Personal Care',
     type: 'website',
   },
 
